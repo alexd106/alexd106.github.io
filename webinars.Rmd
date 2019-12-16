@@ -5,11 +5,19 @@ output:
     toc: false
 ---
 
+\  
+
 Work in Progress
+
+\  
 
 **Introduction to R Markdown**
 
+\  
+
 **Introduction to Version Control**
+
+\  
 
 **Introduction to ggplot**
 
