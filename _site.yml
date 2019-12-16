@@ -21,6 +21,9 @@ navbar:
     - text: "Data"
       icon: fa-download
       href: "data.html"
+    - text: "Webinars"
+      icon: fa-desktop
+      href: webinars.html
     - text: "Info"
       icon: fa-question-circle
       menu:
