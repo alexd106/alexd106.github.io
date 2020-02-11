@@ -23,7 +23,7 @@ navbar:
       href: "data.html"
     - text: "Tutorials"
       icon: fa-desktop
-      href: webinars.html
+      href: Tutorials.html
     - text: "Info"
       icon: fa-question-circle
       menu:
