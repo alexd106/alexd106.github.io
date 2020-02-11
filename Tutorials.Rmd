@@ -1,5 +1,5 @@
 ---
-title: "Webinars"
+title: "Tutorials"
 output: 
   html_document:
     toc: false
@@ -18,6 +18,3 @@ Work in Progress
 **Introduction to Version Control**
 
 \  
-
-**Introduction to ggplot**
-
