@@ -1,11 +1,13 @@
 
 # generate thumbnail from  image
 thumbnail <- function(title, img, href, caption = TRUE) {
-  div(class = "col-sm-4",
+  div(class = "col-sm-2",
       a(class = "thumbnail", title = title, href = href,
         img(src = img),
-        div(class = if (caption) "caption",
-            if (caption) title)
+        div(class = ifelse(caption, "caption", ""),
+            ifelse(caption, title, "")
+        )
       )
   )
 }
+

@@ -7,14 +7,44 @@ output:
 
 \  
 
-Work in Progress
+\  
 
 \  
 
-**Introduction to R Markdown**
+<div style= "float:left;position: relative; top: -60px;">
+```{r, out.width = "200px", out.extra='style="padding:30px;"', echo = FALSE}
+knitr::include_graphics("images/rmarkdown.png")
+```
+</div>
+
+\ 
+
+[Introduction to reproducible reports using R markdown](Rmarkdown_intro.html)
 
 \  
 
-**Introduction to Version Control**
+\  
 
 \  
+
+\  
+
+\  
+
+\  
+
+<div style= "float:left;position: relative; top: -10px;">
+```{r, out.width = "200px", out.extra='style="padding:30px;"', echo = FALSE}
+knitr::include_graphics("images/github.png")
+```
+</div>
+
+\  
+
+[Introduction to version control using Git and GitHub](Github_intro.html)
+
+\  
+
+\  
+
+
