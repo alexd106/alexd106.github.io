@@ -11,8 +11,8 @@ output:
 
 \  
 
-<div style= "float:left;position: relative; top: -60px;">
-```{r, out.width = "200px", out.extra='style="padding:30px;"', echo = FALSE}
+<div style= "float:left;position: relative; top: -35px;">
+```{r, out.width = "150px", out.extra='style="padding:30px;"', echo = FALSE}
 knitr::include_graphics("images/rmarkdown.png")
 ```
 </div>
@@ -29,12 +29,8 @@ knitr::include_graphics("images/rmarkdown.png")
 
 \  
 
-\  
-
-\  
-
-<div style= "float:left;position: relative; top: -10px;">
-```{r, out.width = "200px", out.extra='style="padding:30px;"', echo = FALSE}
+<div style= "float:left;position: relative; top: -15px;">
+```{r, out.width = "150px", out.extra='style="padding:30px;"', echo = FALSE}
 knitr::include_graphics("images/github.png")
 ```
 </div>
