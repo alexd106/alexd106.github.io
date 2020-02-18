@@ -7,7 +7,7 @@ output:
 
 \  
 
-```{r, echo=FALSE, fig.align='center', out.width='30%'}
+```{r, echo=FALSE, fig.align='center', out.width='60%'}
 include_graphics("images/rmarkdown_venn2.png")
 ```
 
