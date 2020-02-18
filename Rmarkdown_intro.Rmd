@@ -1,5 +1,5 @@
 ---
-title: "Introduction to R markdown"
+title: "Introduction to reproducible reports using R markdown"
 output:
   html_document:
     toc: false
@@ -7,4 +7,8 @@ output:
 
 \  
 
-Content coming soon!!
+```{r, echo=FALSE, fig.align='center', out.width='30%'}
+include_graphics("images/rmarkdown_venn2.png")
+```
+
+
