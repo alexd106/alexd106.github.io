@@ -1,0 +1,9 @@
+---
+title: "Code chunks in R markdown"
+output:
+  html_document:
+    css: custom.css
+    code_folding: hide
+---
+
+R markdown excercise 2
