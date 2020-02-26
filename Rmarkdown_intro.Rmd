@@ -872,7 +872,7 @@ kable(iris[1:10,]) %>%
 library(kableExtra)
 
 kable(iris[1:10,]) %>%
-  kable_styling(bootstrap_options = "striped", font_size = 7)
+  kable_styling(bootstrap_options = "striped", font_size = 10)
 
 ```
 
@@ -921,6 +921,87 @@ You can find an exercise to practice using code chunks and inline R code [here](
 
 \  
 
+**Problem :** 
+
+When rendering my R markdown document to pdf my code runs off the edge of the page.
+
+\  
+
+**Solution:**
+
+Add a global_options argument at the start of your .Rmd file in a code chunk:
+
+\  
+
+<pre class="markdown"><code>&#96;&#96;&#96;{r global_options, include=FALSE}
+
+knitr::opts_chunk$set(message=FALSE, tidy.opts=list(width.cutoff=60)) 
+
+&#96;&#96;&#96;
+</code></pre>
+
+\  
+
+This code chunk won’t be displayed in the final document due to the `include = FALSE` argument and you should place the code chunk immediately after the YAML header to affect everything below that.
+
+The `tidy.opts = list(width.cutoff = 60)` defines the margin cutoff point and wraps text to the next line. Play around with this value to get it right.
+
+\  
+
+**Problem:** 
+
+When I load a package in my R markdown document my rendered output contains all of the startup messages and/or warnings.
+
+\  
+
+**Solution:**
+
+You can load all of your packages at the start of your R markdown document in a code chunk along with setting your global options.
+
+\  
+
+<pre class="markdown"><code>&#96;&#96;&#96;{r global_options, include=FALSE}
+
+knitr::opts_chunk$set(message=FALSE, warning=FALSE, tidy.opts=list(width.cutoff=60)) 
+suppressPackageStartupMessages(library(ggplot2))
+
+&#96;&#96;&#96;
+</code></pre>
+
+\  
+
+The `message=FALSE` and `warning=FALSE` arguments supress messages and warnings. The `suppressPackageStartupMessages(library(ggplot2))` will load the `ggplot2` package but supress startup messages.
+
+\  
+
+**Problem:**
+
+When rendering my R markdown document to pdf my tables and/or figures are split over two pages.
+
+\  
+
+**Solution:**
+
+Add a page break using the LateX `\pagebreak` notation before your offending table or figure
+
+\  
+
+**Problem:**
+
+The code in my rendered document looks ugly!
+
+**Solution:**
+
+Add the argument `tidy=TRUE` to your global aruments. Sometimes, however, this can cause problems especially with correct code indentation.
+
+\  
+
+<pre class="markdown"><code>&#96;&#96;&#96;{r global_options, include=FALSE}
+
+knitr::opts_chunk$set(message=FALSE, tidy.opts=list(width.cutoff=60), tidy=TRUE) 
+
+&#96;&#96;&#96;
+</code></pre>
 
 \  
 
@@ -941,23 +1022,5 @@ A quick and easy RStudio R markdown [cheatsheet](https://rstudio.com/wp-content/
 \  
 
 
-The results = 'hide' option doesn't prevent other messages to be printed. To hide them, the following options are useful:
-
-    {r, error=FALSE}
-    {r, warning=FALSE}
-    {r, message=FALSE}
-
-Common problems when compiling a .pdf
-
   
-Text is running off the page when I render a pdf document
-
-Add a global_options argument at the start of your .Rmd file:
-
-```{r global_options2, include = FALSE, eval=FALSE}
-knitr::opts_chunk$set(message=FALSE, 
-tidy.opts=list(width.cutoff=60)) 
-```
-
-This code chunk won’t be displayed in the final document due to the include = FALSE call and should be placed immediately after the YAML header to affect everything below that.
 
