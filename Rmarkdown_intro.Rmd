@@ -102,9 +102,7 @@ Some of the advantages of using R markdown include:
 
 \  
 
-This tutorial assumes that you have already installed the latest versions of R and RStudio. If you haven't done this yet you can find instructions [here](setup.html). To use R markdown you will first need to install the ```rmarkdown``` package in RStudio (or in the R console if you're not using RStudio) and any package dependencies. You can find instructions on how to do this for both Windows and Mac OSX operating systems [here](install_rmarkdown.html). If you would like to create (actually render) pdf documents (or MS Word documents) you will also need to install a version of LaTeX on your computer. If you've not installed LaTeX before, I recommend that you install [TinyTeX](https://yihui.name/tinytex/). Again, instructions on how to do this can be found [here](install_rmarkdown.html). 
-
-For this tutorial we will 
+This tutorial assumes that you have already installed the latest versions of R and RStudio. If you haven't done this yet you can find instructions [here](setup.html). To use R markdown you will first need to install the ```rmarkdown``` package in RStudio (or in the R console if you're not using RStudio) and any package dependencies. You can find instructions on how to do this for both Windows and Mac OSX operating systems [here](install_rmarkdown.html). If you would like to create pdf documents (or MS Word documents) from your R markdown file you will also need to install a version of LaTeX on your computer. If you've not installed LaTeX before, I recommend that you install [TinyTeX](https://yihui.name/tinytex/). Again, instructions on how to do this can be found [here](install_rmarkdown.html). 
 
 \  
 
