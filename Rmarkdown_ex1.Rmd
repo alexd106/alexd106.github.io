@@ -3,6 +3,7 @@ title: "Formatting text in R markdown "
 output:
   html_document:
     css: custom.css
+    toc: no
     code_folding: hide
 ---
 
@@ -62,6 +63,10 @@ These data were originally collected as part of a study published in Aquatic Liv
 >Each individual was also assigned a categorical measure of maturity (**maturity.stage variable**) ranging from 1 to 5 with 1 = immature, 5 = mature.  
 
 >Some interesting background information on squid morphology can be found [here](https://en.wikipedia.org/wiki/Loligo_forbesii) and the following image provides a useful summary of squid anatomy ![squid anatomy](images/squid_anatomy.jpg)
+
+\  
+
+Once you're happy with marking up your text, knit your R markdown document to a HTML file. Open this file in your web browser and check all your formatting. You could also try knitting to a pdf document.
 
 \  
 

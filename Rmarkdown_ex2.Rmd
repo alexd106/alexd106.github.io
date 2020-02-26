@@ -3,6 +3,7 @@ title: "Code chunks in R markdown"
 output:
   html_document:
     css: custom.css
+    toc: no
     code_folding: hide
 ---
 
