@@ -741,7 +741,7 @@ ggplot(dataf, aes(x = x, y = y))
 
 \  
 
-```{r, simple-ggplot, class.source='fold-show'}
+```{r, simple-ggplot, class.source='fold-show', fig.keep='high', fig.path='figs/'}
 x <- 1:10    # create an x variable
 y <- 10:1    # create a y variable
 
