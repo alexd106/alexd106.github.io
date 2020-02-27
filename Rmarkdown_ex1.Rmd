@@ -84,7 +84,7 @@ You can find the solution below (click on the 'code' button on the right)
 
 \  
 
-```{r, eval=FALSE, highlight=FALSE}
+```{r, class.source='fold.hide',  eval=FALSE}
 
 ## Sampling and data description
 These data were originally collected as part of a study published in Aquatic Living Resources (Smith *et al*., 2005). The aim of the study was to investigate the seasonal patterns of investment in somatic and reproductive tissues in the long finned squid *Loligo forbesi* caught in Scottish waters. Squid were caught monthly from December 1989 - July 1991 (**month** and **year variables**). After capture, each squid was given a unique specimen code (**specimen variable**) and the following variables measured: 
