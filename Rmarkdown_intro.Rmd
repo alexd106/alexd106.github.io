@@ -250,7 +250,7 @@ which looks like this in the final rendered document (can you spot the markups?)
 
 \  
 
-**white space and line breaks**
+#### White space and line breaks
 
 \  
 
@@ -306,7 +306,7 @@ effect &nbsp; &nbsp; &nbsp; &nbsp; benthic polychaete (*Nereis diversicolor*) bi
 
 \  
 
-**Emphasis**
+#### Emphasis
 
 \  
 
@@ -328,7 +328,7 @@ Interestingly there is no underline R markdown syntax by default. I think this i
 
 \  
 
-**Headings**
+#### Headings
 
 \  
 
@@ -372,7 +372,7 @@ this is an example of how to format a comment using R markdown.
 
 \  
 
-**Lists**
+#### Lists
 
 \  
 
@@ -424,7 +424,7 @@ If you need an ordered list
 
 \  
 
-**Images**
+#### Images
 
 \  
 
@@ -466,7 +466,7 @@ include_graphics("images/class_of_2019.jpg")
 
 \  
 
-**Links**
+#### Links
 
 \  
 
