@@ -257,6 +257,7 @@ One of the things that can be confusing for new users of R markdown is the use o
 \  
 
 ```markdown
+
 These      data were      obtained from a
 mesocosm experiment which    aimed to examine the
 effect
@@ -331,6 +332,7 @@ You can add headings and subheadings to your R markdown document by using the `#
 \  
 
 ```markdown
+
 # Benthic Biodiversity experiment
 ## Benthic Biodiversity experiment
 ### Benthic Biodiversity experiment
@@ -361,6 +363,7 @@ When formatting text in an R markdown document the meaning of the `#` symbol is 
 \  
 
 ```markdown
+
 <!--
 this is an example of how to format a comment using R markdown.
 -->
@@ -375,6 +378,7 @@ If you want to create a bullet point list of text you can format an unordered li
 \  
 
 ```markdown
+
 - item 1
 - item 2
    + sub-item 2
@@ -399,6 +403,7 @@ If you need an ordered list
 \  
 
 ```markdown
+
 1. item 1
 2. item 2
      + sub-item 2
@@ -465,6 +470,7 @@ In addition to images you can also include links to webpages or other links in y
 \  
 
 ```markdown
+
 You can include a text for your clickable [link](https://www.worldwildlife.org)
 ```
 

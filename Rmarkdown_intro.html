@@ -725,10 +725,11 @@ Benthic Biodiversity experiment.
 <h4>White space and line breaks</h4>
 <p>One of the things that can be confusing for new users of R markdown is the use of spaces and carriage returns (the enter key on your keyboard). In R markdown multiple spaces within the text are generally ignored as are carriage returns. For example this R markdown text</p>
 <p> </p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb4-1" data-line-number="1">These      data were      obtained from a</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">mesocosm experiment which    aimed to examine the</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3">effect</a>
-<a class="sourceLine" id="cb4-4" data-line-number="4">of          benthic polychaete (*Nereis diversicolor*) biomass.</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb4-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">These      data were      obtained from a</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">mesocosm experiment which    aimed to examine the</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">effect</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">of          benthic polychaete (*Nereis diversicolor*) biomass.</a></code></pre></div>
 <p> </p>
 <p>will be rendered as</p>
 <p> </p>
@@ -805,12 +806,13 @@ effect         benthic polychaete (<em>Nereis diversicolor</em>) biomass.</p
 <h4>Headings</h4>
 <p>You can add headings and subheadings to your R markdown document by using the <code>#</code> symbol at the beginning of the line. You can decrease the size of the headings by simply adding more <code>#</code> symbols. For example</p>
 <p> </p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="fu"># Benthic Biodiversity experiment</span></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="fu">## Benthic Biodiversity experiment</span></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="fu">### Benthic Biodiversity experiment</span></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="fu">#### Benthic Biodiversity experiment</span></a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="fu">##### Benthic Biodiversity experiment</span></a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="fu">###### Benthic Biodiversity experiment</span></a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb6-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="fu"># Benthic Biodiversity experiment</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="fu">## Benthic Biodiversity experiment</span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="fu">### Benthic Biodiversity experiment</span></a>
+<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="fu">#### Benthic Biodiversity experiment</span></a>
+<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="fu">##### Benthic Biodiversity experiment</span></a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="fu">###### Benthic Biodiversity experiment</span></a></code></pre></div>
 <p> </p>
 <p>results in headings in decreasing size order</p>
 <p> </p>
@@ -840,21 +842,23 @@ Benthic Biodiversity experiment.
 <h4>Comments</h4>
 <p>When formatting text in an R markdown document the meaning of the <code>#</code> symbol is different than in a standard R script (which is used to included a comment - remember?!). You can, however, use a <code>#</code> symbol to comment code inside a <a href="#code_chunks">code chunk</a> as usual (more about this in a bit). If you want to include a comment in your R markdown document outside a code chunk which won’t be included in the final rendered document then enclose your comment between <code>&lt;!--</code> and <code>--&gt;</code>.</p>
 <p> </p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb7-1" data-line-number="1">&lt;!--</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co">this is an example of how to format a comment using R markdown.</span></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">--&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb7-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">&lt;!--</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">this is an example of how to format a comment using R markdown.</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co">--&gt;</span></a></code></pre></div>
 <p> </p>
 </div>
 <div id="lists" class="section level4">
 <h4>Lists</h4>
-<p>If you want to create a bullet point list of text you can format an unordered list with sub items. Note, the sub-items are indented.</p>
+<p>If you want to create a bullet point list of text you can format an unordered list with sub items. Note, the sub-items need to be indented.</p>
 <p> </p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb8-1" data-line-number="1">- <span class="fl">item 1</span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="fl">- item 2</span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="fl">   + sub-item 2</span></a>
-<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="fl">   + sub-item 3</span></a>
-<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="fl">- item 3</span></a>
-<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="fl">- item 4</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb8-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">- <span class="fl">item 1</span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="fl">- item 2</span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="fl">   + sub-item 2</span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="fl">   + sub-item 3</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="fl">- item 3</span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="fl">- item 4</span></a></code></pre></div>
 <p> </p>
 <blockquote>
 <ul>
@@ -871,12 +875,13 @@ Benthic Biodiversity experiment.
 <p> </p>
 <p>If you need an ordered list</p>
 <p> </p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb9-1" data-line-number="1">1. <span class="fl">item 1</span></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="fl">2. item 2</span></a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="fl">     + sub-item 2</span></a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="fl">     + sub-item 3</span></a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="fl">3. item 3</span></a>
-<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="fl">4. item 4</span></a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb9-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">1. <span class="fl">item 1</span></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="fl">2. item 2</span></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="fl">     + sub-item 2</span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="fl">     + sub-item 3</span></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="fl">3. item 3</span></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="fl">4. item 4</span></a></code></pre></div>
 <p> </p>
 <blockquote>
 <ol style="list-style-type: decimal">
@@ -921,7 +926,8 @@ include_graphics("images/class_of_2019.jpg")
 <h4>Links</h4>
 <p>In addition to images you can also include links to webpages or other links in your document. Use the following syntax to create a clickable link to an existing webpage. The link text goes between the square brackets and the URL for the webpage between the round brackets immediately after.</p>
 <p> </p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb11-1" data-line-number="1">You can include a text for your clickable <span class="ot">[link](https://www.worldwildlife.org)</span></a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb11-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">You can include a text for your clickable <span class="ot">[link](https://www.worldwildlife.org)</span></a></code></pre></div>
 <p> </p>
 <p>which gives you:</p>
 <p> </p>
