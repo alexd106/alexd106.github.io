@@ -23,7 +23,14 @@ Create a new R markdown document in RStudio and save it with an appropriate file
 
 Sampling and data description
 
-These data were originally collected as part of a study published in Aquatic Living Resources (Smith et al. 2005). The aim of the study was to investigate the seasonal patterns of investment in somatic and reproductive tissues in the long finned squid Loligo forbesi caught in Scottish waters. Squid were caught monthly from December 1989 - July 1991 (month and year variables). After capture, each squid was given a unique specimen code (specimen variable) and the following variables measured: 
+These data were originally collected as part of a study published in  
+Aquatic Living Resources (Smith et al. 2005). The aim of the study was  
+to investigate the seasonal patterns of investment in somatic and  
+reproductive tissues in the long finned squid Loligo forbesi caught  
+in Scottish waters. Squid were caught monthly from December   
+1989 - July 1991 (month and year variables). After capture, each  
+squid was given a unique specimen code (specimen variable) and  
+the following variables measured: 
 
 body weight - weight variable 
 sex - sex variable (only female squid are included here)
@@ -34,9 +41,12 @@ nidamental gland weight - nid.weight variable.names
 nidamental gland length - nid.length variable 
 digestive gland weight - dig.weight variable
 
-Each individual was also assigned a categorical measure of maturity (maturity.stage variable) ranging from 1 to 5 with 1 = immature, 5 = mature. 
+Each individual was also assigned a categorical measure of maturity  
+(maturity.stage variable) ranging from 1 to 5 with 1 = immature, 5 = mature. 
 
-Some interesting background information on squid morphology can be found here (https://en.wikipedia.org/wiki/Loligo_forbesii) and the following image provides a useful summary of squid anatomy 
+Some interesting background information on squid morphology can be  
+found here (https://en.wikipedia.org/wiki/Loligo_forbesii) and the  
+following image provides a useful summary of squid anatomy 
 
 ```
 
