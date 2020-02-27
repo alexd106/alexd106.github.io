@@ -50,7 +50,7 @@ following image provides a useful summary of squid anatomy
 
 ```
 
-You will also need to download [this image](images/squid_anatomy.jpg) and save it in the same directory as your R markdown document (right click and then choose `save image as...` or similar). You will embed this image after your text in your R markdown document.
+You will also need to download [this image](images/squid_anatomy.jpg). Create a subdirectory called `images` in the same directory as your R markdown document and save the image file there (right click and then choose `save image as...` or similar). You will embed this image after your text in your R markdown document.
 
 \  
 
