@@ -15,9 +15,9 @@ knitr::opts_chunk$set(message=FALSE, tidy.opts=list(width.cutoff=60))
 
 \  
 
-This short tutorial will introduce you to creating reproducible reports using R markdown to facilitate best (or better) practice that underpins open science. It will first describe what R markdown is and why you might want to consider using it, describe how to create an R markdown document using RStudio and then how to convert this document to a html or pdf formatted output. During this tutorial you will learn about the different components of an R markdown document, how to format text, graphics and tables within the document and finally how to avoid some of the common difficulties using R markdown.  
+This short tutorial will introduce you to creating reproducible reports using R markdown to encourage best (or better) practice to facilitates open science. It will first describe what R markdown is and why you might want to consider using it, describe how to create an R markdown document using RStudio and then how to convert this document to a html or pdf formatted output. During this tutorial you will learn about the different components of an R markdown document, how to format text, graphics and tables within the document and finally how to avoid some of the common difficulties using R markdown. There are also a couple of exercises for you to complete if you wish. 
 
-I estimate that this tutorial should take you roughly 1 to 2 hours to complete in one sitting, but feel free to dip in and out as you see fit. 
+I estimate that this tutorial should take you roughly 2 to 3 hours to complete in one sitting, but feel free to dip in and out as you see fit. 
 
 \  
 
@@ -25,7 +25,7 @@ I estimate that this tutorial should take you roughly 1 to 2 hours to complete i
 
 \  
 
-R markdown is a simple and easy to use plain text language used to combine your R code, results from your data analysis (plots and tables) and written commentary into a single nicely formatted document (like a report, publication, thesis chapter and even a web page like this one).  
+R markdown is a simple and easy to use plain text language used to combine your R code, results from your data analysis (including plots and tables) and written commentary into a single nicely formatted and reproducible document (like a report, publication, thesis chapter or a web page like this one).  
 
 Technically, R markdown is a variant of another language (yet another language!) called Markdown and both are a type of 'markup' language. A markup language simply provides a way of creating an easy to read plain text file which can incorporate formatted text, images, headers and links to other documents. Don't worry about the details for the moment, although if you're interested you can find more information about markup languages [here](https://en.wikipedia.org/wiki/Markup_language). Actually, if it makes you feel any better all of you will have been exposed to a markup language before as most of the internet content you digest every day is underpinned by a markup language called HTML (**H**yper**t**ext **M**arkup **L**anguage). Anyway, the main point is that R markdown is very easy to learn (much, much easier than HTML) and when used with RStudio it's ridiculously easy to integrate into your workflow to produce feature rich content (so why wouldn't you?!). 
 
@@ -203,7 +203,7 @@ YAML stands for '**Y**AML **A**in’t **M**arkup **L**anguage' (it's an 'in' jok
 
 \  
 
-```{r, class.source='fold-show', eval=FALSE, highlight=FALSE}
+```yaml
 
 ---
 title: My first R markdown document
@@ -216,7 +216,7 @@ output: html_document
 
 \  
 
-In the YAML header above the output format is set to HTML. If you would like to change the output to pdf format then you can change it from `output: html_document` to  `output: pdf_document` (you can also set more than one output format if you like). You can also change the default font and font size for the whole document and even include fancy options such as a table of contents and inline references and a bibliography. If you want to explore the plethora of other options see [here](https://bookdown.org/yihui/rmarkdown/html-document.html). Just a note of caution, many of the options you can specify in the YAML header will work with both HTML and pdf formatted documents, but not all. If you need multiple output formats for your R markdown document check whether your YAML options are compatible between these formats. 
+In the YAML header above the output format is set to HTML. If you would like to change the output to pdf format then you can change it from `output: html_document` to  `output: pdf_document` (you can also set more than one output format if you like). You can also change the default font and font size for the whole document and even include fancy options such as a table of contents and inline references and a bibliography. If you want to explore the plethora of other options see [here](https://bookdown.org/yihui/rmarkdown/html-document.html). Just a note of caution, many of the options you can specify in the YAML header will work with both HTML and pdf formatted documents, but not all. If you need multiple output formats for your R markdown document check whether your YAML options are compatible between these formats. Also, indentation in the YAML header has a meaning to be careful when aligning text. 
 
 \  
 
@@ -228,7 +228,7 @@ Here is an example of marking up text formatting in an R markdown document
 
 \  
 
-```{r, class.source='fold-show', eval=FALSE, highlight=FALSE}
+```markdown
 
 #### Benthic Biodiversity experiment
 These data were obtained from a mesocosm experiment which aimed to examine the effect 
@@ -254,7 +254,7 @@ One of the things that can be confusing for new users of R markdown is the use o
 
 \  
 
-```{r, class.source='fold-show', eval=FALSE, highlight=FALSE}
+```markdown
 These      data were      obtained from a
 mesocosm experiment which    aimed to examine the
 effect
@@ -324,7 +324,7 @@ You can add headings and subheadings to your R markdown document by using the `#
 
 \  
 
-```{r, class.source='fold-show', eval=FALSE, highlight=FALSE}
+```markdown
 # Benthic Biodiversity experiment
 ## Benthic Biodiversity experiment
 ### Benthic Biodiversity experiment
@@ -348,7 +348,15 @@ results in headings in decreasing size order
 
 \ 
 
-Note, when formatting text in an R markdown document the meaning of the `#` symbol is different than in a standard R script (which is used to included a comment - remember?!). You can, however, use a `#` symbol to comment code inside a [code chunk](#code_chunks) as usual (more about this in a bit).
+Note, when formatting text in an R markdown document the meaning of the `#` symbol is different than in a standard R script (which is used to included a comment - remember?!). You can, however, use a `#` symbol to comment code inside a [code chunk](#code_chunks) as usual (more about this in a bit). If you want to include a comment in your R markdown document which won't be included in the final rendered document then enclose your comment between `<!--` and `-->`.
+
+\  
+
+```markdown
+<!--
+this is an example of how to format a comment using R markdown.
+-->
+```
 
 \  
 
@@ -356,7 +364,7 @@ If want to create a bullet point list of text you can format an unordered list w
 
 \  
 
-```{r, class.source='fold-show', eval=FALSE, highlight=FALSE}
+```markdown
 - item 1
 - item 2
    + sub-item 2
@@ -380,7 +388,7 @@ If you need an ordered list
 
 \  
 
-```{r, class.source='fold-show', eval=FALSE, highlight=FALSE}
+```markdown
 1. item 1
 2. item 2
      + sub-item 2
@@ -404,7 +412,7 @@ Another useful feature is to embed images and links to web pages (or other docum
 
 \  
 
-```{r, class.source='fold-show', eval=FALSE, highlight=FALSE}
+```markdown
 ![R class of 2019](images/class_of_2019.jpg)
 ```
 
@@ -442,7 +450,7 @@ In addition to images you can also include links to webpages or other links in y
 
 \  
 
-```{r, class.source='fold-show', eval=FALSE, highlight=FALSE}
+```markdown
 You can include a text for your clickable [link](https://www.worldwildlife.org)
 ```
 
