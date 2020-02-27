@@ -20,11 +20,100 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  { background-color: #f8f8f8; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -232,9 +321,6 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
-<style type="text/css">
-.code-folding-btn { margin-bottom: 4px; }
-</style>
 
 
 
@@ -383,14 +469,6 @@ $(document).ready(function () {
 
 <div class="fluid-row" id="header">
 
-<div class="btn-group pull-right">
-<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
-<ul class="dropdown-menu" style="min-width: 50px;">
-<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
-<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
-</ul>
-</div>
-
 
 
 <h1 class="title toc-ignore">Code chunks in R markdown</h1>
@@ -398,7 +476,109 @@ $(document).ready(function () {
 </div>
 
 
-<p>R markdown excercise 2</p>
+<p> </p>
+<p>During this exercise you will practice adding code chunks and inline R code to the R markdown document you created during the <a href="Rmarkdown_ex1.html">previous exercise</a>. The solutions to each section of the exercise can be revealed by clicking on the <code>Solution</code> button (don’t be too quick to do this though!). Once you have finished you can find my version of the <code>.Rmd</code> file <a href="squid_analysis.Rmd">here</a> and the rendered html document <a href="squid_analysis.html">here</a>. A pdf version of the document is <a href="">here</a>  </p>
+<p>So, the first thing you will need to do is open your <code>squid_analysis.Rmd</code> file in RStudio. You will already have a nicely marked up description of the data and the morphological variables measured during the study so we will continue with data import, exploration and some simple visualisations. You will need to download the <code>squid1.xlsx</code> file from <strong><a href="data.html"><i class="fa fa-download"></i> Data</a></strong> link, open it in excel and save it as a tab delimited file (as we did during your R course) called <code>squid1.txt</code>.</p>
+<p> </p>
+<p>Create a code chunk named <code>data-import</code> and include some R code to import the <code>squid1.txt</code> file into R and assign it to a variable called <code>squid</code>. Within the same code chunk get R to print out the structure of the <code>squid</code> variable. Add some text below the code chunk to explain (to your future self) what you are doing. Also write some text with inline R code to state how many observations are present (hint: use the <code>nrow()</code> function) in the dataset and how many variables were measured (hint: use the <code>ncol()</code> function).</p>
+<p> </p>
+<div class="toggle">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="bn">```{r, data-import}</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="bn">squid &lt;- read.table(&#39;./data/squid1.txt&#39;, header = TRUE)</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="bn">str(squid)</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="bn">```</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">  </a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">In this dataset <span class="bn">`r nrow(squid)`</span>  squid were caught and <span class="bn">`r ncol(squid)`</span> variables were measured. Details  </a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">are shown above.</a></code></pre></div>
+</div>
+<p> </p>
+<p>Perhaps you might remember from <a href="exercise_4_solution.html">Exercise 4</a> that the <code>year</code>, <code>month</code> and <code>maturity.stage</code> variables were coded as integers in the original dataset (see the output from <code>str(squid)</code> above to confirm) but we wanted to recode them as factors. Create a new code chunk called <code>data-recode</code> and include R code to create a new variable for each of these variables in the <code>squid</code> dataframe and recode them as factors. Change the chunk option to hide this code in the rendered document. Write some text to describe that you have recoded the variables (even though you don’t show the code).</p>
+<p> </p>
+<div class="toggle">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="bn">```{r, data-recode, echo=FALSE}</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="bn"># convert variables to factors</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="bn">squid$Fmaturity &lt;- factor(squid$maturity.stage)</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="bn">squid$Fmonth &lt;- factor(squid$month) </span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="bn">squid$Fyear &lt;- factor(squid$year)</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="bn">```</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">The variables <span class="bn">`maturity.stage`</span>, <span class="bn">`month`</span> and <span class="bn">`year`</span> were converted from integers to factors in the dataframe  </a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="bn">`squid`</span>. These recoded variables were named <span class="bn">`Fmaturity`</span>, <span class="bn">`Fmonth`</span> and <span class="bn">`Fyear`</span>.</a></code></pre></div>
+</div>
+<p> </p>
+<p>Next create a code chunk (call it a suitable name) where you can write some code to create a table of the number of observations for each year and month combination (hint: remember the <code>table()</code> function?) Don’t forget to use the factor recoded versions of these variables. Use the <code>kable()</code> function from the <code>knitr</code> package to nicely render the table (remember you will need to use <code>library(knitr)</code> to load the package first). You might want to also include the arguments <code>row.names = TRUE</code> so the table contains the month names. Another argument to include is <code>format = 'markdown</code> which will ensure the table renders nicely in HTML and pdf formats. Write some text to highlight which year has the fewest number of observations and which year and month combinations have no observations.</p>
+<p> </p>
+<div class="toggle">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="bn">```{r, data-obs}</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="bn">library(knitr)</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="bn">kable(table(squid$Fmonth, squid$Fyear), row.names = TRUE, format = &#39;markdown&#39;)</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="bn">```</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6">In 1989 data were only collected during December and in 1991 data collection stopped in August.  </a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">During 1990, no data were collected in either February or June. </a></code></pre></div>
+</div>
+<p> </p>
+<p>We should also create a summary table of the number of observations for each level of maturity stage for each month. Create a code chunk and include code to do this but hide the code in the rendered document using the appropriate chunk option. If you feel like it, experiment with the <code>kableExtra</code> package to alter some of the formatting (text size etc). You may need to install the package before you can use it. Again, write some text to summarise your findings.</p>
+<p> </p>
+<div class="toggle">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="bn">```{r, maturity-obs, echo=FALSE}</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="bn">library(kableExtra)</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="bn">kable(table(squid$Fmaturity, squid$Fmonth), row.names = TRUE) %&gt;%</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="bn">    kable_styling(bootstrap_options = &quot;striped&quot;, font_size = 14)</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="bn">```</span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">Not all maturity stages were observed in all months. Very few squid of maturity stage 1, 2 or 3</a>
+<a class="sourceLine" id="cb4-8" data-line-number="8">were caught in the months February to May whereas maturity stages 4 and 5 were </a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">predominantly caught during these months.</a></code></pre></div>
+</div>
+<p> </p>
+<p>Ok, lets produce some exploratory plots in our document. The first thing we would like to know is whether there are any unusual observations in the variables; <code>DML</code>, <code>weight</code>, <code>nid.length</code> and <code>ovary.weight</code>. Create a code chunk containing code to plot cleveland dotplots of these variables. You can either plot one after the other or split the plotting device into 2 rows and 2 columns to plot them all together. This time we would like to show the code used to create these plots. Describe what you see and come up with a plausable explanation (refer back to Exercise 4 Question 7 for a hint.)</p>
+<p> </p>
+<div class="toggle">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="bn">```{r, dotplot}</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="bn">par(mfrow = c(2, 2))</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="bn">    dotchart(squid$DML, main = &quot;DML&quot;)</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="bn">    dotchart(squid$weight, main = &quot;weight&quot;)</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="bn">    dotchart(squid$nid.length, main = &quot;nid length&quot;)</span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="bn">    dotchart(squid$ovary.weight, main = &quot;ovary weight&quot;)</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="bn">```</span></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">It looks like the variable <span class="bn">`nid.length`</span> contains an **unusually large** value. Actually, this value  </a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">is biologically implausible and clearly an error. I went back and checked my field notebook and  </a>
+<a class="sourceLine" id="cb5-10" data-line-number="10">sure enough it&#39;s a typo. I was knackered at the time and accidentally inserted a zero by mistake  </a>
+<a class="sourceLine" id="cb5-11" data-line-number="11">when transcribing these data. **Doh!** This data point was subsequently removed from the data set. </a>
+<a class="sourceLine" id="cb5-12" data-line-number="12"></a></code></pre></div>
+</div>
+<p> </p>
+<p>It’s always good practice to include a summary of the version of R you have been using as well as a list of packages loaded. An easy way to do this is include <code>sessionInfo()</code> in a code chunk at the end of your document.</p>
+<p> </p>
+<div class="toggle">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="bn">```{r, session-info, echo=FALSE}</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="bn">sessionInfo()</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="bn">```</span></a></code></pre></div>
+</div>
+<script>
+  $(".toggle").click(function() {
+    $(this).toggleClass("open");
+  });
+</script>
 
 
 
@@ -433,11 +613,6 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
-<script>
-$(document).ready(function () {
-  window.initializeCodeFolding("hide" === "show");
-});
-</script>
 
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
