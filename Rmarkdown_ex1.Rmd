@@ -15,7 +15,7 @@ knitr::opts_chunk$set(message=FALSE, tidy.opts=list(width.cutoff=60))
 
 OK, before we go on to the next section let's practice marking up some plain text using R markdown syntax.
 
-Create a new R markdown document in RStudio and save it with an appropriate file name on your computer. Make sure you fill out the 'Title' and 'Author' information and set the output option to HTML when you create your document. Next, copy and paste the text below into your R markdown document.
+Create a new R markdown document in RStudio and save it with an appropriate file name on your computer (perhaps `squid_analysis.Rmd`). Make sure you fill out the 'Title' and 'Author' information and set the output option to HTML when you create your document. Next, copy and paste the text below into your R markdown document.
 
 \  
 
@@ -50,7 +50,7 @@ following image provides a useful summary of squid anatomy
 
 ```
 
-You will also need to download [this image](images/squid_anatomy.jpg) and save it in the same directory as your R markdown document (right click and then choose `save image as...` or similar). 
+You will also need to download [this image](images/squid_anatomy.jpg) and save it in the same directory as your R markdown document (right click and then choose `save image as...` or similar). You will embed this image after your text in your R markdown document.
 
 \  
 
@@ -59,20 +59,20 @@ Now mark it up using R markdown syntax so your rendered output document looks li
 \  
 
 ><p style="font-weight:400; font-size:32px">Sampling and data description</p>
-These data were originally collected as part of a study published in Aquatic Living Resources (Smith *et al*., 2005). The aim of the study was to investigate the seasonal patterns of investment in somatic and reproductive tissues in the long finned squid *Loligo forbesi* caught in Scottish waters. Squid were caught monthly from December 1989 - July 1991 (**month** and **year variables**). After capture, each squid was given a unique specimen code (**specimen variable**) and the following variables measured: 
-
-> - **weight variable** - body weight (g)
-> - **sex variable** - sex (only female squid are included here)
-> - **DML variable** - individual dorsal mantle length (mm)
-> - **eviscerate.weight variable** - mantle weight measured without internal organs (g)
-> - **ovary.weight variable** - gonad weight (g) 
-> - **nid.weight variable** - nidamental gland weight (g)
-> - **nid.length variable** - nidamental gland length (g)  
-> - **dig.weight variable** -  digestive gland weight (g)
-
+These data were originally collected as part of a study published in Aquatic Living Resources (Smith *et al*., 2005). The aim of the study was to investigate the seasonal patterns of investment in somatic and reproductive tissues in the long finned squid *Loligo forbesi* caught in Scottish waters. Squid were caught monthly from December 1989 - July 1991 (**month** and **year variables**). After capture, each squid was given a unique specimen code (**specimen variable**) and the following variables measured:  
+  
+>- **weight variable** - body weight (g)
+>- **sex variable** - sex (only female squid are included here)
+>- **DML variable** - individual dorsal mantle length (mm)
+>- **eviscerate.weight variable** - mantle weight measured without internal organs (g)
+>- **ovary.weight variable** - gonad weight (g) 
+>- **nid.weight variable** - nidamental gland weight (g)
+>- **nid.length variable** - nidamental gland length (g)  
+>- **dig.weight variable** -  digestive gland weight (g)  
+  
 >Each individual was also assigned a categorical measure of maturity (**maturity.stage variable**) ranging from 1 to 5 with 1 = immature, 5 = mature.  
-
->Some interesting background information on squid morphology can be found [here](https://en.wikipedia.org/wiki/Loligo_forbesii) and the following image provides a useful summary of squid anatomy ![squid anatomy](images/squid_anatomy.jpg)
+Some interesting background information on squid morphology can be found [here](https://en.wikipedia.org/wiki/Loligo_forbesii) and the following image provides a useful summary of squid anatomy.  
+![squid anatomy](images/squid_anatomy.jpg)
 
 \  
 
@@ -100,6 +100,7 @@ These data were originally collected as part of a study published in Aquatic Liv
 
 Each individual was also assigned a categorical measure of maturity (**maturity.stage variable**) ranging from 1 to 5 with 1 = immature, 5 = mature.  
 
-Some interesting background information on squid morphology can be found [here](https://en.wikipedia.org/wiki/Loligo_forbesii) and the following image provides a useful summary of squid anatomy ![squid anatomy](images/squid_anatomy.jpg) 
+Some interesting background information on squid morphology can be found [here](https://en.wikipedia.org/wiki/Loligo_forbesii) and the following image provides a useful summary of squid anatomy.  
+![squid anatomy](images/squid_anatomy.jpg) 
 
 ```

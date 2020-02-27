@@ -499,7 +499,7 @@ $(document).ready(function () {
 
 <p> </p>
 <p>OK, before we go on to the next section let’s practice marking up some plain text using R markdown syntax.</p>
-<p>Create a new R markdown document in RStudio and save it with an appropriate file name on your computer. Make sure you fill out the ‘Title’ and ‘Author’ information and set the output option to HTML when you create your document. Next, copy and paste the text below into your R markdown document.</p>
+<p>Create a new R markdown document in RStudio and save it with an appropriate file name on your computer (perhaps <code>squid_analysis.Rmd</code>). Make sure you fill out the ‘Title’ and ‘Author’ information and set the output option to HTML when you create your document. Next, copy and paste the text below into your R markdown document.</p>
 <p> </p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb1-1" data-line-number="1"></a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">Sampling and data description</a>
@@ -528,7 +528,7 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb1-25" data-line-number="25">Some interesting background information on squid morphology can be  </a>
 <a class="sourceLine" id="cb1-26" data-line-number="26">found here (https://en.wikipedia.org/wiki/Loligo_forbesii) and the  </a>
 <a class="sourceLine" id="cb1-27" data-line-number="27">following image provides a useful summary of squid anatomy </a></code></pre></div>
-<p>You will also need to download <a href="images/squid_anatomy.jpg">this image</a> and save it in the same directory as your R markdown document (right click and then choose <code>save image as...</code> or similar).</p>
+<p>You will also need to download <a href="images/squid_anatomy.jpg">this image</a> and save it in the same directory as your R markdown document (right click and then choose <code>save image as...</code> or similar). You will embed this image after your text in your R markdown document.</p>
 <p> </p>
 <p>Now mark it up using R markdown syntax so your rendered output document looks like this.</p>
 <p> </p>
@@ -552,10 +552,9 @@ Sampling and data description
 </ul>
 </blockquote>
 <blockquote>
-<p>Each individual was also assigned a categorical measure of maturity (<strong>maturity.stage variable</strong>) ranging from 1 to 5 with 1 = immature, 5 = mature.</p>
-</blockquote>
-<blockquote>
-<p>Some interesting background information on squid morphology can be found <a href="https://en.wikipedia.org/wiki/Loligo_forbesii">here</a> and the following image provides a useful summary of squid anatomy <img src="images/squid_anatomy.jpg" alt="squid anatomy" /></p>
+<p>Each individual was also assigned a categorical measure of maturity (<strong>maturity.stage variable</strong>) ranging from 1 to 5 with 1 = immature, 5 = mature.<br />
+Some interesting background information on squid morphology can be found <a href="https://en.wikipedia.org/wiki/Loligo_forbesii">here</a> and the following image provides a useful summary of squid anatomy.<br />
+<img src="images/squid_anatomy.jpg" alt="squid anatomy" /></p>
 </blockquote>
 <p> </p>
 <p>Once you’re happy with marking up your text, knit your R markdown document to a HTML file. Open this file in your web browser and check all your formatting. You could also try knitting to a pdf document.</p>
@@ -576,7 +575,8 @@ Sampling and data description
 <a class="sourceLine" id="cb2-12" data-line-number="12"></a>
 <a class="sourceLine" id="cb2-13" data-line-number="13">Each individual was also assigned a categorical measure of <span class="kw">maturity</span> (<span class="op">**</span>maturity.stage variable<span class="op">**</span>) ranging from <span class="dv">1</span> to <span class="dv">5</span> with <span class="dv">1</span> =<span class="st"> </span>immature, <span class="dv">5</span> =<span class="st"> </span>mature.  </a>
 <a class="sourceLine" id="cb2-14" data-line-number="14"></a>
-<a class="sourceLine" id="cb2-15" data-line-number="15">Some interesting background information on squid morphology can be found [here](https<span class="op">:</span><span class="er">//</span>en.wikipedia.org<span class="op">/</span>wiki<span class="op">/</span>Loligo_forbesii) and the following image provides a useful summary of squid anatomy <span class="op">!</span>[squid anatomy](images<span class="op">/</span>squid_anatomy.jpg) </a></code></pre></div>
+<a class="sourceLine" id="cb2-15" data-line-number="15">Some interesting background information on squid morphology can be found [here](https<span class="op">:</span><span class="er">//</span>en.wikipedia.org<span class="op">/</span>wiki<span class="op">/</span>Loligo_forbesii) and the following image provides a useful summary of squid anatomy.  </a>
+<a class="sourceLine" id="cb2-16" data-line-number="16"><span class="op">!</span>[squid anatomy](images<span class="op">/</span>squid_anatomy.jpg) </a></code></pre></div>
 
 
 
