@@ -16,3 +16,12 @@ blockquote {
 .caution {
   background-image: url("images/lightbulb.png");
 }
+
+.toggle {
+  height: 1.55em;
+  overflow-y: hidden;
+}
+
+.toggle.open {
+  height: auto;
+}
