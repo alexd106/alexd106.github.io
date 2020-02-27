@@ -723,7 +723,6 @@ Benthic Biodiversity experiment.
 <p> </p>
 <div id="white-space-and-line-breaks" class="section level4">
 <h4>White space and line breaks</h4>
-<p> </p>
 <p>One of the things that can be confusing for new users of R markdown is the use of spaces and carriage returns (the enter key on your keyboard). In R markdown multiple spaces within the text are generally ignored as are carriage returns. For example this R markdown text</p>
 <p> </p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb4-1" data-line-number="1">These      data were      obtained from a</a>
@@ -760,8 +759,7 @@ effect         benthic polychaete (<em>Nereis diversicolor</em>) biomass.</p
 </div>
 <div id="emphasis" class="section level4">
 <h4>Emphasis</h4>
-<p> </p>
-<p>Some of the most common R markdown text formatting syntax is given below.</p>
+<p>Some of the most common R markdown syntax for providing emphasis and formatting text is given below.</p>
 <p> </p>
 <table>
 <thead>
@@ -780,7 +778,7 @@ effect         benthic polychaete (<em>Nereis diversicolor</em>) biomass.</p
 <tr class="even">
 <td align="center">italic text</td>
 <td align="center"><code>*mytext*</code></td>
-<td align="center"><em>mytextt</em></td>
+<td align="center"><em>mytext</em></td>
 </tr>
 <tr class="odd">
 <td align="center">strikethrough</td>
@@ -805,7 +803,6 @@ effect         benthic polychaete (<em>Nereis diversicolor</em>) biomass.</p
 </div>
 <div id="headings" class="section level4">
 <h4>Headings</h4>
-<p> </p>
 <p>You can add headings and subheadings to your R markdown document by using the <code>#</code> symbol at the beginning of the line. You can decrease the size of the headings by simply adding more <code>#</code> symbols. For example</p>
 <p> </p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="fu"># Benthic Biodiversity experiment</span></a>
@@ -847,7 +844,6 @@ Benthic Biodiversity experiment.
 </div>
 <div id="lists" class="section level4">
 <h4>Lists</h4>
-<p> </p>
 <p>If want to create a bullet point list of text you can format an unordered list with sub items. Note, the sub-items are indented.</p>
 <p> </p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb8-1" data-line-number="1">- <span class="fl">item 1</span></a>
@@ -895,7 +891,6 @@ Benthic Biodiversity experiment.
 </div>
 <div id="images" class="section level4">
 <h4>Images</h4>
-<p> </p>
 <p>Another useful feature is to embed images and links to web pages (or other documents) into your R markdown document. You can include images into your R markdown document in a number of different ways. Perhaps the simplest method is to use</p>
 <p> </p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="al">![R class of 2019](images/class_of_2019.jpg)</span></a></code></pre></div>
@@ -921,7 +916,6 @@ include_graphics("images/class_of_2019.jpg")
 </div>
 <div id="links" class="section level4">
 <h4>Links</h4>
-<p> </p>
 <p>In addition to images you can also include links to webpages or other links in your document. Use the following syntax to create a clickable link to an existing webpage. The link text goes between the square brackets and the URL for the webpage between the round brackets immediately after.</p>
 <p> </p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb11-1" data-line-number="1">You can include a text for your clickable <span class="ot">[link](https://www.worldwildlife.org)</span></a></code></pre></div>
@@ -2020,7 +2014,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2,h3,h4",
+      selectors: "h1,h2,h3",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
