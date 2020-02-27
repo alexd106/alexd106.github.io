@@ -50,7 +50,7 @@ By now all of you (hopefully) will be using R to explore and analyse your intere
 
 \  
 
-```{r, echo=FALSE, fig.align='center', out.width='70%'}
+```{r, echo=FALSE, fig.align='center', out.width='90%'}
 include_graphics("images/workflow1.png")
 ```
 
@@ -74,7 +74,7 @@ Perhaps a more efficient and robust workflow would look something like this:
 
 \  
 
-```{r, echo=FALSE, fig.align='center', out.width='70%'}
+```{r, echo=FALSE, fig.align='center', out.width='90%'}
 include_graphics("images/workflow2.png")
 ```
 
@@ -114,7 +114,7 @@ Right, time to create your first R markdown document. Within RStudio, click on t
 
 \  
 
-```{r, echo=FALSE, fig.align='center', out.width='60%'}
+```{r, echo=FALSE, fig.align='center', out.width='70%'}
 include_graphics("images/new_rm2.png")
 ```
 
@@ -124,7 +124,7 @@ You will notice that when your new R markdown document is created it includes so
 
 \  
 
-```{r, echo=FALSE, fig.align='center', out.width='60%'}
+```{r, echo=FALSE, fig.align='center', out.width='70%'}
 include_graphics("images/new_file_rm.png")
 ```
 
@@ -136,7 +136,7 @@ Now, to convert your `.Rmd` file to a HTML document click on the little black tr
 
 \  
 
-```{r, echo=FALSE, fig.align='center', out.width='60%'}
+```{r, echo=FALSE, fig.align='center', out.width='80%'}
 include_graphics("images/knit_rm.png")
 ```
 
@@ -146,17 +146,17 @@ RStudio will now 'knit' (or render) your `.Rmd` file into a HTML file. Notice th
 
 \  
 
-```{r, echo=FALSE, fig.align='center', out.width='50%'}
+```{r, echo=FALSE, fig.align='center', out.width='70%'}
 include_graphics("images/Rmarkdown_console.png")
 ```
 
 \  
 
-If everything went smoothly a new HTML file will have been created and saved in the same directory as your `.Rmd` file (ours will be called `my_first_rmarkdown.html`). To view this document simply double click to open in a browser (like Chrome or Firefox) to display the rendered content. RStudio will also display a preview of the rendered file in a new window for you to check out (your window might look slightly different if you're using a Windows computer).
+If everything went smoothly a new HTML file will have been created and saved in the same directory as your `.Rmd` file (ours will be called `my_first_rmarkdown.html`). To view this document simply double click on the file to open in a browser (like Chrome or Firefox) to display the rendered content. RStudio will also display a preview of the rendered file in a new window for you to check out (your window might look slightly different if you're using a Windows computer).
 
 \  
 
-```{r, echo=FALSE, fig.align='center', out.width='60%'}
+```{r, echo=FALSE, fig.align='center', out.width='70%'}
 include_graphics("images/html_rendered.png")
 ```
 
