@@ -354,7 +354,9 @@ results in headings in decreasing size order
 
 \ 
 
-Note, when formatting text in an R markdown document the meaning of the `#` symbol is different than in a standard R script (which is used to included a comment - remember?!). You can, however, use a `#` symbol to comment code inside a [code chunk](#code_chunks) as usual (more about this in a bit). If you want to include a comment in your R markdown document which won't be included in the final rendered document then enclose your comment between `<!--` and `-->`.
+#### Comments
+
+When formatting text in an R markdown document the meaning of the `#` symbol is different than in a standard R script (which is used to included a comment - remember?!). You can, however, use a `#` symbol to comment code inside a [code chunk](#code_chunks) as usual (more about this in a bit). If you want to include a comment in your R markdown document outside a code chunk which won't be included in the final rendered document then enclose your comment between `<!--` and `-->`.
 
 \  
 
@@ -368,7 +370,7 @@ this is an example of how to format a comment using R markdown.
 
 #### Lists
 
-If want to create a bullet point list of text you can format an unordered list with sub items. Note, the sub-items are indented.  
+If you want to create a bullet point list of text you can format an unordered list with sub items. Note, the sub-items need to be indented.  
 
 \  
 
