@@ -46,7 +46,7 @@ During our previous R course we talked a lot about conducting your research in a
 
 \  
 
-By now all of you (hopefully) will be using R to explore and analyse your interesting data. As such, you're already well along the road to making your analysis more reproducible, transparent and shareable. However, perhaps your current workflow looks something like this:
+By now all of you will (hopefully) be using R to explore and analyse your interesting data. As such, you're already well along the road to making your analysis more reproducible, transparent and shareable. However, perhaps your current workflow looks something like this:
 
 \  
 
@@ -120,7 +120,7 @@ include_graphics("images/new_rm2.png")
 
 \  
 
-You will notice that when your new R markdown document is created it includes some example code. Normally you would just highlight and delete everything in the document except the information at the top between the `---` delimiters (this is called the YAML header which we will discuss in a bit) and then start writing your own code. However, just for now we will use this document to practice converting R markdown to both html and pdf formats and check everything is working.    
+You will notice that when your new R markdown document is created it includes some example R markdown code. Normally you would just highlight and delete everything in the document except the information at the top between the `---` delimiters (this is called the YAML header which we will discuss in a bit) and then start writing your own code. However, just for now we will use this document to practice converting R markdown to both html and pdf formats and check everything is working.    
 
 \  
 
@@ -246,7 +246,11 @@ which looks like this in the final rendered document (can you spot the markups?)
 \  
 
 ><p style="font-weight:400; font-size:20px">Benthic Biodiversity experiment.</p>
->These data were obtained from a mesocosm experiment which aimed to examine the effect of benthic polychaete (*Nereis diversicolor*) biomass on sediment nutrient (NH~4~, NO~3~ and PO~3~) release. At the start of the experiment replicate mesocosms were filled with 20 cm^2^ of homogenised marine sediment and assigned to one of five polychaete biomass treatments (0, 0.5, 1, 1.5, 2 g per mesocosm).
+>These data were obtained from a mesocosm experiment which aimed to examine the effect of benthic polychaete (*Nereis diversicolor*) biomass on sediment nutrient (NH~4~, NO~3~ and PO~3~) release. At the start of the experiment replicate mesocosms were filled with 20 cm^2^ of **homogenised** marine sediment and assigned to one of five polychaete biomass treatments (0, 0.5, 1, 1.5, 2 g per mesocosm).
+
+\  
+
+**white space and line breaks**
 
 \  
 
@@ -302,21 +306,29 @@ effect &nbsp; &nbsp; &nbsp; &nbsp; benthic polychaete (*Nereis diversicolor*) bi
 
 \  
 
+**Emphasis**
+
+\  
+
 Some of the most common R markdown text formatting syntax is given below.
 
 \  
 
 |     Goal       |    R markdown       |     output        |
 |:--------------:|:-------------------:|:-----------------:|
-|  bold text     |   `**bold text**`   |   **bold text**   |
-|  italic text   |   `*italic text*`   |   *italic text*   |
-|  strikethrough | `~~strikethrough~~` | ~~strikethrough~~ |
-|  superscript   |   `superscript^2^`  |   superscript^2^  |
-|  subscript     |   `subscript~2~`    |   subscript~2~    |
+|  bold text     |   `**mytext**`   |   **mytext**   |
+|  italic text   |   `*mytext*`   |   *mytextt*   |
+|  strikethrough | `~~mytext~~` | ~~mytext~~ |
+|  superscript   |   `mytext^2^`  |   mytext^2^  |
+|  subscript     |   `mytext~2~`    |   mytext~2~    |
 
 \  
 
 Interestingly there is no underline R markdown syntax by default. I think this is because bold and italics are used to emphasise content (a semantic meaning) whereas an underline is considered a stylistic element (there may well be other [reasons](https://softwareengineering.stackexchange.com/questions/207727/why-there-is-no-markdown-for-underline)). If you really want to underline text you can use `<span style="text-decoration:underline">underline this text</span>` for HTML output or `$\text{\underline{This sentence underlined using \LaTeX}}$` for pdf output. I just avoid underlining!
+
+\  
+
+**Headings**
 
 \  
 
@@ -357,6 +369,10 @@ Note, when formatting text in an R markdown document the meaning of the `#` symb
 this is an example of how to format a comment using R markdown.
 -->
 ```
+
+\  
+
+**Lists**
 
 \  
 
@@ -408,6 +424,10 @@ If you need an ordered list
 
 \  
 
+**Images**
+
+\  
+
 Another useful feature is to embed images and links to web pages (or other documents) into your R markdown document. You can include images into your R markdown document in a number of different ways. Perhaps the simplest method is to use
 
 \  
@@ -446,6 +466,10 @@ include_graphics("images/class_of_2019.jpg")
 
 \  
 
+**Links**
+
+\  
+
 In addition to images you can also include links to webpages or other links in your document. Use the following syntax to create a clickable link to an existing webpage. The link text goes between the square brackets and the URL for the webpage between the round brackets immediately after.
 
 \  
@@ -474,7 +498,7 @@ You can find an exercise to practice formatting R markdown text [here](Rmarkdown
 
 ### Code chunks {#code_chunks}
 
-Now to the heart of the matter. To include R code into your R markdown document you simply place your code into what's known as a 'code chunk'. All code chunks start and end with three backticks ```` ``` ````. Note, these are also known as 'grave accents' and are not the same as an apostrophe! On most keyboards you can find the backtick on the same key as tilde (~).
+Now to the heart of the matter. To include R code into your R markdown document you simply place your code into a 'code chunk'. All code chunks start and end with three backticks ```` ``` ````. Note, these are also known as 'grave accents' and are not the same as an apostrophe! On most keyboards you can find the backtick on the same key as tilde (~).
 
 \  
 

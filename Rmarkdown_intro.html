@@ -603,7 +603,7 @@ div.tocify {
 <li>Using web-based tools to facilitate scientific collaboration</li>
 </ul>
 <p> </p>
-<p>By now all of you (hopefully) will be using R to explore and analyse your interesting data. As such, you’re already well along the road to making your analysis more reproducible, transparent and shareable. However, perhaps your current workflow looks something like this:</p>
+<p>By now all of you will (hopefully) be using R to explore and analyse your interesting data. As such, you’re already well along the road to making your analysis more reproducible, transparent and shareable. However, perhaps your current workflow looks something like this:</p>
 <p> </p>
 <p><img src="images/workflow1.png" width="90%" style="display: block; margin: auto;" /></p>
 <p> </p>
@@ -645,7 +645,7 @@ div.tocify {
 <p> </p>
 <p><img src="images/new_rm2.png" width="70%" style="display: block; margin: auto;" /></p>
 <p> </p>
-<p>You will notice that when your new R markdown document is created it includes some example code. Normally you would just highlight and delete everything in the document except the information at the top between the <code>---</code> delimiters (this is called the YAML header which we will discuss in a bit) and then start writing your own code. However, just for now we will use this document to practice converting R markdown to both html and pdf formats and check everything is working.</p>
+<p>You will notice that when your new R markdown document is created it includes some example R markdown code. Normally you would just highlight and delete everything in the document except the information at the top between the <code>---</code> delimiters (this is called the YAML header which we will discuss in a bit) and then start writing your own code. However, just for now we will use this document to practice converting R markdown to both html and pdf formats and check everything is working.</p>
 <p> </p>
 <p><img src="images/new_file_rm.png" width="70%" style="display: block; margin: auto;" /></p>
 <p> </p>
@@ -718,8 +718,10 @@ div.tocify {
 <p style="font-weight:400; font-size:20px">
 Benthic Biodiversity experiment.
 </p>
-<p>These data were obtained from a mesocosm experiment which aimed to examine the effect of benthic polychaete (<em>Nereis diversicolor</em>) biomass on sediment nutrient (NH<sub>4</sub>, NO<sub>3</sub> and PO<sub>3</sub>) release. At the start of the experiment replicate mesocosms were filled with 20 cm<sup>2</sup> of homogenised marine sediment and assigned to one of five polychaete biomass treatments (0, 0.5, 1, 1.5, 2 g per mesocosm).</p>
+<p>These data were obtained from a mesocosm experiment which aimed to examine the effect of benthic polychaete (<em>Nereis diversicolor</em>) biomass on sediment nutrient (NH<sub>4</sub>, NO<sub>3</sub> and PO<sub>3</sub>) release. At the start of the experiment replicate mesocosms were filled with 20 cm<sup>2</sup> of <strong>homogenised</strong> marine sediment and assigned to one of five polychaete biomass treatments (0, 0.5, 1, 1.5, 2 g per mesocosm).</p>
 </blockquote>
+<p> </p>
+<p><strong>white space and line breaks</strong></p>
 <p> </p>
 <p>One of the things that can be confusing for new users of R markdown is the use of spaces and carriage returns (the enter key on your keyboard). In R markdown multiple spaces within the text are generally ignored as are carriage returns. For example this R markdown text</p>
 <p> </p>
@@ -754,6 +756,8 @@ mesocosm experiment which     aimed to examine the<br />
 effect         benthic polychaete (<em>Nereis diversicolor</em>) biomass.</p>
 </blockquote>
 <p> </p>
+<p><strong>Emphasis</strong></p>
+<p> </p>
 <p>Some of the most common R markdown text formatting syntax is given below.</p>
 <p> </p>
 <table>
@@ -767,33 +771,35 @@ effect         benthic polychaete (<em>Nereis diversicolor</em>) biomass.</p
 <tbody>
 <tr class="odd">
 <td align="center">bold text</td>
-<td align="center"><code>**bold text**</code></td>
-<td align="center"><strong>bold text</strong></td>
+<td align="center"><code>**mytext**</code></td>
+<td align="center"><strong>mytext</strong></td>
 </tr>
 <tr class="even">
 <td align="center">italic text</td>
-<td align="center"><code>*italic text*</code></td>
-<td align="center"><em>italic text</em></td>
+<td align="center"><code>*mytext*</code></td>
+<td align="center"><em>mytextt</em></td>
 </tr>
 <tr class="odd">
 <td align="center">strikethrough</td>
-<td align="center"><code>~~strikethrough~~</code></td>
-<td align="center"><del>strikethrough</del></td>
+<td align="center"><code>~~mytext~~</code></td>
+<td align="center"><del>mytext</del></td>
 </tr>
 <tr class="even">
 <td align="center">superscript</td>
-<td align="center"><code>superscript^2^</code></td>
-<td align="center">superscript<sup>2</sup></td>
+<td align="center"><code>mytext^2^</code></td>
+<td align="center">mytext<sup>2</sup></td>
 </tr>
 <tr class="odd">
 <td align="center">subscript</td>
-<td align="center"><code>subscript~2~</code></td>
-<td align="center">subscript<sub>2</sub></td>
+<td align="center"><code>mytext~2~</code></td>
+<td align="center">mytext<sub>2</sub></td>
 </tr>
 </tbody>
 </table>
 <p> </p>
 <p>Interestingly there is no underline R markdown syntax by default. I think this is because bold and italics are used to emphasise content (a semantic meaning) whereas an underline is considered a stylistic element (there may well be other <a href="https://softwareengineering.stackexchange.com/questions/207727/why-there-is-no-markdown-for-underline">reasons</a>). If you really want to underline text you can use <code>&lt;span style=&quot;text-decoration:underline&quot;&gt;underline this text&lt;/span&gt;</code> for HTML output or <code>$\text{\underline{This sentence underlined using \LaTeX}}$</code> for pdf output. I just avoid underlining!</p>
+<p> </p>
+<p><strong>Headings</strong></p>
 <p> </p>
 <p>You can add headings and subheadings to your R markdown document by using the <code>#</code> symbol at the beginning of the line. You can decrease the size of the headings by simply adding more <code>#</code> symbols. For example</p>
 <p> </p>
@@ -832,6 +838,8 @@ Benthic Biodiversity experiment.
 <div class="sourceCode" id="cb7"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb7-1" data-line-number="1">&lt;!--</a>
 <a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co">this is an example of how to format a comment using R markdown.</span></a>
 <a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">--&gt;</span></a></code></pre></div>
+<p> </p>
+<p><strong>Lists</strong></p>
 <p> </p>
 <p>If want to create a bullet point list of text you can format an unordered list with sub items. Note, the sub-items are indented.</p>
 <p> </p>
@@ -877,6 +885,8 @@ Benthic Biodiversity experiment.
 </ol>
 </blockquote>
 <p> </p>
+<p><strong>Images</strong></p>
+<p> </p>
 <p>Another useful feature is to embed images and links to web pages (or other documents) into your R markdown document. You can include images into your R markdown document in a number of different ways. Perhaps the simplest method is to use</p>
 <p> </p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="al">![R class of 2019](images/class_of_2019.jpg)</span></a></code></pre></div>
@@ -899,6 +909,8 @@ include_graphics("images/class_of_2019.jpg")
 <p> </p>
 <p><img src="images/class_of_2019.jpg" width="50%" style="display: block; margin: auto;" /></p>
 <p> </p>
+<p><strong>Links</strong></p>
+<p> </p>
 <p>In addition to images you can also include links to webpages or other links in your document. Use the following syntax to create a clickable link to an existing webpage. The link text goes between the square brackets and the URL for the webpage between the round brackets immediately after.</p>
 <p> </p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb11-1" data-line-number="1">You can include a text for your clickable <span class="ot">[link](https://www.worldwildlife.org)</span></a></code></pre></div>
@@ -917,7 +929,7 @@ include_graphics("images/class_of_2019.jpg")
 </div>
 <div id="code_chunks" class="section level3">
 <h3>Code chunks</h3>
-<p>Now to the heart of the matter. To include R code into your R markdown document you simply place your code into what’s known as a ‘code chunk’. All code chunks start and end with three backticks <code>```</code>. Note, these are also known as ‘grave accents’ and are not the same as an apostrophe! On most keyboards you can find the backtick on the same key as tilde (~).</p>
+<p>Now to the heart of the matter. To include R code into your R markdown document you simply place your code into a ‘code chunk’. All code chunks start and end with three backticks <code>```</code>. Note, these are also known as ‘grave accents’ and are not the same as an apostrophe! On most keyboards you can find the backtick on the same key as tilde (~).</p>
 <p> </p>
 <pre class="markdown"><code>&#96;&#96;&#96;{r}
 
