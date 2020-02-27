@@ -919,7 +919,7 @@ Up till now we've been writing and executing our R code in code chunks. Another 
 \  
 
 ```{r, class.source='fold-show', eval=FALSE, highlight=FALSE}
-Morphological characteristics (`r names(iris)[1:4]`) were measured from 
+Morphological characteristics (variable names: `r names(iris)[1:4]`) were measured from 
 `r nrow(iris)`*iris* plants from `r length(levels(iris$Species))` different species. The mean Sepal length was `r round(mean(iris$Sepal.Length), digits = 2)` mm. 
 ```
 
@@ -929,7 +929,7 @@ which would be rendered as
 
 \  
 
->Morphological characteristics (`r names(iris)[1:4]`) were measured from `r nrow(iris)` *iris* plants from `r length(levels(iris$Species))` different species. The mean Sepal length was `r round(mean(iris$Sepal.Length), digits = 2)` mm. 
+>Morphological characteristics (variable names: `r names(iris)[1:4]`) were measured from `r nrow(iris)` *iris* plants from `r length(levels(iris$Species))` different species. The mean Sepal length was `r round(mean(iris$Sepal.Length), digits = 2)` mm. 
 
 \  
 
@@ -945,7 +945,7 @@ You can find an exercise to practice using code chunks and inline R code [here](
 
 \  
 
-## Some tips and tricks
+## Some tips and tricks {#tips_tricks}
 
 \  
 
