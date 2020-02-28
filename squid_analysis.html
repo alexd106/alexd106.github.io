@@ -21,7 +21,6 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -479,6 +478,7 @@ $(document).ready(function () {
 </div>
 
 
+<p> </p>
 <div id="sampling-and-data-description" class="section level3">
 <h3>Sampling and data description</h3>
 <p>These data were originally collected as part of a study published in Aquatic Living Resources (Smith <em>et al</em>., 2005). The aim of the study was to investigate the seasonal patterns of investment in somatic and reproductive tissues in the long finned squid <em>Loligo forbesi</em> caught in Scottish waters. Squid were caught monthly from December 1989 - July 1991 (<strong>month</strong> and <strong>year variables</strong>). After capture, each squid was given a unique specimen code (<strong>specimen variable</strong>) and the following variables measured:</p>
@@ -497,15 +497,17 @@ $(document).ready(function () {
 <p> </p>
 <p>Each individual was also assigned a categorical measure of maturity (<strong>maturity.stage variable</strong>) ranging from 1 to 5 with 1 = immature, 5 = mature.</p>
 <p>Some interesting background information on squid morphology can be found <a href="https://en.wikipedia.org/wiki/Loligo_forbesii">here</a> and the following image provides a useful summary of squid anatomy.</p>
-<p> </p>
+<div style="page-break-after: always;"></div>
 <div class="figure">
-<img src="images/squid_anatomy.jpg" alt="squid anatomy" />
+<img src="images/squid_anatomy.jpg" alt="squid anatomy" style="width:70.0%" />
 <p class="caption">squid anatomy</p>
 </div>
+<p> </p>
 </div>
 <div id="data-import-and-exploration" class="section level3">
 <h3>Data import and exploration</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">squid &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&#39;./data/squid1.txt&#39;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>)</a>
+<p> </p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">squid &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;./data/squid1.txt&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">str</span>(squid)</a></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    519 obs. of  13 variables:
 ##  $ sample.no        : int  105128901 105128901 105128901 105128901 105128901 105128901 105128901 105128901 105128901 105128901 ...
@@ -521,14 +523,14 @@ $(document).ready(function () {
 ##  $ nid.length       : num  39.4 24.1 39 41.4 39.8 20 14 55 44 53 ...
 ##  $ nid.weight       : num  2.46 0.319 1.169 1.631 2.03 ...
 ##  $ ovary.weight     : num  1.68 0.103 0.289 0.252 0.86 ...</code></pre>
-<p>In this dataset 519 squid were caught and 13 variables were measured. Details are shown above.</p>
+<p>In this dataset 519 squid were caught and 13 variables were measured for each squid. Details are shown above.</p>
 <p> </p>
 <p>The variables <code>maturity.stage</code>, <code>month</code> and <code>year</code> were converted from integers to factors in the dataframe <code>squid</code>. These recoded variables were named <code>Fmaturity</code>, <code>Fmonth</code> and <code>Fyear</code>.</p>
 <p> </p>
 <p>Next, let’s take a look at the number of observations across years and months.</p>
 <p> </p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">library</span>(knitr)</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">kable</span>(<span class="kw">table</span>(squid<span class="op">$</span>Fmonth, squid<span class="op">$</span>Fyear), <span class="dt">row.names =</span> <span class="ot">TRUE</span>, <span class="dt">format =</span> <span class="st">&#39;markdown&#39;</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">kable</span>(<span class="kw">table</span>(squid<span class="op">$</span>Fmonth, squid<span class="op">$</span>Fyear), <span class="dt">row.names =</span> <span class="ot">TRUE</span>, <span class="dt">format =</span> <span class="st">&quot;markdown&quot;</span>)</a></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -616,275 +618,123 @@ $(document).ready(function () {
 <p> </p>
 <p>In 1989 data were only collected during December and in 1991 data collection stopped in August. During 1990, no data were collected in either February or June. There are also some months that have very few observations (May 1990 and July 1991 for example) so care must be taken when modelling these data.</p>
 <p> </p>
-<p>Number of observations each month for each of the squid maturity stages are given in the table below.</p>
+<!-- If you want a fancy table with the variable names (month and year) then use the pander function from the pander package. You will also have to provide the dimnames to the table and use the ftable function to 'flatten' the table. I have hidden this code and output in the final document but all you need to do is remove include=FALSE argument from the code chunk. -->
 <p> </p>
-<table class="table table-striped" style="font-size: 10px; margin-left: auto; margin-right: auto;">
+<p>Number of observations in each month for each of the squid maturity stages are given in the table below.</p>
+<p> </p>
+<table>
 <thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:right;">
-1
-</th>
-<th style="text-align:right;">
-2
-</th>
-<th style="text-align:right;">
-3
-</th>
-<th style="text-align:right;">
-4
-</th>
-<th style="text-align:right;">
-5
-</th>
-<th style="text-align:right;">
-6
-</th>
-<th style="text-align:right;">
-7
-</th>
-<th style="text-align:right;">
-8
-</th>
-<th style="text-align:right;">
-9
-</th>
-<th style="text-align:right;">
-10
-</th>
-<th style="text-align:right;">
-11
-</th>
-<th style="text-align:right;">
-12
-</th>
+<tr class="header">
+<th align="left"></th>
+<th align="right">1</th>
+<th align="right">2</th>
+<th align="right">3</th>
+<th align="right">4</th>
+<th align="right">5</th>
+<th align="right">6</th>
+<th align="right">7</th>
+<th align="right">8</th>
+<th align="right">9</th>
+<th align="right">10</th>
+<th align="right">11</th>
+<th align="right">12</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-1
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-4
-</td>
-<td style="text-align:right;">
-8
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-4
-</td>
+<tr class="odd">
+<td align="left">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">4</td>
+<td align="right">8</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">4</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-2
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-6
-</td>
-<td style="text-align:right;">
-22
-</td>
-<td style="text-align:right;">
-21
-</td>
-<td style="text-align:right;">
-76
-</td>
-<td style="text-align:right;">
-17
-</td>
-<td style="text-align:right;">
-31
-</td>
-<td style="text-align:right;">
-7
-</td>
+<tr class="even">
+<td align="left">2</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">6</td>
+<td align="right">22</td>
+<td align="right">21</td>
+<td align="right">76</td>
+<td align="right">17</td>
+<td align="right">31</td>
+<td align="right">7</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-3
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-5
-</td>
-<td style="text-align:right;">
-5
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-31
-</td>
-<td style="text-align:right;">
-11
-</td>
+<tr class="odd">
+<td align="left">3</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">1</td>
+<td align="right">31</td>
+<td align="right">11</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-4
-</td>
-<td style="text-align:right;">
-18
-</td>
-<td style="text-align:right;">
-8
-</td>
-<td style="text-align:right;">
-21
-</td>
-<td style="text-align:right;">
-20
-</td>
-<td style="text-align:right;">
-6
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-5
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-10
-</td>
-<td style="text-align:right;">
-15
-</td>
+<tr class="even">
+<td align="left">4</td>
+<td align="right">18</td>
+<td align="right">8</td>
+<td align="right">21</td>
+<td align="right">20</td>
+<td align="right">6</td>
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">10</td>
+<td align="right">15</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-5
-</td>
-<td style="text-align:right;">
-19
-</td>
-<td style="text-align:right;">
-21
-</td>
-<td style="text-align:right;">
-48
-</td>
-<td style="text-align:right;">
-19
-</td>
-<td style="text-align:right;">
-24
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:right;">
-8
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:right;">
-6
-</td>
+<tr class="odd">
+<td align="left">5</td>
+<td align="right">19</td>
+<td align="right">21</td>
+<td align="right">48</td>
+<td align="right">19</td>
+<td align="right">24</td>
+<td align="right">3</td>
+<td align="right">8</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">6</td>
 </tr>
 </tbody>
 </table>
 <p> </p>
-<p>Not all maturity stages were observed in all months. Very few squid of maturity stage 1, 2 or 3 were caught in the months February to May whereas maturity stages 4 and 5 were predominantly caught during these months.</p>
+<p>Not all maturity stages were observed in all months Very few squid of maturity stage 1, 2 or 3 were caught in the months February to May whereas maturity stages 4 and 5 were predominantly caught during these months.</p>
 <p> </p>
 <p>Now let’s check for any unusual observations in the variables; <code>DML</code>, <code>weight</code>, <code>nid.length</code> and <code>ovary.weight</code>.</p>
 <p> </p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">    <span class="kw">dotchart</span>(squid<span class="op">$</span>DML, <span class="dt">main =</span> <span class="st">&quot;DML&quot;</span>)</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3">    <span class="kw">dotchart</span>(squid<span class="op">$</span>weight, <span class="dt">main =</span> <span class="st">&quot;weight&quot;</span>)</a>
-<a class="sourceLine" id="cb4-4" data-line-number="4">    <span class="kw">dotchart</span>(squid<span class="op">$</span>nid.length, <span class="dt">main =</span> <span class="st">&quot;nid length&quot;</span>)</a>
-<a class="sourceLine" id="cb4-5" data-line-number="5">    <span class="kw">dotchart</span>(squid<span class="op">$</span>ovary.weight, <span class="dt">main =</span> <span class="st">&quot;ovary weight&quot;</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">dotchart</span>(squid<span class="op">$</span>DML, <span class="dt">main =</span> <span class="st">&quot;DML&quot;</span>)</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="kw">dotchart</span>(squid<span class="op">$</span>weight, <span class="dt">main =</span> <span class="st">&quot;weight&quot;</span>)</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="kw">dotchart</span>(squid<span class="op">$</span>nid.length, <span class="dt">main =</span> <span class="st">&quot;nid length&quot;</span>)</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="kw">dotchart</span>(squid<span class="op">$</span>ovary.weight, <span class="dt">main =</span> <span class="st">&quot;ovary weight&quot;</span>)</a></code></pre></div>
 <p><img src="squid_analysis_files/figure-html/dotplot-1.png" width="672" /></p>
 <p> </p>
 <p>It looks like the variable <code>nid.length</code> contains an <strong>unusually large</strong> value. Actually, this value is biologically implausible and clearly an error. I went back and checked my field notebook and sure enough it’s a typo. I was knackered at the time and accidentally inserted a zero by mistake when transcribing these data. <strong>Doh!</strong> This squid was identified as 11 with a sample number 105128901. This observation was subsequently removed from the data set.</p>
 <p> </p>
 <p>Let’s take a look at whether DML changes with maturity stage.</p>
-<p><img src="squid_analysis_files/figure-html/maturity-dml-1.png" width="672" /></p>
+<p> </p>
+<p><img src="squid_analysis_files/figure-html/maturity-dml-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>DML was lowest for maturity stage 1 with a mean length of 139.14 mm. DML increased until maturity stage 3 (mean 222.35 mm) after which it remained reasonably consistent for maturity stages 4 (mean 238.6 mm) and 5 (mean 233.99 mm).</p>
 <p> </p>
 </div>
@@ -905,16 +755,13 @@ $(document).ready(function () {
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] kableExtra_1.1.0 ggplot2_3.2.1    htmltools_0.4.0  dplyr_0.8.4      stringr_1.4.0    knitr_1.28      
+## [1] pander_0.6.3     kableExtra_1.1.0 ggplot2_3.2.1    htmltools_0.4.0  dplyr_0.8.4      stringr_1.4.0    knitr_1.28      
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] Rcpp_1.0.3        pillar_1.4.3      compiler_3.6.2    formatR_1.7       highr_0.8         tools_3.6.2      
-##  [7] digest_0.6.24     viridisLite_0.3.0 evaluate_0.14     tibble_2.1.3      lifecycle_0.1.0   gtable_0.3.0     
-## [13] pkgconfig_2.0.3   rlang_0.4.4       rstudioapi_0.11   yaml_2.2.1        xfun_0.12         xml2_1.2.2       
-## [19] httr_1.4.1        withr_2.1.2       vctrs_0.2.2       hms_0.5.3         webshot_0.5.2     grid_3.6.2       
-## [25] tidyselect_1.0.0  glue_1.3.1        R6_2.4.1          rmarkdown_2.1     purrr_0.3.3       farver_2.0.3     
-## [31] readr_1.3.1       magrittr_1.5      scales_1.1.0      rvest_0.3.5       assertthat_0.2.1  colorspace_1.4-1 
-## [37] labeling_0.3      tinytex_0.19      stringi_1.4.5     lazyeval_0.2.2    munsell_0.5.0     crayon_1.3.4</code></pre>
+##  [1] Rcpp_1.0.3        pillar_1.4.3      compiler_3.6.2    formatR_1.7       highr_0.8         tools_3.6.2       digest_0.6.24     viridisLite_0.3.0 evaluate_0.14     tibble_2.1.3      lifecycle_0.1.0  
+## [12] gtable_0.3.0      pkgconfig_2.0.3   rlang_0.4.4       rstudioapi_0.11   yaml_2.2.1        xfun_0.12         xml2_1.2.2        httr_1.4.1        withr_2.1.2       vctrs_0.2.2       hms_0.5.3        
+## [23] webshot_0.5.2     grid_3.6.2        tidyselect_1.0.0  glue_1.3.1        R6_2.4.1          rmarkdown_2.1     purrr_0.3.3       farver_2.0.3      readr_1.3.1       magrittr_1.5      scales_1.1.0     
+## [34] rvest_0.3.5       assertthat_0.2.1  colorspace_1.4-1  labeling_0.3      tinytex_0.19      stringi_1.4.5     lazyeval_0.2.2    munsell_0.5.0     crayon_1.3.4</code></pre>
 </div>
 
 

@@ -2,10 +2,16 @@
 title: "Squid Analysis"
 author: "Alex Douglas"
 date: "27/02/2020"
-output: 
+output:
   html_document:
     toc: no
+  pdf_document: default
+always_allow_html: true
 ---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, tidy.opts=list(width.cutoff=60), tidy=TRUE)
+```
 
 \  
 
@@ -28,22 +34,24 @@ These data were originally collected as part of a study published in Aquatic Liv
 
 Each individual was also assigned a categorical measure of maturity (**maturity.stage variable**) ranging from 1 to 5 with 1 = immature, 5 = mature.  
 
-Some interesting background information on squid morphology can be found [here](https://en.wikipedia.org/wiki/Loligo_forbesii) and the following image provides a useful summary of squid anatomy.
+Some interesting background information on squid morphology can be found [here](https://en.wikipedia.org/wiki/Loligo_forbesii) and the following image provides a useful summary of squid anatomy.  
 
-\  
+\pagebreak
 
-![squid anatomy](images/squid_anatomy.jpg) 
+![squid anatomy](images/squid_anatomy.jpg){width=70%}
 
 \  
 
 ### Data import and exploration
+
+\  
 
 ```{r, data-import}
 squid <- read.table('./data/squid1.txt', header = TRUE)
 str(squid)
 ```
 
-In this dataset `r nrow(squid)`  squid were caught and `r ncol(squid)` variables were measured. Details are shown above.
+In this dataset `r nrow(squid)`  squid were caught and `r ncol(squid)` variables were measured for each squid. Details are shown above.
 
 ```{r, data-recode, echo=FALSE}
 # convert variables to factors
@@ -73,20 +81,30 @@ In 1989 data were only collected during December and in 1991 data collection sto
 
 \  
 
-Number of observations each month for each of the squid maturity stages are given in the table below.
+<!-- If you want a fancy table with the variable names (month and year) then use the pander function from the pander package. You will also have to provide the dimnames to the table and use the ftable function to 'flatten' the table. I have hidden this code and output in the final document but all you need to do is remove include=FALSE argument from the code chunk. -->
+
+```{r, data-obs2, include=FALSE}
+library(pander)
+mytab <- table(squid$Fmonth, squid$Fyear)
+names(dimnames(mytab)) <- c("Month", "Year")
+pander(ftable(mytab))
+```
+
+\  
+
+Number of observations in each month for each of the squid maturity stages are given in the table below.
 
 \  
 
 ```{r, maturity-obs, echo=FALSE}
 library(kableExtra)
 
-kable(table(squid$Fmaturity, squid$Fmonth), row.names = TRUE) %>%
-    kable_styling(bootstrap_options = "striped", font_size = 10)
+kable(table(squid$Fmaturity, squid$Fmonth), row.names = TRUE, format = 'markdown')
 ```
 
 \  
 
-Not all maturity stages were observed in all months. Very few squid of maturity stage 1, 2 or 3 were caught in the months February to May whereas maturity stages 4 and 5 were predominantly caught during these months.
+Not all maturity stages were observed in all months Very few squid of maturity stage 1, 2 or 3 were caught in the months February to May whereas maturity stages 4 and 5 were predominantly caught during these months.
 
 \  
 
@@ -110,7 +128,9 @@ It looks like the variable `nid.length` contains an **unusually large** value. A
 
 Let's take a look at whether DML changes with maturity stage.
 
-```{r, maturity-dml, echo=FALSE}
+\  
+
+```{r, maturity-dml, echo=FALSE, fig.width=5, fig.height=4, fig.align='center'}
 
 boxplot(DML ~ Fmaturity, data = squid, xlab = "maturity stage", ylab = "DML")
 
@@ -124,6 +144,7 @@ DML was lowest for maturity stage 1 with a mean length of `r round(mean(squid$DM
 
 ```{r, session-info, echo=FALSE}
 sessionInfo()
+
 ```
 
 
