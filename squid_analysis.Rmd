@@ -80,7 +80,7 @@ kable(table(squid$Fmonth, squid$Fyear), row.names = TRUE, format = 'markdown')
 
 \  
 
-In 1989 data were only collected during December and in 1991 data collection stopped in August. During 1990, no data were collected in either February or June. There are also some months that have very few observations (May 1990 and July 1991 for example) so care must be taken when modelling these data.
+In 1989 data were only collected during December and in 1991 data collection stopped in August. During 1990, no data were collected in either February or June. There are also some months that have very few observations (May 1990 and July 1991 for example) so care must be taken when modelling these data. 
 
 \  
 
@@ -107,7 +107,7 @@ kable(table(squid$Fmaturity, squid$Fmonth), row.names = TRUE, format = 'markdown
 
 \  
 
-Not all maturity stages were observed in all months Very few squid of maturity stage 1, 2 or 3 were caught in the months February to May whereas maturity stages 4 and 5 were predominantly caught during these months.
+Not all maturity stages were observed in all months. Very few squid of maturity stage 1, 2 or 3 were caught in the months January to May whereas maturity stages 4 and 5 were predominantly caught during these months.
 
 \  
 
@@ -153,6 +153,6 @@ sessionInfo()
 <!-- But i prefere to use the pander package as it wraps long lines nicely when rendering to PDF. I have hidden this code and output in the final document but all you need to do is remove echo=FALSE argument from the code chunk. -->
 
 
-```{r, session-info, echo = FALSE}
+```{r, session-info2, echo = FALSE}
 pander::pander(sessionInfo())
 ```

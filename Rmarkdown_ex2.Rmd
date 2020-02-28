@@ -77,8 +77,10 @@ names(dimnames(mytab)) <- c("Month", "Year")
 pander(ftable(mytab))
 ```
 
-In 1989 data were only collected during December and in 1991 data collection stopped in August.  
-During 1990, no data were collected in either February or June. 
+In 1989 data were only collected during December and in 1991 data collection stopped in August.    
+During 1990, no data were collected in either February or June. There are also some months that   
+have very few observations (May 1990 and July 1991 for example) so care must be taken when   
+modelling these data.   
 
 ````
 </div>
