@@ -80,7 +80,7 @@ knitr::opts_chunk$set(echo=TRUE, message = FALSE, warning = FALSE, eval = FALSE,
 
 \  
 
-5. How many observations are there per month and year combination (hint: remember the ```table()``` or ```xtabs()``` functions?)? Don't forget to use the factor recoded versions of these variables. Do you have data for each month in each year? Which years have the most observations? (optional) Use a combination of the ```xtabs()``` and ```ftable()``` functions to create a flattened table of the number of observations for each year, maturity stage and  month (aka a contingency table).  
+5. How many observations are there per month and year combination (hint: remember the ```table()``` or ```xtabs()``` functions?)? Don't forget to use the factor recoded versions of these variables. Do you have data for each month in each year? Which years have the most observations? (optional) Use a combination of the ```xtabs()``` and ```ftable()``` functions to create a flattened table of the number of observations for each year, maturity stage and month (aka a contingency table).  
 
     ```{r Q5}
     table(squid$Fmonth, squid$Fyear)
