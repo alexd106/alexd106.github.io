@@ -477,10 +477,9 @@ $(document).ready(function () {
 
 
 <p> </p>
-<p>During this exercise you will practice adding code chunks and inline R code to the R markdown document you created during the <a href="Rmarkdown_ex1.html">previous exercise</a>. The solutions to each section of the exercise can be revealed by clicking on the <code>Solution</code> button (don’t be too quick to do this though!). Once you have finished you can find my version of the <code>.Rmd</code> file <a href="squid_analysis.Rmd">here</a> and the rendered html document <a href="squid_analysis.html">here</a>. A pdf version of the document is <a href="">here</a>  </p>
-<p>So, the first thing you will need to do is open your <code>squid_analysis.Rmd</code> file in RStudio. You will already have a nicely marked up description of the data and the morphological variables measured during the study so we will continue with data import, exploration and some simple visualisations. You will need to download the <code>squid1.xlsx</code> file from <strong><a href="data.html"><i class="fa fa-download"></i> Data</a></strong> link, open it in excel and save it as a tab delimited file called <code>squid1.txt</code> (as we did during the R course).</p>
-<p> </p>
-<p>Create a code chunk named <code>data-import</code> and include some R code to import the <code>squid1.txt</code> file into R using the <code>read.table()</code> function and assign it to a variable called <code>squid</code>. Within the same code chunk get R to print out the structure of the <code>squid</code> variable. Add some text below the code chunk to explain (to your future self) what you are doing. Also write some text with inline R code to state how many observations are present (hint: use the <code>nrow()</code> function) in the dataset and how many variables were measured (hint: use the <code>ncol()</code> function).</p>
+<p>During this exercise you will practice adding code chunks and inline R code to the R markdown document you created during the <a href="Rmarkdown_ex1.html">previous exercise</a>. The solutions to each section of the exercise can be revealed by clicking on the <code>Solution</code> button (don’t be too quick to do this though!). Once you have finished you can find my version of the <code>.Rmd</code> file <a href="squid_analysis.Rmd">here</a> and the rendered html document <a href="squid_analysis.html">here</a>. A pdf version of the document is <a href="squid_analysis.pdf">here</a>  </p>
+<p>So, the first thing you will need to do is open your <code>squid_analysis.Rmd</code> file in RStudio. You will already have a nicely marked up description of the data and the morphological variables measured during the study so we will continue with data import, exploration and some simple visualisations. You will need to download the <code>squid1.xlsx</code> file from <strong><a href="data.html"><i class="fa fa-download"></i> Data</a></strong> link, open it in excel and save it as a tab delimited file called <code>squid1.txt</code> (as we did during the R course).  </p>
+<p>Create a code chunk named <code>data-import</code> and include some R code to import the <code>squid1.txt</code> file into R using the <code>read.table()</code> function and assign it to a variable called <code>squid</code>. Within the code chunk get R to print out the structure of the <code>squid</code> variable. Add some text below the code chunk to explain (to your future self) what you are doing. Also write some text with inline R code to state how many observations are present (hint: use the <code>nrow()</code> function) in the dataset and how many variables were measured (hint: use the <code>ncol()</code> function).</p>
 <p> </p>
 <div class="toggle">
 <button>
@@ -491,8 +490,8 @@ Solution
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="bn">str(squid)</span></a>
 <a class="sourceLine" id="cb1-4" data-line-number="4"><span class="bn">```</span></a>
 <a class="sourceLine" id="cb1-5" data-line-number="5">  </a>
-<a class="sourceLine" id="cb1-6" data-line-number="6">In this dataset <span class="bn">`r nrow(squid)`</span> squid were caught and <span class="bn">`r ncol(squid)`</span> variables were measured. Details  </a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">are shown above.</a></code></pre></div>
+<a class="sourceLine" id="cb1-6" data-line-number="6">In this dataset <span class="bn">`r nrow(squid)`</span> squid were caught and <span class="bn">`r ncol(squid)`</span> variables were measured  </a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">for each squid. Details are shown above.</a></code></pre></div>
 </div>
 <p> </p>
 <p>Perhaps you might remember from <a href="exercise_4_solution.html">Exercise 4</a> that the <code>year</code>, <code>month</code> and <code>maturity.stage</code> variables were coded as integers in the original dataset (see the output from <code>str(squid)</code> above to confirm) but we want to recode them as factors. Create a new code chunk called <code>data-recode</code> and include R code to create a new variable for each of these variables in the <code>squid</code> dataframe and recode them as factors. Change the chunk option to hide this code in the rendered document. Write some text to describe that you have recoded the variables to let the reader know you’ve done this (even though you don’t show the code in the final document).</p>
@@ -525,8 +524,19 @@ Solution
 <a class="sourceLine" id="cb3-5" data-line-number="5"><span class="bn">kable(table(squid$Fmonth, squid$Fyear), row.names = TRUE, format = &#39;markdown&#39;)</span></a>
 <a class="sourceLine" id="cb3-6" data-line-number="6"><span class="bn">```</span></a>
 <a class="sourceLine" id="cb3-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb3-8" data-line-number="8">In 1989 data were only collected during December and in 1991 data collection stopped in August.  </a>
-<a class="sourceLine" id="cb3-9" data-line-number="9">During 1990, no data were collected in either February or June. </a></code></pre></div>
+<a class="sourceLine" id="cb3-8" data-line-number="8">Or,If you want a fancy table with the variable names (month and year) then use the pander function from the  </a>
+<a class="sourceLine" id="cb3-9" data-line-number="9">pander package. You will also have to provide the dimnames to the table and use the ftable function to  </a>
+<a class="sourceLine" id="cb3-10" data-line-number="10">&#39;flatten&#39; the table.  </a>
+<a class="sourceLine" id="cb3-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="bn">```{r, data-obs2}</span></a>
+<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="bn">library(pander)</span></a>
+<a class="sourceLine" id="cb3-14" data-line-number="14"><span class="bn">mytab &lt;- table(squid$Fmonth, squid$Fyear)</span></a>
+<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="bn">names(dimnames(mytab)) &lt;- c(&quot;Month&quot;, &quot;Year&quot;)</span></a>
+<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="bn">pander(ftable(mytab))</span></a>
+<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="bn">```</span></a>
+<a class="sourceLine" id="cb3-18" data-line-number="18"></a>
+<a class="sourceLine" id="cb3-19" data-line-number="19">In 1989 data were only collected during December and in 1991 data collection stopped in August.  </a>
+<a class="sourceLine" id="cb3-20" data-line-number="20">During 1990, no data were collected in either February or June. </a></code></pre></div>
 </div>
 <p> </p>
 <p>We should also create a summary table of the number of observations for each level of maturity stage for each month. Create a code chunk and include code to do this but hide the code in the rendered document using the appropriate chunk option. If you feel like it, experiment with the <code>kableExtra</code> package to alter some of the formatting (text size etc). You may need to install the package before you can use it. Again, write some text to summarise your findings.</p>
@@ -539,14 +549,21 @@ Solution
 <a class="sourceLine" id="cb4-2" data-line-number="2">Number of observations each month for each of the squid maturity stages are given in the table below.</a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb4-4" data-line-number="4"><span class="bn">```{r, maturity-obs, echo=FALSE}</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="bn">library(kableExtra)</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="bn">kable(table(squid$Fmaturity, squid$Fmonth), row.names = TRUE) %&gt;%</span></a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="bn">    kable_styling(bootstrap_options = &quot;striped&quot;, font_size = 14)</span></a>
-<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="bn">```</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="bn"># using just kable</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="bn">kable(table(squid$Fmaturity, squid$Fmonth), row.names = TRUE)</span></a>
 <a class="sourceLine" id="cb4-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb4-10" data-line-number="10">Not all maturity stages were observed in all months. Very few squid of maturity stage 1, 2 or 3</a>
-<a class="sourceLine" id="cb4-11" data-line-number="11">were caught in the months February to May whereas maturity stages 4 and 5 were </a>
-<a class="sourceLine" id="cb4-12" data-line-number="12">predominantly caught during these months.</a></code></pre></div>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="bn"># using kableExtra (good for html output)</span></a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="bn">library(kableExtra)</span></a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="bn">kable(table(squid$Fmaturity, squid$Fmonth), row.names = TRUE) %&gt;%</span></a>
+<a class="sourceLine" id="cb4-14" data-line-number="14"><span class="bn">    kable_styling(bootstrap_options = &quot;striped&quot;, font_size = 14)</span></a>
+<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="bn">```</span></a>
+<a class="sourceLine" id="cb4-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb4-17" data-line-number="17">Not all maturity stages were observed in all months. Very few squid of maturity stage 1, 2 or 3</a>
+<a class="sourceLine" id="cb4-18" data-line-number="18">were caught in the months February to May whereas maturity stages 4 and 5 were </a>
+<a class="sourceLine" id="cb4-19" data-line-number="19">predominantly caught during these months.</a></code></pre></div>
 </div>
 <p> </p>
 <p>Ok, lets produce some exploratory plots in our document. The first thing we would like to know is whether there are any unusual observations in the variables; <code>DML</code>, <code>weight</code>, <code>nid.length</code> and <code>ovary.weight</code>. Create a code chunk containing code to plot cleveland dotplots of these variables. You can either plot one after the other or split the plotting device into 2 rows and 2 columns to plot them all together. This time we would like to show the code used to create these plots. Describe what you see and come up with a plausable explanation (refer back to Exercise 4 Question 7 for a hint.)</p>

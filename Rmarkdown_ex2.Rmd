@@ -8,14 +8,13 @@ output:
 
 \  
 
-During this exercise you will practice adding code chunks and inline R code to the R markdown document you created during the [previous exercise](Rmarkdown_ex1.html). The solutions to each section of the exercise can be revealed by clicking on the `Solution` button (don't be too quick to do this though!). Once you have finished you can find my version of the `.Rmd` file [here](squid_analysis.Rmd) and the rendered html document [here](squid_analysis.html). A pdf version of the document is [here]()
+During this exercise you will practice adding code chunks and inline R code to the R markdown document you created during the [previous exercise](Rmarkdown_ex1.html). The solutions to each section of the exercise can be revealed by clicking on the `Solution` button (don't be too quick to do this though!). Once you have finished you can find my version of the `.Rmd` file [here](squid_analysis.Rmd) and the rendered html document [here](squid_analysis.html). A pdf version of the document is [here](squid_analysis.pdf)
 \  
 
 So, the first thing you will need to do is open your `squid_analysis.Rmd` file in RStudio. You will already have a nicely marked up description of the data and the morphological variables measured during the study so we will continue with data import, exploration and some simple visualisations. You will need to download the `squid1.xlsx` file from **[<i class="fa fa-download"></i> Data](data.html)** link, open it in excel and save it as a tab delimited file called `squid1.txt` (as we did during the R course). 
-
 \  
 
-Create a code chunk named `data-import` and include some R code to import the `squid1.txt` file into R using the `read.table()` function and assign it to a variable called `squid`. Within the same code chunk get R to print out the structure of the `squid` variable. Add some text below the code chunk to explain (to your future self) what you are doing. Also write some text with inline R code to state how many observations are present (hint: use the `nrow()` function) in the dataset and how many variables were measured (hint: use the `ncol()` function). 
+Create a code chunk named `data-import` and include some R code to import the `squid1.txt` file into R using the `read.table()` function and assign it to a variable called `squid`. Within the code chunk get R to print out the structure of the `squid` variable. Add some text below the code chunk to explain (to your future self) what you are doing. Also write some text with inline R code to state how many observations are present (hint: use the `nrow()` function) in the dataset and how many variables were measured (hint: use the `ncol()` function). 
 
 \  
 
@@ -26,8 +25,8 @@ squid <- read.table('./data/squid1.txt', header = TRUE)
 str(squid)
 ```
   
-In this dataset `r knitr::inline_expr("nrow(squid)")` squid were caught and `r knitr::inline_expr("ncol(squid)")` variables were measured. Details  
-are shown above.
+In this dataset `r knitr::inline_expr("nrow(squid)")` squid were caught and `r knitr::inline_expr("ncol(squid)")` variables were measured  
+for each squid. Details are shown above.
 ````
 </div>
 
@@ -67,8 +66,20 @@ library(knitr)
 kable(table(squid$Fmonth, squid$Fyear), row.names = TRUE, format = 'markdown')
 ```
 
+Or,If you want a fancy table with the variable names (month and year) then use the pander function from the  
+pander package. You will also have to provide the dimnames to the table and use the ftable function to  
+'flatten' the table.  
+
+`r ''````{r, data-obs2}
+library(pander)
+mytab <- table(squid$Fmonth, squid$Fyear)
+names(dimnames(mytab)) <- c("Month", "Year")
+pander(ftable(mytab))
+```
+
 In 1989 data were only collected during December and in 1991 data collection stopped in August.  
 During 1990, no data were collected in either February or June. 
+
 ````
 </div>
 
@@ -84,6 +95,13 @@ We should also create a summary table of the number of observations for each lev
 Number of observations each month for each of the squid maturity stages are given in the table below.
 
 `r ''````{r, maturity-obs, echo=FALSE}
+
+# using just kable
+
+kable(table(squid$Fmaturity, squid$Fmonth), row.names = TRUE)
+
+# using kableExtra (good for html output)
+
 library(kableExtra)
 kable(table(squid$Fmaturity, squid$Fmonth), row.names = TRUE) %>%
     kable_styling(bootstrap_options = "striped", font_size = 14)
