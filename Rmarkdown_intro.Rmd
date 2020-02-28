@@ -15,9 +15,9 @@ knitr::opts_chunk$set(message=FALSE, tidy.opts=list(width.cutoff=60))
 
 \  
 
-This short tutorial will introduce you to creating reproducible reports using R markdown to encourage best (or better) practice to facilitates open science. It will first describe what R markdown is and why you might want to consider using it, describe how to create an R markdown document using RStudio and then how to convert this document to a html or pdf formatted output. During this tutorial you will learn about the different components of an R markdown document, how to format text, graphics and tables within the document and finally how to avoid some of the common difficulties using R markdown. There are also a couple of exercises for you to complete if you wish. 
+This short tutorial will introduce you to creating reproducible reports using R markdown to encourage best (or better) practice to facilitate open science. It will first describe what R markdown is and why you might want to consider using it, describe how to create an R markdown document using RStudio and then how to convert this document to a html or pdf formatted report. During this tutorial you will learn about the different components of an R markdown document, how to format text, graphics and tables within the document and finally how to avoid some of the common difficulties using R markdown. There are also a couple of exercises for you to complete if you wish. 
 
-I estimate that this tutorial should take you roughly 2 to 3 hours to complete in one sitting, but feel free to dip in and out as you see fit. 
+I estimate that this tutorial should take you roughly 1.5 to 2.5 hours to complete in one sitting, but feel free to dip in and out over a longer period if that suits you better. 
 
 \  
 
@@ -39,7 +39,7 @@ During our previous R course we talked a lot about conducting your research in a
 
 \  
 
-- Transparency in experimental methodology, observation, and collection of data
+- Transparency in experimental methodology, observation, collection of data and analytical methods.
 - Public availability and re-usability of scientific data
 - Public accessibility and transparency of scientific communication
 - Using web-based tools to facilitate scientific collaboration
@@ -216,7 +216,22 @@ output: html_document
 
 \  
 
-In the YAML header above the output format is set to HTML. If you would like to change the output to pdf format then you can change it from `output: html_document` to  `output: pdf_document` (you can also set more than one output format if you like). You can also change the default font and font size for the whole document and even include fancy options such as a table of contents and inline references and a bibliography. If you want to explore the plethora of other options see [here](https://bookdown.org/yihui/rmarkdown/html-document.html). Just a note of caution, many of the options you can specify in the YAML header will work with both HTML and pdf formatted documents, but not all. If you need multiple output formats for your R markdown document check whether your YAML options are compatible between these formats. Also, indentation in the YAML header has a meaning to be careful when aligning text. 
+In the YAML header above the output format is set to HTML. If you would like to change the output to pdf format then you can change it from `output: html_document` to  `output: pdf_document` (you can also set more than one output format if you like). You can also change the default font and font size for the whole document and even include fancy options such as a table of contents and inline references and a bibliography. If you want to explore the plethora of other options see [here](https://bookdown.org/yihui/rmarkdown/html-document.html). Just a note of caution, many of the options you can specify in the YAML header will work with both HTML and pdf formatted documents, but not all. If you need multiple output formats for your R markdown document check whether your YAML options are compatible between these formats. Also, indentation in the YAML header has a meaning to be careful when aligning text. For example, if you want to include a table of contents you would modify the `output:` field in the YAML header as follows
+
+\  
+
+```yaml
+
+---
+title: My first R markdown document
+author: Jane Doe
+date: March 01, 2020
+output:
+  html_document:
+    toc: yes
+---
+  
+```
 
 \  
 
@@ -241,12 +256,33 @@ polychaete biomass treatments (0, 0.5, 1, 1.5, 2 g per mesocosm).
 
 \  
 
-which looks like this in the final rendered document (can you spot the markups?)
+which would look like this in the final rendered document (can you spot the markups?)
 
 \  
 
 ><p style="font-weight:400; font-size:20px">Benthic Biodiversity experiment.</p>
 >These data were obtained from a mesocosm experiment which aimed to examine the effect of benthic polychaete (*Nereis diversicolor*) biomass on sediment nutrient (NH~4~, NO~3~ and PO~3~) release. At the start of the experiment replicate mesocosms were filled with 20 cm^2^ of **homogenised** marine sediment and assigned to one of five polychaete biomass treatments (0, 0.5, 1, 1.5, 2 g per mesocosm).
+
+\  
+
+
+#### Emphasis
+
+Some of the most common R markdown syntax for providing emphasis and formatting text is given below.
+
+\  
+
+|     Goal       |    R markdown       |     output        |
+|:--------------:|:-------------------:|:-----------------:|
+|  bold text     |   `**mytext**`   |   **mytext**   |
+|  italic text   |   `*mytext*`   |   *mytext*   |
+|  strikethrough | `~~mytext~~` | ~~mytext~~ |
+|  superscript   |   `mytext^2^`  |   mytext^2^  |
+|  subscript     |   `mytext~2~`    |   mytext~2~    |
+
+\  
+
+Interestingly there is no underline R markdown syntax by default. I think this is because bold and italics are used to emphasise content (a semantic meaning) whereas an underline is considered a stylistic element (there may well be other [reasons](https://softwareengineering.stackexchange.com/questions/207727/why-there-is-no-markdown-for-underline)). If you really want to underline text you can use `<span style="text-decoration:underline">underline this text</span>` for HTML output or `$\text{\underline{This sentence underlined using \LaTeX}}$` for pdf output. I just avoid underlining!
 
 \  
 
@@ -305,26 +341,6 @@ effect &nbsp; &nbsp; &nbsp; &nbsp; benthic polychaete (*Nereis diversicolor*) bi
 
 \  
 
-#### Emphasis
-
-Some of the most common R markdown syntax for providing emphasis and formatting text is given below.
-
-\  
-
-|     Goal       |    R markdown       |     output        |
-|:--------------:|:-------------------:|:-----------------:|
-|  bold text     |   `**mytext**`   |   **mytext**   |
-|  italic text   |   `*mytext*`   |   *mytext*   |
-|  strikethrough | `~~mytext~~` | ~~mytext~~ |
-|  superscript   |   `mytext^2^`  |   mytext^2^  |
-|  subscript     |   `mytext~2~`    |   mytext~2~    |
-
-\  
-
-Interestingly there is no underline R markdown syntax by default. I think this is because bold and italics are used to emphasise content (a semantic meaning) whereas an underline is considered a stylistic element (there may well be other [reasons](https://softwareengineering.stackexchange.com/questions/207727/why-there-is-no-markdown-for-underline)). If you really want to underline text you can use `<span style="text-decoration:underline">underline this text</span>` for HTML output or `$\text{\underline{This sentence underlined using \LaTeX}}$` for pdf output. I just avoid underlining!
-
-\  
-
 #### Headings
 
 You can add headings and subheadings to your R markdown document by using the `#` symbol at the beginning of the line. You can decrease the size of the headings by simply adding more `#` symbols. For example 
@@ -358,7 +374,7 @@ results in headings in decreasing size order
 
 #### Comments
 
-When formatting text in an R markdown document the meaning of the `#` symbol is different than in a standard R script (which is used to included a comment - remember?!). You can, however, use a `#` symbol to comment code inside a [code chunk](#code_chunks) as usual (more about this in a bit). If you want to include a comment in your R markdown document outside a code chunk which won't be included in the final rendered document then enclose your comment between `<!--` and `-->`.
+As you can see above the meaning of the `#` symbol is different when formatting text in an R markdown document compared to a standard R script (which is used to included a comment - remember?!). You can, however, use a `#` symbol to comment code inside a [code chunk](#code_chunks) as usual (more about this in a bit). If you want to include a comment in your R markdown document outside a code chunk which won't be included in the final rendered document then enclose your comment between `<!--` and `-->`.
 
 \  
 
@@ -425,7 +441,7 @@ If you need an ordered list
 
 #### Images
 
-Another useful feature is to embed images and links to web pages (or other documents) into your R markdown document. You can include images into your R markdown document in a number of different ways. Perhaps the simplest method is to use
+Another useful feature is the ability to embed images and links to web pages (or other documents) into your R markdown document. You can include images into your R markdown document in a number of different ways. Perhaps the simplest method is to use
 
 \  
 
@@ -445,7 +461,7 @@ resulting in:
 
 The code above will only work if the image file (`class_of_2019.jpg`) is in the right place relative to where you saved your `.Rmd` file. In the example above the image file is in a sub directory (folder) called `images` in the directory where we saved our `my_first_rmarkdown.Rmd` file. You can embed images saved in many different file types but perhaps the most common are `.jpg` and `.png`. 
 
-I think a more flexible way of including images in your document is to use the `include_graphics()` function from the `knitr` package as this gives finer control over the alignment and image size (it's also works more or less the same with both HTML and pdf output formats). However, to do this you will need to include your R code in a ['code chunk'](#code_chunks) which we haven't covered yet. Despite this I'll leave the code here for later reference. This code center aligns the image and scales it to 50% of it's original size. See `?include_graphics` for more options. 
+I think a more flexible way of including images in your document is to use the `include_graphics()` function from the `knitr` package as this gives finer control over the alignment and image size (it's also works more or less the same with both HTML and pdf output formats). However, to do this you will need to include this R code in a ['code chunk'](#code_chunks) which we haven't covered yet. Despite this I'll leave the code here for later reference. This code center aligns the image and scales it to 50% of it's original size. See `?include_graphics` for more options. 
 
 \  
 
