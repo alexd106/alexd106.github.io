@@ -6,7 +6,7 @@ output:
   html_document:
     toc: no
   pdf_document: default
-always_allow_html: true
+
 ---
 
 ```{r global_options, include=FALSE}
@@ -14,6 +14,7 @@ always_allow_html: true
 knitr::opts_chunk$set(message=FALSE, tidy.opts=list(width.cutoff=60),tidy=TRUE) 
 
 ```
+
 
 \  
 
@@ -27,9 +28,9 @@ These data were originally collected as part of a study published in Aquatic Liv
 - **sex variable** - sex (only female squid are included here)
 - **DML variable** - individual dorsal mantle length (mm)
 - **eviscerate.weight variable** - mantle weight measured without internal organs (g)
-- **ovary.weight variable** - gonad weight (g) 
+- **ovary.weight variable** - gonad weight (g)
 - **nid.weight variable** - nidamental gland weight (g)
-- **nid.length variable** - nidamental gland length (g)  
+- **nid.length variable** - nidamental gland length (g)
 - **dig.weight variable** -  digestive gland weight (g)
 
 \  
@@ -50,7 +51,7 @@ Some interesting background information on squid morphology can be found [here](
 
 ```{r, data-import}
 squid <- read.table('./data/squid1.txt', header = TRUE)
-str(squid)
+str(squid, vec.len = 2)
 ```
 
 In this dataset `r nrow(squid)`  squid were caught and `r ncol(squid)` variables were measured for each squid. Details are shown above.
@@ -144,7 +145,14 @@ DML was lowest for maturity stage 1 with a mean length of `r round(mean(squid$DM
 
 ### Session Information
 
-```{r, session-info, echo=FALSE}
-sessionInfo()
 
+```{r, session-info, eval=FALSE}
+sessionInfo()
+```
+
+<!-- But i prefere to use the pander package as it wraps long lines nicely when rendering to PDF. I have hidden this code and output in the final document but all you need to do is remove echo=FALSE argument from the code chunk. -->
+
+
+```{r, session-info, echo = FALSE}
+pander::pander(sessionInfo())
 ```

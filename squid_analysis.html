@@ -490,8 +490,7 @@ $(document).ready(function () {
 <li><strong>eviscerate.weight variable</strong> - mantle weight measured without internal organs (g)</li>
 <li><strong>ovary.weight variable</strong> - gonad weight (g)</li>
 <li><strong>nid.weight variable</strong> - nidamental gland weight (g)</li>
-<li><strong>nid.length variable</strong> - nidamental gland length (g)<br />
-</li>
+<li><strong>nid.length variable</strong> - nidamental gland length (g)</li>
 <li><strong>dig.weight variable</strong> - digestive gland weight (g)</li>
 </ul>
 <p> </p>
@@ -508,20 +507,20 @@ $(document).ready(function () {
 <h3>Data import and exploration</h3>
 <p> </p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">squid &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;./data/squid1.txt&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">str</span>(squid)</a></code></pre></div>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">str</span>(squid, <span class="dt">vec.len =</span> <span class="dv">2</span>)</a></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    519 obs. of  13 variables:
-##  $ sample.no        : int  105128901 105128901 105128901 105128901 105128901 105128901 105128901 105128901 105128901 105128901 ...
-##  $ specimen         : int  1002 1003 1005 1007 1008 1009 1011 1013 1014 1017 ...
-##  $ year             : int  1989 1989 1989 1989 1989 1989 1989 1989 1989 1989 ...
-##  $ month            : int  12 12 12 12 12 12 12 12 12 12 ...
-##  $ weight           : num  152 106 138 141 126 ...
-##  $ sex              : int  2 2 2 2 2 2 2 2 2 2 ...
-##  $ maturity.stage   : int  3 1 2 2 3 1 2 3 3 4 ...
-##  $ DML              : int  174 153 169 175 169 116 135 192 170 205 ...
+##  $ sample.no        : int  105128901 105128901 105128901 105128901 105128901 ...
+##  $ specimen         : int  1002 1003 1005 1007 1008 ...
+##  $ year             : int  1989 1989 1989 1989 1989 ...
+##  $ month            : int  12 12 12 12 12 ...
+##  $ weight           : num  152 106 ...
+##  $ sex              : int  2 2 2 2 2 ...
+##  $ maturity.stage   : int  3 1 2 2 3 ...
+##  $ DML              : int  174 153 169 175 169 ...
 ##  $ eviscerate.weight: num  87.5 62.6 79.4 83.1 72.2 ...
-##  $ dig.weight       : num  4.648 3.138 0.307 4.123 3.605 ...
-##  $ nid.length       : num  39.4 24.1 39 41.4 39.8 20 14 55 44 53 ...
-##  $ nid.weight       : num  2.46 0.319 1.169 1.631 2.03 ...
+##  $ dig.weight       : num  4.65 3.14 ...
+##  $ nid.length       : num  39.4 24.1 39 41.4 39.8 ...
+##  $ nid.weight       : num  2.46 0.319 ...
 ##  $ ovary.weight     : num  1.68 0.103 0.289 0.252 0.86 ...</code></pre>
 <p>In this dataset 519 squid were caught and 13 variables were measured for each squid. Details are shown above.</p>
 <p> </p>
@@ -740,28 +739,12 @@ $(document).ready(function () {
 </div>
 <div id="session-information" class="section level3">
 <h3>Session Information</h3>
-<pre><code>## R version 3.6.2 (2019-12-12)
-## Platform: x86_64-apple-darwin15.6.0 (64-bit)
-## Running under: macOS Catalina 10.15.3
-## 
-## Matrix products: default
-## BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
-## LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
-## 
-## locale:
-## [1] en_GB.UTF-8/en_GB.UTF-8/en_GB.UTF-8/C/en_GB.UTF-8/en_GB.UTF-8
-## 
-## attached base packages:
-## [1] stats     graphics  grDevices utils     datasets  methods   base     
-## 
-## other attached packages:
-## [1] pander_0.6.3     kableExtra_1.1.0 ggplot2_3.2.1    htmltools_0.4.0  dplyr_0.8.4      stringr_1.4.0    knitr_1.28      
-## 
-## loaded via a namespace (and not attached):
-##  [1] Rcpp_1.0.3        pillar_1.4.3      compiler_3.6.2    formatR_1.7       highr_0.8         tools_3.6.2       digest_0.6.24     viridisLite_0.3.0 evaluate_0.14     tibble_2.1.3      lifecycle_0.1.0  
-## [12] gtable_0.3.0      pkgconfig_2.0.3   rlang_0.4.4       rstudioapi_0.11   yaml_2.2.1        xfun_0.12         xml2_1.2.2        httr_1.4.1        withr_2.1.2       vctrs_0.2.2       hms_0.5.3        
-## [23] webshot_0.5.2     grid_3.6.2        tidyselect_1.0.0  glue_1.3.1        R6_2.4.1          rmarkdown_2.1     purrr_0.3.3       farver_2.0.3      readr_1.3.1       magrittr_1.5      scales_1.1.0     
-## [34] rvest_0.3.5       assertthat_0.2.1  colorspace_1.4-1  labeling_0.3      tinytex_0.19      stringi_1.4.5     lazyeval_0.2.2    munsell_0.5.0     crayon_1.3.4</code></pre>
+<p><strong>R version 3.6.2 (2019-12-12)</strong></p>
+<p><strong>Platform:</strong> x86_64-apple-darwin15.6.0 (64-bit)</p>
+<p><strong>locale:</strong> en_GB.UTF-8||en_GB.UTF-8||en_GB.UTF-8||C||en_GB.UTF-8||en_GB.UTF-8</p>
+<p><strong>attached base packages:</strong> <em>stats</em>, <em>graphics</em>, <em>grDevices</em>, <em>utils</em>, <em>datasets</em>, <em>methods</em> and <em>base</em></p>
+<p><strong>other attached packages:</strong> <em>pander(v.0.6.3)</em>, <em>kableExtra(v.1.1.0)</em>, <em>ggplot2(v.3.2.1)</em>, <em>htmltools(v.0.4.0)</em>, <em>dplyr(v.0.8.4)</em>, <em>stringr(v.1.4.0)</em> and <em>knitr(v.1.28)</em></p>
+<p><strong>loaded via a namespace (and not attached):</strong> <em>Rcpp(v.1.0.3)</em>, <em>pillar(v.1.4.3)</em>, <em>compiler(v.3.6.2)</em>, <em>formatR(v.1.7)</em>, <em>highr(v.0.8)</em>, <em>tools(v.3.6.2)</em>, <em>digest(v.0.6.24)</em>, <em>viridisLite(v.0.3.0)</em>, <em>evaluate(v.0.14)</em>, <em>tibble(v.2.1.3)</em>, <em>lifecycle(v.0.1.0)</em>, <em>gtable(v.0.3.0)</em>, <em>pkgconfig(v.2.0.3)</em>, <em>rlang(v.0.4.4)</em>, <em>rstudioapi(v.0.11)</em>, <em>yaml(v.2.2.1)</em>, <em>xfun(v.0.12)</em>, <em>xml2(v.1.2.2)</em>, <em>httr(v.1.4.1)</em>, <em>withr(v.2.1.2)</em>, <em>vctrs(v.0.2.2)</em>, <em>hms(v.0.5.3)</em>, <em>webshot(v.0.5.2)</em>, <em>grid(v.3.6.2)</em>, <em>tidyselect(v.1.0.0)</em>, <em>glue(v.1.3.1)</em>, <em>R6(v.2.4.1)</em>, <em>rmarkdown(v.2.1)</em>, <em>purrr(v.0.3.3)</em>, <em>farver(v.2.0.3)</em>, <em>readr(v.1.3.1)</em>, <em>magrittr(v.1.5)</em>, <em>scales(v.1.1.0)</em>, <em>rvest(v.0.3.5)</em>, <em>assertthat(v.0.2.1)</em>, <em>colorspace(v.1.4-1)</em>, <em>labeling(v.0.3)</em>, <em>tinytex(v.0.19)</em>, <em>stringi(v.1.4.5)</em>, <em>lazyeval(v.0.2.2)</em>, <em>munsell(v.0.5.0)</em> and <em>crayon(v.1.3.4)</em></p>
 </div>
 
 
