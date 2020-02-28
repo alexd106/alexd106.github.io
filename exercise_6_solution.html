@@ -529,19 +529,17 @@ $(document).ready(function () {
 <li><p>Write a function to convert farenheit to centegrade (oC = (oF - 32) x 5/9). Get your function to print out your result in the following format: “Farenheit : <em>value of oF</em> is equivalent to <em>value oC</em> centigrade.”</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">far.cent &lt;-<span class="st"> </span><span class="cf">function</span>(a) {</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2">    val &lt;-<span class="st"> </span>(a <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">*</span><span class="st"> </span><span class="dv">5</span><span class="op">/</span><span class="dv">9</span></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">    <span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Fahrenheit: &quot;</span>, <span class="kw">round</span>(a, <span class="dt">digits =</span> <span class="dv">3</span>), <span class="st">&quot;oF&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>), </a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">        <span class="dt">quote =</span> <span class="ot">FALSE</span>)  <span class="co"># round 3dp</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5">    <span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Centigrade: &quot;</span>, <span class="kw">round</span>(val, <span class="dt">digits =</span> <span class="dv">3</span>), <span class="st">&quot;oC&quot;</span>, </a>
-<a class="sourceLine" id="cb2-6" data-line-number="6">        <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>), <span class="dt">quote =</span> <span class="ot">FALSE</span>)  <span class="co"># round 3dp</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7">}</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">    <span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Fahrenheit: &quot;</span>, <span class="kw">round</span>(a, <span class="dt">digits =</span> <span class="dv">3</span>), <span class="st">&quot;oF&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>), <span class="dt">quote =</span> <span class="ot">FALSE</span>)  <span class="co"># round 3dp</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">    <span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Centigrade: &quot;</span>, <span class="kw">round</span>(val, <span class="dt">digits =</span> <span class="dv">3</span>), <span class="st">&quot;oC&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>), <span class="dt">quote =</span> <span class="ot">FALSE</span>)  <span class="co"># round 3dp</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">}</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co"># alternative Fahrenheit to centigrade using cat function</span></a>
 <a class="sourceLine" id="cb2-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co"># alternative Fahrenheit to centigrade using cat function</span></a>
-<a class="sourceLine" id="cb2-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb2-11" data-line-number="11">far.cent2 &lt;-<span class="st"> </span><span class="cf">function</span>(a) {</a>
-<a class="sourceLine" id="cb2-12" data-line-number="12">    val &lt;-<span class="st"> </span>(a <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">*</span><span class="st"> </span><span class="dv">5</span><span class="op">/</span><span class="dv">9</span>  <span class="co">#calculation</span></a>
-<a class="sourceLine" id="cb2-13" data-line-number="13">    <span class="kw">cat</span>(<span class="st">&quot;Fahrenheit: &quot;</span>, <span class="kw">round</span>(a, <span class="dt">digits =</span> <span class="dv">3</span>), <span class="st">&quot;oF&quot;</span>, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)  <span class="co"># use cat function</span></a>
-<a class="sourceLine" id="cb2-14" data-line-number="14">    <span class="kw">cat</span>(<span class="st">&quot;Centigrade: &quot;</span>, <span class="kw">round</span>(val, <span class="dt">digits =</span> <span class="dv">3</span>), <span class="st">&quot;oC&quot;</span>, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
-<a class="sourceLine" id="cb2-15" data-line-number="15">}</a></code></pre></div></li>
+<a class="sourceLine" id="cb2-9" data-line-number="9">far.cent2 &lt;-<span class="st"> </span><span class="cf">function</span>(a) {</a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">    val &lt;-<span class="st"> </span>(a <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">*</span><span class="st"> </span><span class="dv">5</span><span class="op">/</span><span class="dv">9</span>  <span class="co">#calculation</span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11">    <span class="kw">cat</span>(<span class="st">&quot;Fahrenheit: &quot;</span>, <span class="kw">round</span>(a, <span class="dt">digits =</span> <span class="dv">3</span>), <span class="st">&quot;oF&quot;</span>, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)  <span class="co"># use cat function</span></a>
+<a class="sourceLine" id="cb2-12" data-line-number="12">    <span class="kw">cat</span>(<span class="st">&quot;Centigrade: &quot;</span>, <span class="kw">round</span>(val, <span class="dt">digits =</span> <span class="dv">3</span>), <span class="st">&quot;oC&quot;</span>, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
+<a class="sourceLine" id="cb2-13" data-line-number="13">}</a></code></pre></div></li>
 </ol>
 <p> </p>
 <ol start="3" style="list-style-type: decimal">
@@ -611,14 +609,11 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb5-9" data-line-number="9">        N[i <span class="op">+</span><span class="st"> </span><span class="dv">1</span>] &lt;-<span class="st"> </span>N[i] <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(r <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>N[i]<span class="op">/</span>K))</a>
 <a class="sourceLine" id="cb5-10" data-line-number="10">    }</a>
 <a class="sourceLine" id="cb5-11" data-line-number="11">    Time &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span>time  <span class="co"># creates vector for x axis</span></a>
-<a class="sourceLine" id="cb5-12" data-line-number="12">    <span class="kw">plot</span>(Time, N, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, time), <span class="dt">xlab =</span> <span class="st">&quot;Time&quot;</span>, </a>
-<a class="sourceLine" id="cb5-13" data-line-number="13">        <span class="dt">ylab =</span> <span class="st">&quot;Population size (N)&quot;</span>, <span class="dt">main =</span> <span class="kw">paste</span>(<span class="st">&quot;r =&quot;</span>, r, </a>
-<a class="sourceLine" id="cb5-14" data-line-number="14">            <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>))  <span class="co"># plots     output</span></a>
-<a class="sourceLine" id="cb5-15" data-line-number="15">}</a>
-<a class="sourceLine" id="cb5-16" data-line-number="16"></a>
-<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co"># To run play around with the different parameters,</span></a>
-<a class="sourceLine" id="cb5-18" data-line-number="18"><span class="co"># especially r</span></a>
-<a class="sourceLine" id="cb5-19" data-line-number="19"><span class="kw">Ricker.model</span>(<span class="dt">nzero =</span> <span class="fl">0.1</span>, <span class="dt">r =</span> <span class="dv">1</span>, <span class="dt">time =</span> <span class="dv">100</span>)</a></code></pre></div></li>
+<a class="sourceLine" id="cb5-12" data-line-number="12">    <span class="kw">plot</span>(Time, N, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, time), <span class="dt">xlab =</span> <span class="st">&quot;Time&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Population size (N)&quot;</span>, <span class="dt">main =</span> <span class="kw">paste</span>(<span class="st">&quot;r =&quot;</span>, r, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>))  <span class="co"># plots     output</span></a>
+<a class="sourceLine" id="cb5-13" data-line-number="13">}</a>
+<a class="sourceLine" id="cb5-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co"># To run play around with the different parameters, especially r</span></a>
+<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="kw">Ricker.model</span>(<span class="dt">nzero =</span> <span class="fl">0.1</span>, <span class="dt">r =</span> <span class="dv">1</span>, <span class="dt">time =</span> <span class="dv">100</span>)</a></code></pre></div></li>
 </ol>
 <p> </p>
 <p>End of Exercise 6</p>
