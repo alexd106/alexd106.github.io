@@ -9,8 +9,10 @@ output:
 always_allow_html: true
 ---
 
-```{r setup, echo=FALSE}
-knitr::opts_chunk$set(message = FALSE, warning = FALSE, tidy.opts=list(width.cutoff=60), tidy=TRUE)
+```{r global_options, include=FALSE}
+
+knitr::opts_chunk$set(message=FALSE, tidy.opts=list(width.cutoff=60),tidy=TRUE) 
+
 ```
 
 \  
@@ -146,6 +148,3 @@ DML was lowest for maturity stage 1 with a mean length of `r round(mean(squid$DM
 sessionInfo()
 
 ```
-
-
-
