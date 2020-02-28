@@ -979,7 +979,7 @@ Add a global_options argument at the start of your .Rmd file in a code chunk:
 
 <pre class="markdown"><code>&#96;&#96;&#96;{r global_options, include=FALSE}
 
-knitr::opts_chunk$set(message=FALSE, tidy.opts=list(width.cutoff=60)) 
+knitr::opts_chunk$set(message=FALSE, tidy.opts=list(width.cutoff=60), tidy=TRUE) 
 
 &#96;&#96;&#96;
 </code></pre>
