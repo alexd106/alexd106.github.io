@@ -27,7 +27,7 @@ I estimate that this tutorial should take you roughly 1.5 to 2.5 hours to comple
 
 R markdown is a simple and easy to use plain text language used to combine your R code, results from your data analysis (including plots and tables) and written commentary into a single nicely formatted and reproducible document (like a report, publication, thesis chapter or a web page like this one).  
 
-Technically, R markdown is a variant of another language (yet another language!) called Markdown and both are a type of 'markup' language. A markup language simply provides a way of creating an easy to read plain text file which can incorporate formatted text, images, headers and links to other documents. Don't worry about the details for the moment, although if you're interested you can find more information about markup languages [here](https://en.wikipedia.org/wiki/Markup_language). Actually, if it makes you feel any better all of you will have been exposed to a markup language before as most of the internet content you digest every day is underpinned by a markup language called HTML (**H**yper**t**ext **M**arkup **L**anguage). Anyway, the main point is that R markdown is very easy to learn (much, much easier than HTML) and when used with RStudio it's ridiculously easy to integrate into your workflow to produce feature rich content (so why wouldn't you?!). 
+Technically, R markdown is a variant of another language (yet another language!) called Markdown and both are a type of 'markup' language. A markup language simply provides a way of creating an easy to read plain text file which can incorporate formatted text, images, headers and links to other documents. Don't worry about the details for the moment, although if you're interested you can find more information about markup languages [here](https://en.wikipedia.org/wiki/Markup_language). Actually, if it makes you feel any better all of you will have been exposed to a markup language before, as most of the internet content you digest every day is underpinned by a markup language called HTML (**H**yper**t**ext **M**arkup **L**anguage). Anyway, the main point is that R markdown is very easy to learn (much, much easier than HTML) and when used with RStudio it's ridiculously easy to integrate into your workflow to produce feature rich content (so why wouldn't you?!). 
 
 \  
 
@@ -199,7 +199,7 @@ include_graphics("images/rm_components.png")
 
 ### YAML header
 
-YAML stands for '**Y**AML **A**in’t **M**arkup **L**anguage' (it's an 'in' joke!) and this optional component contains the metadata and options for the entire document such as the author name, date, output format, etc. The YAML header is surrounded before and after by a `---` on its own line. In RStudio a minimal YAML header is automatically created for you when you create a new R markdown document as we did [above](#new_rm) but you can change this any time. A simple YAML header may look something like this:
+YAML stands for '**Y**AML **A**in’t **M**arkup **L**anguage' (it's an 'in' [joke](https://en.wikipedia.org/wiki/Recursive_acronym)!) and this optional component contains the metadata and options for the entire document such as the author name, date, output format, etc. The YAML header is surrounded before and after by a `---` on its own line. In RStudio a minimal YAML header is automatically created for you when you create a new R markdown document as we did [above](#new_rm) but you can change this any time. A simple YAML header may look something like this:
 
 \  
 
@@ -249,7 +249,7 @@ Here is an example of marking up text formatting in an R markdown document
 These data were obtained from a mesocosm experiment which aimed to examine the effect 
 of benthic polychaete (*Nereis diversicolor*) biomass on sediment nutrient 
 (NH~4~, NO~3~ and PO~3~) release. At the start of the experiment 15 replicate mesocosms 
-were filled with 20 cm^2^ of homogenised marine sediment and assigned to one of five 
+were filled with 20 cm^2^ of **homogenised** marine sediment and assigned to one of five 
 polychaete biomass treatments (0, 0.5, 1, 1.5, 2 g per mesocosm).
 
 ```
@@ -293,7 +293,6 @@ One of the things that can be confusing for new users of R markdown is the use o
 \  
 
 ```markdown
-
 These      data were      obtained from a
 mesocosm experiment which    aimed to examine the
 effect
@@ -348,7 +347,6 @@ You can add headings and subheadings to your R markdown document by using the `#
 \  
 
 ```markdown
-
 # Benthic Biodiversity experiment
 ## Benthic Biodiversity experiment
 ### Benthic Biodiversity experiment
@@ -379,7 +377,6 @@ As you can see above the meaning of the `#` symbol is different when formatting 
 \  
 
 ```markdown
-
 <!--
 this is an example of how to format a comment using R markdown.
 -->
@@ -389,12 +386,11 @@ this is an example of how to format a comment using R markdown.
 
 #### Lists
 
-If you want to create a bullet point list of text you can format an unordered list with sub items. Note, the sub-items need to be indented.  
+If you want to create a bullet point list of text you can format an unordered list with sub items. Notice that the sub-items need to be indented.  
 
 \  
 
 ```markdown
-
 - item 1
 - item 2
    + sub-item 2
@@ -417,7 +413,6 @@ If you want to create a bullet point list of text you can format an unordered li
 If you need an ordered list 
 
 \  
-
 ```markdown
 
 1. item 1
@@ -510,7 +505,7 @@ You can find an exercise to practice formatting R markdown text [here](Rmarkdown
 
 ### Code chunks {#code_chunks}
 
-Now to the heart of the matter. To include R code into your R markdown document you simply place your code into a 'code chunk'. All code chunks start and end with three backticks ```` ``` ````. Note, these are also known as 'grave accents' and are not the same as an apostrophe! On most keyboards you can find the backtick on the same key as tilde (~).
+Now to the heart of the matter. To include R code into your R markdown document you simply place your code into a 'code chunk'. All code chunks start and end with three backticks ```` ``` ````. Note, these are also known as 'grave accents' or 'back quotes and are not the same as an apostrophe! On most keyboards you can [find the backtick](https://superuser.com/questions/254076/how-do-i-type-the-tick-and-backtick-characters-on-windows) on the same key as tilde (~).
 
 \  
 
@@ -527,9 +522,9 @@ You can insert a code chunk by either typing the chunk delimiters ```` ```{r} ``
 
 \  
 
-There are a many things you can do with code chunks: you can produce text output from your analysis, create tables and figures and insert images amongst other things. Within the code chunk you can place rules and arguments between the curly brackets `{}` that give you control over how your code is interpreted and output is rendered. These are known as chunk options. The only mandatory chunk option is the first argument which specifies which language you're using (`r` in our case). Note, all of your chunk options must be written between the curly brackets on one line with no line breaks.  
+There are a many things you can do with code chunks: you can produce text output from your analysis, create tables and figures and insert images amongst other things. Within the code chunk you can place rules and arguments between the curly brackets `{}` that give you control over how your code is interpreted and output is rendered. These are known as chunk options. The only mandatory chunk option is the first argument which specifies which language you're using (`r` in our case but [other](https://rmarkdown.rstudio.com/authoring_knitr_engines.html%23sql) languages are supported). Note, all of your chunk options must be written between the curly brackets on one line with no line breaks.  
 
-You can also specify an optional code chunk name (or label)  which can be useful when trying to debug problems and when performing advanced document rendering. In the following we name the code chunk `summary-stats`, create a dataframe (`dataf`) with two variables `x` and `y` and then use the `summary()` function to display some summary statistics . When we run the code chunk both the R code and the resulting output are displayed in the final document.
+You can also specify an optional code chunk name (or label)  which can be useful when trying to debug problems and when performing advanced document rendering. In the following block we name the code chunk `summary-stats`, create a dataframe (`dataf`) with two variables `x` and `y` and then use the `summary()` function to display some summary statistics . When we run the code chunk both the R code and the resulting output are displayed in the final document.
 
 \  
 
@@ -558,7 +553,7 @@ summary(dataf)
 
 \  
 
-When using chunk names make sure that you don't have duplicate chunk names in your R markdown document and avoid spaces and full stops as this will cause problems when you come to knit your document (I use a `-` to separate words in my chunk names).
+When using chunk names make sure that you don't have duplicate chunk names in your R markdown document and avoid spaces and full stops as this may cause problems when you come to knit your document (I use a `-` to separate words in my chunk names).
 
 If we wanted to only display the output of our R code (just the summary statistics for example) and not the code itself in our final document we can use the chunk option `echo=FALSE`
 
@@ -850,7 +845,7 @@ But how ugly is that! You can create slightly nicer looking tables using native 
 
 \  
 
-The `:-------:` lets R markdown know that the line above should be treated as a header and the lines below as the body of the table. Alignment within the table is set by the position of the `:`. To centre align use `:------:`, to left align `:------` and right align `------:`. Whilst it can be fun(!) to create tables with raw markup it's only  practical for very small and simple tables.  
+The `:-------:` lets R markdown know that the line above should be treated as a header and the lines below as the body of the table. Alignment within the table is set by the position of the `:`. To center align use `:------:`, to left align `:------` and right align `------:`. Whilst it can be fun(!) to create tables with raw markup it's only  practical for very small and simple tables.  
 
 The easiest way I know to include tables in an R markdown document is by using the `kable()` function from the `knitr` package (this should have already been installed when you installed the `rmarkdown` package). The `kable()` function can create tables for HTML, PDF and Word outputs.
 
@@ -936,7 +931,7 @@ Up till now we've been writing and executing our R code in code chunks. Another 
 
 ```{r, class.source='fold-show', eval=FALSE, highlight=FALSE}
 Morphological characteristics (variable names: `r names(iris)[1:4]`) were measured from 
-`r nrow(iris)`*iris* plants from `r length(levels(iris$Species))` different species. The mean Sepal length was `r round(mean(iris$Sepal.Length), digits = 2)` mm. 
+`r nrow(iris)`*Iris sp.* plants from `r length(levels(iris$Species))` different species. The mean Sepal length was `r round(mean(iris$Sepal.Length), digits = 2)` mm. 
 ```
 
 \  
@@ -988,7 +983,7 @@ knitr::opts_chunk$set(message=FALSE, tidy.opts=list(width.cutoff=60), tidy=TRUE)
 
 This code chunk won’t be displayed in the final document due to the `include = FALSE` argument and you should place the code chunk immediately after the YAML header to affect everything below that.
 
-The `tidy.opts = list(width.cutoff = 60)` defines the margin cutoff point and wraps text to the next line. Play around with this value to get it right.
+`tidy.opts = list(width.cutoff = 60), tidy=TRUE` defines the margin cutoff point and wraps text to the next line. Play around with this value to get it right (60-80 should be OK for most documents).
 
 \  
 
@@ -1014,7 +1009,7 @@ suppressPackageStartupMessages(library(ggplot2))
 
 \  
 
-The `message=FALSE` and `warning=FALSE` arguments supress messages and warnings. The `suppressPackageStartupMessages(library(ggplot2))` will load the `ggplot2` package but supress startup messages.
+The `message=FALSE` and `warning=FALSE` arguments suppress messages and warnings. The `suppressPackageStartupMessages(library(ggplot2))` will load the `ggplot2` package but suppress startup messages.
 
 \  
 
@@ -1034,9 +1029,11 @@ Add a page break using the LateX `\pagebreak` notation before your offending tab
 
 The code in my rendered document looks ugly!
 
+\  
+
 **Solution:**
 
-Add the argument `tidy=TRUE` to your global aruments. Sometimes, however, this can cause problems especially with correct code indentation.
+Add the argument `tidy=TRUE` to your global arguments. Sometimes, however, this can cause problems especially with correct code indentation.
 
 \  
 

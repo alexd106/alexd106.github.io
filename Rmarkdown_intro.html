@@ -588,7 +588,7 @@ div.tocify {
 <h2>What is R markdown?</h2>
 <p> </p>
 <p>R markdown is a simple and easy to use plain text language used to combine your R code, results from your data analysis (including plots and tables) and written commentary into a single nicely formatted and reproducible document (like a report, publication, thesis chapter or a web page like this one).</p>
-<p>Technically, R markdown is a variant of another language (yet another language!) called Markdown and both are a type of ‘markup’ language. A markup language simply provides a way of creating an easy to read plain text file which can incorporate formatted text, images, headers and links to other documents. Don’t worry about the details for the moment, although if you’re interested you can find more information about markup languages <a href="https://en.wikipedia.org/wiki/Markup_language">here</a>. Actually, if it makes you feel any better all of you will have been exposed to a markup language before as most of the internet content you digest every day is underpinned by a markup language called HTML (<strong>H</strong>yper<strong>t</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage). Anyway, the main point is that R markdown is very easy to learn (much, much easier than HTML) and when used with RStudio it’s ridiculously easy to integrate into your workflow to produce feature rich content (so why wouldn’t you?!).</p>
+<p>Technically, R markdown is a variant of another language (yet another language!) called Markdown and both are a type of ‘markup’ language. A markup language simply provides a way of creating an easy to read plain text file which can incorporate formatted text, images, headers and links to other documents. Don’t worry about the details for the moment, although if you’re interested you can find more information about markup languages <a href="https://en.wikipedia.org/wiki/Markup_language">here</a>. Actually, if it makes you feel any better all of you will have been exposed to a markup language before, as most of the internet content you digest every day is underpinned by a markup language called HTML (<strong>H</strong>yper<strong>t</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage). Anyway, the main point is that R markdown is very easy to learn (much, much easier than HTML) and when used with RStudio it’s ridiculously easy to integrate into your workflow to produce feature rich content (so why wouldn’t you?!).</p>
 <p> </p>
 </div>
 <div id="why-use-r-markdown" class="section level2">
@@ -685,7 +685,7 @@ div.tocify {
 <p> </p>
 <div id="yaml-header" class="section level3">
 <h3>YAML header</h3>
-<p>YAML stands for ‘<strong>Y</strong>AML <strong>A</strong>in’t <strong>M</strong>arkup <strong>L</strong>anguage’ (it’s an ‘in’ joke!) and this optional component contains the metadata and options for the entire document such as the author name, date, output format, etc. The YAML header is surrounded before and after by a <code>---</code> on its own line. In RStudio a minimal YAML header is automatically created for you when you create a new R markdown document as we did <a href="#new_rm">above</a> but you can change this any time. A simple YAML header may look something like this:</p>
+<p>YAML stands for ‘<strong>Y</strong>AML <strong>A</strong>in’t <strong>M</strong>arkup <strong>L</strong>anguage’ (it’s an ‘in’ <a href="https://en.wikipedia.org/wiki/Recursive_acronym">joke</a>!) and this optional component contains the metadata and options for the entire document such as the author name, date, output format, etc. The YAML header is surrounded before and after by a <code>---</code> on its own line. In RStudio a minimal YAML header is automatically created for you when you create a new R markdown document as we did <a href="#new_rm">above</a> but you can change this any time. A simple YAML header may look something like this:</p>
 <p> </p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb2-1" data-line-number="1"></a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="ot">---</span></a>
@@ -720,7 +720,7 @@ div.tocify {
 <a class="sourceLine" id="cb4-3" data-line-number="3">These data were obtained from a mesocosm experiment which aimed to examine the effect </a>
 <a class="sourceLine" id="cb4-4" data-line-number="4">of benthic polychaete (*Nereis diversicolor*) biomass on sediment nutrient </a>
 <a class="sourceLine" id="cb4-5" data-line-number="5">(NH~4~, NO~3~ and PO~3~) release. At the start of the experiment 15 replicate mesocosms </a>
-<a class="sourceLine" id="cb4-6" data-line-number="6">were filled with 20 cm^2^ of homogenised marine sediment and assigned to one of five </a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">were filled with 20 cm^2^ of **homogenised** marine sediment and assigned to one of five </a>
 <a class="sourceLine" id="cb4-7" data-line-number="7">polychaete biomass treatments (0, 0.5, 1, 1.5, 2 g per mesocosm).</a></code></pre></div>
 <p> </p>
 <p>which would look like this in the final rendered document (can you spot the markups?)</p>
@@ -780,11 +780,10 @@ Benthic Biodiversity experiment.
 <h4>White space and line breaks</h4>
 <p>One of the things that can be confusing for new users of R markdown is the use of spaces and carriage returns (the enter key on your keyboard). In R markdown multiple spaces within the text are generally ignored as are carriage returns. For example this R markdown text</p>
 <p> </p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb5-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">These      data were      obtained from a</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3">mesocosm experiment which    aimed to examine the</a>
-<a class="sourceLine" id="cb5-4" data-line-number="4">effect</a>
-<a class="sourceLine" id="cb5-5" data-line-number="5">of          benthic polychaete (*Nereis diversicolor*) biomass.</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb5-1" data-line-number="1">These      data were      obtained from a</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">mesocosm experiment which    aimed to examine the</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">effect</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">of          benthic polychaete (*Nereis diversicolor*) biomass.</a></code></pre></div>
 <p> </p>
 <p>will be rendered as</p>
 <p> </p>
@@ -817,13 +816,12 @@ effect         benthic polychaete (<em>Nereis diversicolor</em>) biomass.</p
 <h4>Headings</h4>
 <p>You can add headings and subheadings to your R markdown document by using the <code>#</code> symbol at the beginning of the line. You can decrease the size of the headings by simply adding more <code>#</code> symbols. For example</p>
 <p> </p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb7-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="fu"># Benthic Biodiversity experiment</span></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="fu">## Benthic Biodiversity experiment</span></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="fu">### Benthic Biodiversity experiment</span></a>
-<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="fu">#### Benthic Biodiversity experiment</span></a>
-<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="fu">##### Benthic Biodiversity experiment</span></a>
-<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="fu">###### Benthic Biodiversity experiment</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="fu"># Benthic Biodiversity experiment</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="fu">## Benthic Biodiversity experiment</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="fu">### Benthic Biodiversity experiment</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="fu">#### Benthic Biodiversity experiment</span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="fu">##### Benthic Biodiversity experiment</span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="fu">###### Benthic Biodiversity experiment</span></a></code></pre></div>
 <p> </p>
 <p>results in headings in decreasing size order</p>
 <p> </p>
@@ -853,23 +851,21 @@ Benthic Biodiversity experiment.
 <h4>Comments</h4>
 <p>As you can see above the meaning of the <code>#</code> symbol is different when formatting text in an R markdown document compared to a standard R script (which is used to included a comment - remember?!). You can, however, use a <code>#</code> symbol to comment code inside a <a href="#code_chunks">code chunk</a> as usual (more about this in a bit). If you want to include a comment in your R markdown document outside a code chunk which won’t be included in the final rendered document then enclose your comment between <code>&lt;!--</code> and <code>--&gt;</code>.</p>
 <p> </p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb8-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2">&lt;!--</a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">this is an example of how to format a comment using R markdown.</span></a>
-<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co">--&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb8-1" data-line-number="1">&lt;!--</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">this is an example of how to format a comment using R markdown.</span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">--&gt;</span></a></code></pre></div>
 <p> </p>
 </div>
 <div id="lists" class="section level4">
 <h4>Lists</h4>
-<p>If you want to create a bullet point list of text you can format an unordered list with sub items. Note, the sub-items need to be indented.</p>
+<p>If you want to create a bullet point list of text you can format an unordered list with sub items. Notice that the sub-items need to be indented.</p>
 <p> </p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb9-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">- <span class="fl">item 1</span></a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="fl">- item 2</span></a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="fl">   + sub-item 2</span></a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="fl">   + sub-item 3</span></a>
-<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="fl">- item 3</span></a>
-<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="fl">- item 4</span></a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb9-1" data-line-number="1">- <span class="fl">item 1</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="fl">- item 2</span></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="fl">   + sub-item 2</span></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="fl">   + sub-item 3</span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="fl">- item 3</span></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="fl">- item 4</span></a></code></pre></div>
 <p> </p>
 <blockquote>
 <ul>
@@ -955,7 +951,7 @@ include_graphics("images/class_of_2019.jpg")
 </div>
 <div id="code_chunks" class="section level3">
 <h3>Code chunks</h3>
-<p>Now to the heart of the matter. To include R code into your R markdown document you simply place your code into a ‘code chunk’. All code chunks start and end with three backticks <code>```</code>. Note, these are also known as ‘grave accents’ and are not the same as an apostrophe! On most keyboards you can find the backtick on the same key as tilde (~).</p>
+<p>Now to the heart of the matter. To include R code into your R markdown document you simply place your code into a ‘code chunk’. All code chunks start and end with three backticks <code>```</code>. Note, these are also known as ‘grave accents’ or ’back quotes and are not the same as an apostrophe! On most keyboards you can <a href="https://superuser.com/questions/254076/how-do-i-type-the-tick-and-backtick-characters-on-windows">find the backtick</a> on the same key as tilde (~).</p>
 <p> </p>
 <pre class="markdown"><code>&#96;&#96;&#96;{r}
 
@@ -966,8 +962,8 @@ Any valid R code goes here
 <p> </p>
 <p>You can insert a code chunk by either typing the chunk delimiters <code>```{r}</code> and <code>```</code> manually or use the RStudio toolbar (the Insert button) or by clicking on the menu <code>Code</code> -&gt; <code>Insert Chunk</code>. Perhaps an even better way is to get familiar with the keyboard shortcuts Ctrl + Alt + I for Windows and Cmd + Option + I on MacOSX.</p>
 <p> </p>
-<p>There are a many things you can do with code chunks: you can produce text output from your analysis, create tables and figures and insert images amongst other things. Within the code chunk you can place rules and arguments between the curly brackets <code>{}</code> that give you control over how your code is interpreted and output is rendered. These are known as chunk options. The only mandatory chunk option is the first argument which specifies which language you’re using (<code>r</code> in our case). Note, all of your chunk options must be written between the curly brackets on one line with no line breaks.</p>
-<p>You can also specify an optional code chunk name (or label) which can be useful when trying to debug problems and when performing advanced document rendering. In the following we name the code chunk <code>summary-stats</code>, create a dataframe (<code>dataf</code>) with two variables <code>x</code> and <code>y</code> and then use the <code>summary()</code> function to display some summary statistics . When we run the code chunk both the R code and the resulting output are displayed in the final document.</p>
+<p>There are a many things you can do with code chunks: you can produce text output from your analysis, create tables and figures and insert images amongst other things. Within the code chunk you can place rules and arguments between the curly brackets <code>{}</code> that give you control over how your code is interpreted and output is rendered. These are known as chunk options. The only mandatory chunk option is the first argument which specifies which language you’re using (<code>r</code> in our case but <a href="https://rmarkdown.rstudio.com/authoring_knitr_engines.html%23sql">other</a> languages are supported). Note, all of your chunk options must be written between the curly brackets on one line with no line breaks.</p>
+<p>You can also specify an optional code chunk name (or label) which can be useful when trying to debug problems and when performing advanced document rendering. In the following block we name the code chunk <code>summary-stats</code>, create a dataframe (<code>dataf</code>) with two variables <code>x</code> and <code>y</code> and then use the <code>summary()</code> function to display some summary statistics . When we run the code chunk both the R code and the resulting output are displayed in the final document.</p>
 <p> </p>
 <pre class="markdown"><code>&#96;&#96;&#96;{r, summary-stats}
 
@@ -995,7 +991,7 @@ summary(dataf)
 ##  3rd Qu.: 7.75   3rd Qu.: 7.75  
 ##  Max.   :10.00   Max.   :10.00</code></pre>
 <p> </p>
-<p>When using chunk names make sure that you don’t have duplicate chunk names in your R markdown document and avoid spaces and full stops as this will cause problems when you come to knit your document (I use a <code>-</code> to separate words in my chunk names).</p>
+<p>When using chunk names make sure that you don’t have duplicate chunk names in your R markdown document and avoid spaces and full stops as this may cause problems when you come to knit your document (I use a <code>-</code> to separate words in my chunk names).</p>
 <p>If we wanted to only display the output of our R code (just the summary statistics for example) and not the code itself in our final document we can use the chunk option <code>echo=FALSE</code></p>
 <p> </p>
 <pre class="markdown"><code>&#96;&#96;&#96;{r, summary-stats, echo=FALSE}
@@ -1279,7 +1275,7 @@ iris[1:10,]
 </tbody>
 </table>
 <p> </p>
-<p>The <code>:-------:</code> lets R markdown know that the line above should be treated as a header and the lines below as the body of the table. Alignment within the table is set by the position of the <code>:</code>. To centre align use <code>:------:</code>, to left align <code>:------</code> and right align <code>------:</code>. Whilst it can be fun(!) to create tables with raw markup it’s only practical for very small and simple tables.</p>
+<p>The <code>:-------:</code> lets R markdown know that the line above should be treated as a header and the lines below as the body of the table. Alignment within the table is set by the position of the <code>:</code>. To center align use <code>:------:</code>, to left align <code>:------</code> and right align <code>------:</code>. Whilst it can be fun(!) to create tables with raw markup it’s only practical for very small and simple tables.</p>
 <p>The easiest way I know to include tables in an R markdown document is by using the <code>kable()</code> function from the <code>knitr</code> package (this should have already been installed when you installed the <code>rmarkdown</code> package). The <code>kable()</code> function can create tables for HTML, PDF and Word outputs.</p>
 <p>To create a table of the first 10 rows of the <code>iris</code> dataframe using the <code>kable()</code> function simply write your code block as</p>
 <p> </p>
@@ -1292,194 +1288,84 @@ kable(iris[1:10,])
 </code></pre>
 <table>
 <thead>
-<tr>
-<th style="text-align:right;">
-Sepal.Length
-</th>
-<th style="text-align:right;">
-Sepal.Width
-</th>
-<th style="text-align:right;">
-Petal.Length
-</th>
-<th style="text-align:right;">
-Petal.Width
-</th>
-<th style="text-align:left;">
-Species
-</th>
+<tr class="header">
+<th align="right">Sepal.Length</th>
+<th align="right">Sepal.Width</th>
+<th align="right">Petal.Length</th>
+<th align="right">Petal.Width</th>
+<th align="left">Species</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:right;">
-5.1
-</td>
-<td style="text-align:right;">
-3.5
-</td>
-<td style="text-align:right;">
-1.4
-</td>
-<td style="text-align:right;">
-0.2
-</td>
-<td style="text-align:left;">
-setosa
-</td>
+<tr class="odd">
+<td align="right">5.1</td>
+<td align="right">3.5</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
 </tr>
-<tr>
-<td style="text-align:right;">
-4.9
-</td>
-<td style="text-align:right;">
-3.0
-</td>
-<td style="text-align:right;">
-1.4
-</td>
-<td style="text-align:right;">
-0.2
-</td>
-<td style="text-align:left;">
-setosa
-</td>
+<tr class="even">
+<td align="right">4.9</td>
+<td align="right">3.0</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
 </tr>
-<tr>
-<td style="text-align:right;">
-4.7
-</td>
-<td style="text-align:right;">
-3.2
-</td>
-<td style="text-align:right;">
-1.3
-</td>
-<td style="text-align:right;">
-0.2
-</td>
-<td style="text-align:left;">
-setosa
-</td>
+<tr class="odd">
+<td align="right">4.7</td>
+<td align="right">3.2</td>
+<td align="right">1.3</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
 </tr>
-<tr>
-<td style="text-align:right;">
-4.6
-</td>
-<td style="text-align:right;">
-3.1
-</td>
-<td style="text-align:right;">
-1.5
-</td>
-<td style="text-align:right;">
-0.2
-</td>
-<td style="text-align:left;">
-setosa
-</td>
+<tr class="even">
+<td align="right">4.6</td>
+<td align="right">3.1</td>
+<td align="right">1.5</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
 </tr>
-<tr>
-<td style="text-align:right;">
-5.0
-</td>
-<td style="text-align:right;">
-3.6
-</td>
-<td style="text-align:right;">
-1.4
-</td>
-<td style="text-align:right;">
-0.2
-</td>
-<td style="text-align:left;">
-setosa
-</td>
+<tr class="odd">
+<td align="right">5.0</td>
+<td align="right">3.6</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
 </tr>
-<tr>
-<td style="text-align:right;">
-5.4
-</td>
-<td style="text-align:right;">
-3.9
-</td>
-<td style="text-align:right;">
-1.7
-</td>
-<td style="text-align:right;">
-0.4
-</td>
-<td style="text-align:left;">
-setosa
-</td>
+<tr class="even">
+<td align="right">5.4</td>
+<td align="right">3.9</td>
+<td align="right">1.7</td>
+<td align="right">0.4</td>
+<td align="left">setosa</td>
 </tr>
-<tr>
-<td style="text-align:right;">
-4.6
-</td>
-<td style="text-align:right;">
-3.4
-</td>
-<td style="text-align:right;">
-1.4
-</td>
-<td style="text-align:right;">
-0.3
-</td>
-<td style="text-align:left;">
-setosa
-</td>
+<tr class="odd">
+<td align="right">4.6</td>
+<td align="right">3.4</td>
+<td align="right">1.4</td>
+<td align="right">0.3</td>
+<td align="left">setosa</td>
 </tr>
-<tr>
-<td style="text-align:right;">
-5.0
-</td>
-<td style="text-align:right;">
-3.4
-</td>
-<td style="text-align:right;">
-1.5
-</td>
-<td style="text-align:right;">
-0.2
-</td>
-<td style="text-align:left;">
-setosa
-</td>
+<tr class="even">
+<td align="right">5.0</td>
+<td align="right">3.4</td>
+<td align="right">1.5</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
 </tr>
-<tr>
-<td style="text-align:right;">
-4.4
-</td>
-<td style="text-align:right;">
-2.9
-</td>
-<td style="text-align:right;">
-1.4
-</td>
-<td style="text-align:right;">
-0.2
-</td>
-<td style="text-align:left;">
-setosa
-</td>
+<tr class="odd">
+<td align="right">4.4</td>
+<td align="right">2.9</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
 </tr>
-<tr>
-<td style="text-align:right;">
-4.9
-</td>
-<td style="text-align:right;">
-3.1
-</td>
-<td style="text-align:right;">
-1.5
-</td>
-<td style="text-align:right;">
-0.1
-</td>
-<td style="text-align:left;">
-setosa
-</td>
+<tr class="even">
+<td align="right">4.9</td>
+<td align="right">3.1</td>
+<td align="right">1.5</td>
+<td align="right">0.1</td>
+<td align="left">setosa</td>
 </tr>
 </tbody>
 </table>
@@ -1495,194 +1381,84 @@ kable(iris[1:10,], digits = 0, align = 'c', col.names = c('sepal length', 'sepal
 <p> </p>
 <table>
 <thead>
-<tr>
-<th style="text-align:center;">
-sepal length
-</th>
-<th style="text-align:center;">
-sepal width
-</th>
-<th style="text-align:center;">
-petal length
-</th>
-<th style="text-align:center;">
-petal width
-</th>
-<th style="text-align:center;">
-species
-</th>
+<tr class="header">
+<th align="center">sepal length</th>
+<th align="center">sepal width</th>
+<th align="center">petal length</th>
+<th align="center">petal width</th>
+<th align="center">species</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:center;">
-5
-</td>
-<td style="text-align:center;">
-4
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-0
-</td>
-<td style="text-align:center;">
-setosa
-</td>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">4</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">setosa</td>
 </tr>
-<tr>
-<td style="text-align:center;">
-5
-</td>
-<td style="text-align:center;">
-3
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-0
-</td>
-<td style="text-align:center;">
-setosa
-</td>
+<tr class="even">
+<td align="center">5</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">setosa</td>
 </tr>
-<tr>
-<td style="text-align:center;">
-5
-</td>
-<td style="text-align:center;">
-3
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-0
-</td>
-<td style="text-align:center;">
-setosa
-</td>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">setosa</td>
 </tr>
-<tr>
-<td style="text-align:center;">
-5
-</td>
-<td style="text-align:center;">
-3
-</td>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;">
-0
-</td>
-<td style="text-align:center;">
-setosa
-</td>
+<tr class="even">
+<td align="center">5</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">0</td>
+<td align="center">setosa</td>
 </tr>
-<tr>
-<td style="text-align:center;">
-5
-</td>
-<td style="text-align:center;">
-4
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-0
-</td>
-<td style="text-align:center;">
-setosa
-</td>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">4</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">setosa</td>
 </tr>
-<tr>
-<td style="text-align:center;">
-5
-</td>
-<td style="text-align:center;">
-4
-</td>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;">
-0
-</td>
-<td style="text-align:center;">
-setosa
-</td>
+<tr class="even">
+<td align="center">5</td>
+<td align="center">4</td>
+<td align="center">2</td>
+<td align="center">0</td>
+<td align="center">setosa</td>
 </tr>
-<tr>
-<td style="text-align:center;">
-5
-</td>
-<td style="text-align:center;">
-3
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-0
-</td>
-<td style="text-align:center;">
-setosa
-</td>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">setosa</td>
 </tr>
-<tr>
-<td style="text-align:center;">
-5
-</td>
-<td style="text-align:center;">
-3
-</td>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;">
-0
-</td>
-<td style="text-align:center;">
-setosa
-</td>
+<tr class="even">
+<td align="center">5</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">0</td>
+<td align="center">setosa</td>
 </tr>
-<tr>
-<td style="text-align:center;">
-4
-</td>
-<td style="text-align:center;">
-3
-</td>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-0
-</td>
-<td style="text-align:center;">
-setosa
-</td>
+<tr class="odd">
+<td align="center">4</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">setosa</td>
 </tr>
-<tr>
-<td style="text-align:center;">
-5
-</td>
-<td style="text-align:center;">
-3
-</td>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;">
-0
-</td>
-<td style="text-align:center;">
-setosa
-</td>
+<tr class="even">
+<td align="center">5</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">0</td>
+<td align="center">setosa</td>
 </tr>
 </tbody>
 </table>
@@ -1901,7 +1677,7 @@ setosa
 <p>Up till now we’ve been writing and executing our R code in code chunks. Another great reason to use R markdown is that we can also include our R code directly within our text. This is known as ‘inline code’. To include your code in your R markdown text you simply write <code>`r write your r code here`</code>. This can come in really useful when you want to include summary statistics within your text. For example, we could describe the <code>iris</code> dataset as follows:</p>
 <p> </p>
 <pre class="text fold-show"><code>Morphological characteristics (variable names: `r names(iris)[1:4]`) were measured from 
-`r nrow(iris)`*iris* plants from `r length(levels(iris$Species))` different species. The mean Sepal length was `r round(mean(iris$Sepal.Length), digits = 2)` mm. </code></pre>
+`r nrow(iris)`*Iris sp.* plants from `r length(levels(iris$Species))` different species. The mean Sepal length was `r round(mean(iris$Sepal.Length), digits = 2)` mm. </code></pre>
 <p> </p>
 <p>which would be rendered as</p>
 <p> </p>
@@ -1935,7 +1711,7 @@ knitr::opts_chunk$set(message=FALSE, tidy.opts=list(width.cutoff=60), tidy=TRUE)
 </code></pre>
 <p> </p>
 <p>This code chunk won’t be displayed in the final document due to the <code>include = FALSE</code> argument and you should place the code chunk immediately after the YAML header to affect everything below that.</p>
-<p>The <code>tidy.opts = list(width.cutoff = 60)</code> defines the margin cutoff point and wraps text to the next line. Play around with this value to get it right.</p>
+<p><code>tidy.opts = list(width.cutoff = 60), tidy=TRUE</code> defines the margin cutoff point and wraps text to the next line. Play around with this value to get it right (60-80 should be OK for most documents).</p>
 <p> </p>
 <p><strong>Problem:</strong></p>
 <p>When I load a package in my R markdown document my rendered output contains all of the startup messages and/or warnings.</p>
@@ -1951,7 +1727,7 @@ suppressPackageStartupMessages(library(ggplot2))
 &#96;&#96;&#96;
 </code></pre>
 <p> </p>
-<p>The <code>message=FALSE</code> and <code>warning=FALSE</code> arguments supress messages and warnings. The <code>suppressPackageStartupMessages(library(ggplot2))</code> will load the <code>ggplot2</code> package but supress startup messages.</p>
+<p>The <code>message=FALSE</code> and <code>warning=FALSE</code> arguments suppress messages and warnings. The <code>suppressPackageStartupMessages(library(ggplot2))</code> will load the <code>ggplot2</code> package but suppress startup messages.</p>
 <p> </p>
 <p><strong>Problem:</strong></p>
 <p>When rendering my R markdown document to pdf my tables and/or figures are split over two pages.</p>
@@ -1961,8 +1737,9 @@ suppressPackageStartupMessages(library(ggplot2))
 <p> </p>
 <p><strong>Problem:</strong></p>
 <p>The code in my rendered document looks ugly!</p>
+<p> </p>
 <p><strong>Solution:</strong></p>
-<p>Add the argument <code>tidy=TRUE</code> to your global aruments. Sometimes, however, this can cause problems especially with correct code indentation.</p>
+<p>Add the argument <code>tidy=TRUE</code> to your global arguments. Sometimes, however, this can cause problems especially with correct code indentation.</p>
 <p> </p>
 <pre class="markdown"><code>&#96;&#96;&#96;{r global_options, include=FALSE}
 
