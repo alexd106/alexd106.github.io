@@ -240,7 +240,7 @@ RStudio will now **clone** your remote repository to your local computer will cr
 
 \  
 
-An alternative approach is to create a local RStudio project first and then create and link to a remote Github repository. As I mentioned above, this option is more involved than Option 1 so feel free to skip this now and come back later to it if you're interested. This option is also useful if you just want to create a local Git repository and not link it to a GitHub repository.
+An alternative approach is to create a local RStudio project first and then create and link to a remote Github repository. As I mentioned above, this option is more involved than Option 1 so feel free to skip this now and come back later to it if you're interested. However, this option is useful if you just want to create a local Git repository and not link it to GitHub.
 
 \  
 
@@ -399,15 +399,31 @@ Whether you followed Option 1 or Option 2 (or both) you have now successfully se
 
 \  
 
-Now that we have our project and repositories (both local and remote) set up, it's finally time to learn how to use Git in RStudio!
+Now that we have our project and repositories (both local and remote) set up, it's finally time to learn how to use Git in RStudio!  
 
-
-
+Typically, when using Git your workflow will go something like this:  
 
 \  
 
-Git workflow...
+1. You create/delete and edit files in your project directory on your computer as usual (saving these changes as you go)  
 
+2. Once you've reached a natural 'break point' in your progress (i.e. you'd be sad if you lost this progress) you **stage** these files
+
+3. You then **commit** these changes (along with a useful commit message) which creates a permanent snapshot of these changes  
+
+4. You keep on with this cycle until you get to a point when you would like to **push** these changes to GitHub  
+
+5. If you're working with other people on the same project you may also need to **pull** their changes to your local computer  
+
+```{r workflow, echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics(path = "images/workflow_3.png")
+```
+
+\  
+
+OK, lets go through an example to help clarify this workfow. 
+
+\  
 
 Once your project is set up, you can start working on your code, perhaps by creating an R script that reads in your data and carries out some preliminary analysis. First open a new R script, then type some commands, for example:
 
