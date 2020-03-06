@@ -712,7 +712,7 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <p> </p>
 <p><img src="images/new_proj_RS5.png" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
-<p>This will take you to the Commit window. Type in the commit message ‘First commit’ in the ‘Commit message’ window and click on the ‘Commit’ button. A new window will appear with some messages which you can ignore for now. Click close on this window and also on the Commit window. The two files should now have disappeared from the Git pane in RStudio indicating a successful commit.</p>
+<p>This will take you to the Commit window. Type in the commit message ‘First commit’ in the ‘Commit message’ window and click on the ‘Commit’ button. A new window will appear with some messages which you can ignore for now. Click ‘Close’ to close this window and also close the Commit window. The two files should now have disappeared from the Git pane in RStudio indicating a successful commit.</p>
 <p> </p>
 <p><img src="images/new_proj_RS6.png" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
@@ -756,14 +756,19 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <p> </p>
 <p>Now that we have our project and repositories (both local and remote) set up, it’s finally time to learn how to use Git in RStudio!</p>
 <p>Typically, when using Git your workflow will go something like this:</p>
+<p> </p>
 <ol style="list-style-type: decimal">
 <li><p>You create/delete and edit files in your project directory on your computer as usual (saving these changes as you go)</p></li>
 <li><p>Once you’ve reached a natural ‘break point’ in your progress (i.e. you’d be sad if you lost this progress) you <strong>stage</strong> these files</p></li>
 <li><p>You then <strong>commit</strong> these changes (along with a useful commit message) which creates a permanent snapshot of these changes</p></li>
 <li><p>You keep on with this cycle until you get to a point when you would like to <strong>push</strong> these changes to GitHub</p></li>
-<li><p>If you are working with other people on the same project you may also need to <strong>pull</strong> their changes to your local computer</p></li>
+<li><p>If you’re working with other people on the same project you may also need to <strong>pull</strong> their changes to your local computer</p></li>
 </ol>
 <p><img src="images/workflow_3.png" width="80%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<p>OK, lets go through an example to help clarify this workfow.</p>
+<hr />
+<p>Work in progress below</p>
 <p> </p>
 <p>Once your project is set up, you can start working on your code, perhaps by creating an R script that reads in your data and carries out some preliminary analysis. First open a new R script, then type some commands, for example:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">data</span>(cars)</a>

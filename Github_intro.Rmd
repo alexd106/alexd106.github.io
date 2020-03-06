@@ -306,7 +306,7 @@ knitr::include_graphics(path = "images/new_proj_RS5.png")
 
 \  
 
-This will take you to the Commit window. Type in the commit message 'First commit' in the 'Commit message' window and click on the 'Commit' button. A new window will appear with some messages which you can ignore for now. Click close on this window and also on the Commit window. The two files should now have disappeared from the Git pane in RStudio indicating a successful commit. 
+This will take you to the Commit window. Type in the commit message 'First commit' in the 'Commit message' window and click on the 'Commit' button. A new window will appear with some messages which you can ignore for now. Click 'Close' to close this window and also close the Commit window. The two files should now have disappeared from the Git pane in RStudio indicating a successful commit. 
 
 \  
 
@@ -422,6 +422,10 @@ knitr::include_graphics(path = "images/workflow_3.png")
 \  
 
 OK, lets go through an example to help clarify this workfow. 
+
+
+***
+Work in progress below
 
 \  
 
