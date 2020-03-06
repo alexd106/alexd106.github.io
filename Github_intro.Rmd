@@ -421,10 +421,25 @@ knitr::include_graphics(path = "images/workflow_3.png")
 
 \  
 
-OK, lets go through an example to help clarify this workfow. Open up the `first_repo.Rproj` file you created in Option 1 in RStudio. Let's create an R markdown document by clicking on the `File` -> `New File` -> `R markdown` menu (remember from the [R markdown tutorial](Rmarkdown_intro.html)?).  
+OK, lets go through an example to help clarify this workfow. In RStudio open up the `first_repo.Rproj` file you created previously during Option 1. Let's create an R markdown document inside this project by clicking on the `File` -> `New File` -> `R markdown` menu (remember from the [R markdown tutorial](Rmarkdown_intro.html)?).  
 
+Once created, we can delete all the example R markdown code (except the YAML header) as usual and write some interesting R markdown text and include a plot. We'll use the inbuilt `cars` dataset to do this. Save this file (cmd + s for Mac or ctrl + s in Windows). Your R markdown document should look something like the following (it doesn't matter if it's not exactly the same).
 
+\  
 
+```{r rm1, echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics(path = "images/first_Rmd.png")
+```
+
+\  
+
+Take a look at the `Git` tab which should list your new R markdown document (`first_doc.Rmd` in this example) along with `first_repo.Rproj`, `README.md` and `.gitignore` (you created these files when following Option 1).
+
+\  
+
+```{r rm2, echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics(path = "images/first_Rmd2.png")
+```
 
 ***
 Work in progress below
