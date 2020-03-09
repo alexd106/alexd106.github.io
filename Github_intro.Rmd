@@ -451,7 +451,7 @@ Following our workflow, we now need to **stage** these files. To do this tick th
 
 \  
 
-```{r rm3, echo=FALSE, out.width="10%", fig.align="center"}
+```{r rm3, echo=FALSE, out.width="20%", fig.align="center"}
 knitr::include_graphics(path = "images/rstudio_git_cols.png")
 ```
 
@@ -461,7 +461,7 @@ After you have staged the files the next step is to **commit** the files. This i
 
 \  
 
-```{r rm4, echo=FALSE, out.width="80%", fig.align="center"}
+```{r rm4, echo=FALSE, out.width="60%", fig.align="center"}
 knitr::include_graphics(path = "images/first_Rmd3.png")
 ```
 
