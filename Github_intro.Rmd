@@ -425,7 +425,7 @@ knitr::include_graphics(path = "images/workflow_3.png")
 
 \  
 
-OK, lets go through an example to help clarify this workflow. In RStudio open up the `first_repo.Rproj` file you created previously during Option 1. Let's create an R markdown document inside this project by clicking on the `File` -> `New File` -> `R markdown` menu (remember from the R markdown [tutorial](Rmarkdown_intro.html)?).  
+OK, let's go through an example to help clarify this workflow. In RStudio open up the `first_repo.Rproj` file you created previously during Option 1. Create an R markdown document inside this project by clicking on the `File` -> `New File` -> `R markdown` menu (remember from the R markdown [tutorial](Rmarkdown_intro.html)?).  
 
 Once created, we can delete all the example R markdown code (except the YAML header) as usual and write some interesting R markdown text and include a plot. We'll use the inbuilt `cars` dataset to do this. Save this file (cmd + s for Mac or ctrl + s in Windows). Your R markdown document should look something like the following (it doesn't matter if it's not exactly the same).
 
@@ -437,21 +437,21 @@ knitr::include_graphics(path = "images/first_Rmd.png")
 
 \  
 
-Take a look at the `Git` tab which should list your new R markdown document (`first_doc.Rmd` in this example) along with `first_repo.Rproj`, and `.gitignore` (you created these files previously when following Option 1).
+Take a look at the 'Git' tab which should list your new R markdown document (`first_doc.Rmd` in this example) along with `first_repo.Rproj`, and `.gitignore` (you created these files previously when following Option 1).
 
 \  
 
-```{r rm2, echo=FALSE, out.width="60%", fig.align="center"}
+```{r rm2, echo=FALSE, out.width="80%", fig.align="center"}
 knitr::include_graphics(path = "images/first_Rmd2.png")
 ```
 
 \  
 
-Following our workflow, we now need to **stage** these files. To do this tick the boxes under the 'Staged' column for all files. Notice that there is a Status icon next to the box which gives you an indication of how the files were changed. In our case all of the files are to be added (capital A).
+Following our workflow, we now need to **stage** these files. To do this tick the boxes under the 'Staged' column for all files. Notice that there is a status icon next to the box which gives you an indication of how the files were changed. In our case all of the files are to be added (capital A) as we have just created them.
 
 \  
 
-```{r rm3, echo=FALSE, out.width="20%", fig.align="center"}
+```{r rm3, echo=FALSE, out.width="15%", fig.align="center"}
 knitr::include_graphics(path = "images/rstudio_git_cols.png")
 ```
 
@@ -461,19 +461,33 @@ After you have staged the files the next step is to **commit** the files. This i
 
 \  
 
-```{r rm4, echo=FALSE, out.width="60%", fig.align="center"}
+```{r rm4, echo=FALSE, out.width="50%", fig.align="center"}
 knitr::include_graphics(path = "images/first_Rmd3.png")
 ```
 
 \  
 
-After clicking on the 'Commit' button you will be taken to the 'Review changes' window. You will see the three files you staged from the previous step in the left pane. If you click on the file name `first_doc.Rmd` you will see the changes you have made to this file highlighted in the bottom pane. Content that you have added is highlighted in green and deleted content is highlighted in red. As you have only just created this file, all the content is highlighted in green. To commit these files (take a snapshot) first enter a mandatory commit message in the 'Commit message' box. This message should be relatively short and informative (to you and your collaborators) which succinctly summarises the changes you have made. It's traditional to enter the message 'First commit' (or 'Initial commit') when you commit files for the first time. Now click on the 'Commit' button to commit these changes.
+After clicking on the 'Commit' button you will be taken to the 'Review Changes' window. You should see the three files you staged from the previous step in the left pane. If you click on the file name `first_doc.Rmd` you will see the changes you have made to this file highlighted in the bottom pane. Content that you have added is highlighted in green and deleted content is highlighted in red. As you have only just created this file, all the content is highlighted in green. To commit these files (take a snapshot) first enter a mandatory commit message in the 'Commit message' box. This message should be relatively short and informative (to you and your collaborators) which succinctly summarises the changes you have made. It is traditional to enter the message 'First commit' (or 'Initial commit') when you commit files for the first time. Now click on the 'Commit' button to commit these changes.
 
 \  
 
 ```{r rm5, echo=FALSE, out.width="60%", fig.align="center"}
 knitr::include_graphics(path = "images/first_Rmd4.png")
 ```
+
+\  
+
+A summary of the commit you just performed will be shown. Once you're happy click on the 'Close' button to return to the 'Review Changes' window. Note that the staged files have now been removed.
+
+\  
+
+```{r rm6, echo=FALSE, out.width="60%", fig.align="center"}
+knitr::include_graphics(path = "images/first_Rmd5.png")
+```
+
+\  
+
+Now that you have commited your changes the next step is to **push** these changes to GitHub. To do this click on the green 'Push' button on the top right of the Review Changes window.  
 
 \  
 
