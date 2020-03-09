@@ -669,25 +669,26 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb7-5" data-line-number="5">gigartina &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;workshop/data/Gigartina.CSV&quot;</span>)</a>
 <a class="sourceLine" id="cb7-6" data-line-number="6"></a>
 <a class="sourceLine" id="cb7-7" data-line-number="7"><span class="kw">str</span>(gigartina)</a>
-<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="co"># &#39;data.frame&#39;: 40 obs. of 2 variables: $ diameter : int 110 115 110 108 109 101 101 98 120 ...  $ diatom.treat: Factor w/ 4 levels &#39;ASGM&#39;,&#39;Sdecl&#39;,..: 1 1...</span></a>
-<a class="sourceLine" id="cb7-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb7-10" data-line-number="10"><span class="kw">table</span>(gigartina<span class="op">$</span>diatom.treat)</a>
-<a class="sourceLine" id="cb7-11" data-line-number="11"></a>
-<a class="sourceLine" id="cb7-12" data-line-number="12"><span class="co"># ASGM Sdecl Sexpo Sstat 10 10 10 10</span></a>
-<a class="sourceLine" id="cb7-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb7-14" data-line-number="14"><span class="co"># or use xtabs</span></a>
-<a class="sourceLine" id="cb7-15" data-line-number="15"></a>
-<a class="sourceLine" id="cb7-16" data-line-number="16"><span class="kw">xtabs</span>(<span class="op">~</span>diatom.treat, <span class="dt">data =</span> gigartina)</a>
-<a class="sourceLine" id="cb7-17" data-line-number="17"></a>
-<a class="sourceLine" id="cb7-18" data-line-number="18"><span class="co"># diatom.treat ASGM Sdecl Sexpo Sstat 10 10 10 10</span></a>
-<a class="sourceLine" id="cb7-19" data-line-number="19"></a>
-<a class="sourceLine" id="cb7-20" data-line-number="20"><span class="co"># plot these data</span></a>
-<a class="sourceLine" id="cb7-21" data-line-number="21"></a>
-<a class="sourceLine" id="cb7-22" data-line-number="22"><span class="kw">boxplot</span>(diameter <span class="op">~</span><span class="st"> </span>diatom.treat, <span class="dt">data =</span> gigartina, <span class="dt">xlab =</span> <span class="st">&quot;diatom treatment&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;diameter (um)&quot;</span>)</a>
-<a class="sourceLine" id="cb7-23" data-line-number="23"></a>
-<a class="sourceLine" id="cb7-24" data-line-number="24"><span class="co"># or if you want to do the fancy um symbol correctly</span></a>
-<a class="sourceLine" id="cb7-25" data-line-number="25"></a>
-<a class="sourceLine" id="cb7-26" data-line-number="26"><span class="kw">boxplot</span>(diameter <span class="op">~</span><span class="st"> </span>diatom.treat, <span class="dt">data =</span> gigartina, <span class="dt">xlab =</span> <span class="st">&quot;diatom treatment&quot;</span>, <span class="dt">ylab =</span> <span class="kw">expression</span>(<span class="kw">paste</span>(<span class="st">&quot;diameter&quot;</span>, <span class="st">&quot; (&quot;</span>, mu, <span class="st">&quot;m)&quot;</span>)))</a></code></pre></div></li>
+<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="co"># &#39;data.frame&#39;: 40 obs. of 2 variables: $ diameter : int 110 115 110 108 109 101 101 98 120 ...  $ diatom.treat: Factor w/ 4 levels &#39;ASGM&#39;,&#39;Sdecl&#39;,..: 1</span></a>
+<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="co"># 1...</span></a>
+<a class="sourceLine" id="cb7-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb7-11" data-line-number="11"><span class="kw">table</span>(gigartina<span class="op">$</span>diatom.treat)</a>
+<a class="sourceLine" id="cb7-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb7-13" data-line-number="13"><span class="co"># ASGM Sdecl Sexpo Sstat 10 10 10 10</span></a>
+<a class="sourceLine" id="cb7-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb7-15" data-line-number="15"><span class="co"># or use xtabs</span></a>
+<a class="sourceLine" id="cb7-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb7-17" data-line-number="17"><span class="kw">xtabs</span>(<span class="op">~</span>diatom.treat, <span class="dt">data =</span> gigartina)</a>
+<a class="sourceLine" id="cb7-18" data-line-number="18"></a>
+<a class="sourceLine" id="cb7-19" data-line-number="19"><span class="co"># diatom.treat ASGM Sdecl Sexpo Sstat 10 10 10 10</span></a>
+<a class="sourceLine" id="cb7-20" data-line-number="20"></a>
+<a class="sourceLine" id="cb7-21" data-line-number="21"><span class="co"># plot these data</span></a>
+<a class="sourceLine" id="cb7-22" data-line-number="22"></a>
+<a class="sourceLine" id="cb7-23" data-line-number="23"><span class="kw">boxplot</span>(diameter <span class="op">~</span><span class="st"> </span>diatom.treat, <span class="dt">data =</span> gigartina, <span class="dt">xlab =</span> <span class="st">&quot;diatom treatment&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;diameter (um)&quot;</span>)</a>
+<a class="sourceLine" id="cb7-24" data-line-number="24"></a>
+<a class="sourceLine" id="cb7-25" data-line-number="25"><span class="co"># or if you want to do the fancy um symbol correctly</span></a>
+<a class="sourceLine" id="cb7-26" data-line-number="26"></a>
+<a class="sourceLine" id="cb7-27" data-line-number="27"><span class="kw">boxplot</span>(diameter <span class="op">~</span><span class="st"> </span>diatom.treat, <span class="dt">data =</span> gigartina, <span class="dt">xlab =</span> <span class="st">&quot;diatom treatment&quot;</span>, <span class="dt">ylab =</span> <span class="kw">expression</span>(<span class="kw">paste</span>(<span class="st">&quot;diameter&quot;</span>, <span class="st">&quot; (&quot;</span>, mu, <span class="st">&quot;m)&quot;</span>)))</a></code></pre></div></li>
 </ol>
 <p> </p>
 <ol start="8" style="list-style-type: decimal">
@@ -778,7 +779,8 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb14-6" data-line-number="6"></a>
 <a class="sourceLine" id="cb14-7" data-line-number="7"><span class="kw">str</span>(temora)</a>
 <a class="sourceLine" id="cb14-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb14-9" data-line-number="9"><span class="co"># &#39;data.frame&#39;: 45 obs. of 3 variables: $ temp : num 5 6 7 10 11 12 13 15 16 17 ...  $ beat_rate : num 3.76 5.4 8 9.4 16.6 18.5 19...  $ acclimitisation_temp: int 5 5 5 5 5 5 5 5 5 5 ...</span></a></code></pre></div></li>
+<a class="sourceLine" id="cb14-9" data-line-number="9"><span class="co"># &#39;data.frame&#39;: 45 obs. of 3 variables: $ temp : num 5 6 7 10 11 12 13 15 16 17 ...  $ beat_rate : num 3.76 5.4 8 9.4 16.6 18.5 19...  $</span></a>
+<a class="sourceLine" id="cb14-10" data-line-number="10"><span class="co"># acclimitisation_temp: int 5 5 5 5 5 5 5 5 5 5 ...</span></a></code></pre></div></li>
 </ol>
 <p> </p>
 <ol start="16" style="list-style-type: decimal">
