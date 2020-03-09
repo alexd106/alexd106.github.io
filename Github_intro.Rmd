@@ -516,7 +516,11 @@ knitr::include_graphics(path = "images/first_Rmd8.png")
 
 \  
 
+After following the steps outlined above, you have successfully modified an RStudio project by creating a new R markdown document, staged and then commited these changes and finally pushed the changes to your GitHub repository. Now let's make some further changes to your R markdown file and follow the workflow once again but this time we will take a look at how to identify changes made, examine the commit history and how to restore to a previous version of the document. 
 
+\  
+
+In RStudio open up the `first_repo.Rproj` file you created previously and open then open the `first_doc.Rmd` file (click on the file in the 'Files' tab in RStudio). 
 
 
 
