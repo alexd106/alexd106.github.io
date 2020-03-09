@@ -451,7 +451,7 @@ Following our workflow, we now need to **stage** these files. To do this tick th
 
 \  
 
-```{r rm3, echo=FALSE, out.width="80%", fig.align="center"}
+```{r rm3, echo=FALSE, out.width="30%", fig.align="center"}
 knitr::include_graphics(path = "images/rstudio_git_cols.png")
 ```
 
