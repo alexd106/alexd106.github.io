@@ -803,13 +803,15 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <p> </p>
 <p><img src="images/first_Rmd8.png" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
-<p>After following the steps outlined above, you will have successfully modified an RStudio project by creating a new R markdown document, staged and then commited these changes and finally pushed the changes to your GitHub repository. Now let’s make some further changes to your R markdown file and follow the workflow once again but this time we ’ll take a look at how to identify changes made, examine the commit history and how to restore to a previous version of the document.</p>
+<div id="making-changes" class="section level3">
+<h3>Making changes</h3>
 <p> </p>
-<p>In RStudio open up the <code>first_repo.Rproj</code> file you created previously and open then open the <code>first_doc.Rmd</code> file (click on the file name in the ‘Files’ tab in RStudio).</p>
+<p>After following the steps outlined above, you will have successfully modified an RStudio project by creating a new R markdown document, staged and then commited these changes and finally pushed the changes to your GitHub repository. Now let’s make some further changes to your R markdown file and follow the workflow once again but this time we ’ll take a look at how to identify changes made to files, examine the commit history and how to restore to a previous version of the document.</p>
+<p> </p>
+<p>In RStudio open up the <code>first_repo.Rproj</code> file you created previously (if not already open) then open the <code>first_doc.Rmd</code> file (click on the file name in the <code>Files</code> tab in RStudio).</p>
 <p>Let’s make some changes to this document. Delete the line begining with ‘My first version controlled …’ and replace it with something more informative (see figure below). We will also change the plotted symbols to red and give the plot axes labels. Lastly, let’s add a summary of the dataframe using the <code>summary()</code> function and let’s render this document to pdf.</p>
 <p> </p>
-<p><img src="images/mod1.png" width="60%" style="display: block; margin: auto;" /></p>
-<hr />
+<p><img src="images/mod1.png" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>Now click the <code>knit</code> button and render to pdf. A new pdf file named <code>first_doc.pdf</code> will be created which you can view by clicking on the file name in the <code>Files</code> tab in RStudio.</p>
 <p>Notice that these two files have been added to the <code>Git</code> tab in RStudio. The status icons indicate that the <code>first_doc.Rmd</code> file has been modified (capital M) and the <code>first_doc.pdf</code> file is currently untracked (question mark).</p>
@@ -820,15 +822,21 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <p> </p>
 <p><img src="images/mod3.png" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
-<p>Before you commit your changes notice the status of <code>first_doc.pdf</code> has changed from untracked to added (A). You can also check out the changes you have made to the <code>first_doc.Rmd</code> by clicking on the file name in the lefthand pane. The pane at the bottom provides a useful summary of the changes. Lines that have been deleted are highlighted in red and lines that have been added are highlighted in green. Once you’re happy you understand this, commit these changes by writing a suitable commit message and click on the ‘Commit’ button.</p>
+<p>Before you commit your changes notice the status of <code>first_doc.pdf</code> has changed from untracked to added (A). You can also view the changes you have made to the <code>first_doc.Rmd</code> by clicking on the file name in the top left pane which will then provide you with a useful summary of the changes in the bottom pane. Lines that have been deleted are highlighted in red and lines that have been added are highlighted in green. Once you’re happy, commit these changes by writing a suitable commit message and click on the ‘Commit’ button.</p>
 <p> </p>
-<p><img src="images/mod4.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="images/mod4.png" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
+<p>To push the changes to GitHub, click on the ‘Pull’ button first (remember this is good practice even though you are only collaborating with yourself at the moment) and then click on the ‘Push’ button. Go to your GitHub repository and you will see your new commits, including your <code>first_doc.pdf</code> you just created.</p>
 <p> </p>
+<p><img src="images/mod5.png" width="80%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<p>To view the changes in <code>first_doc.Rmd</code> click on the file name for this file</p>
+<p> </p>
+<p><img src="images/mod6.png" width="80%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<hr />
 <p><em>Work in progress below</em></p>
 <p> </p>
-<div id="making-changes" class="section level3">
-<h3>Making changes</h3>
 <p>Now we want to make some changes to our R script, for example modify a plot.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">plot</span>(cars, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a></code></pre></div>
 <p><img src="Github_intro_files/figure-html/change_plot-1.png" width="672" /></p>
@@ -870,22 +878,6 @@ Push changes to remote repository
 <p> </p>
 <p>And you’re done! Now your remote and local copy are synchronised and any changes you’ve made are available to you and your collaborators.</p>
 <p> </p>
-</div>
-</div>
-<div id="vc_workflow" class="section level2">
-<h2>A version control workflow</h2>
-<p>Let’s summarise the steps you can take to version control your project.</p>
-<ol style="list-style-type: decimal">
-<li><p>Set up a local version control repository (section <a href="#rstudio_git">8.2</a>)</p></li>
-<li><p>Write some code</p></li>
-<li><p>Save your script to the local repository</p></li>
-<li><p>Choose (<em>stage</em>) files to be included in the version history</p></li>
-<li><p>Commit your files</p></li>
-<li><p>Create a remote repository on GitHub (section <a href="#github">8.3</a>)</p></li>
-<li><p>Synchronise your changes with the remote repository</p></li>
-<li><p>Repeat steps 2-7</p></li>
-</ol>
-<p> </p>
 <p> </p>
 <div id="view-your-project-history" class="section level4">
 <h4>View your project history</h4>
@@ -906,6 +898,7 @@ Push changes to remote repository
 <p>GitHub is a great tool for collaboration, it can seem scary and complicated at first, but it is worth investing some time to learn how it works. What makes it so good for collaboration is that it is a <em>distributed system</em>, which means that every collaborator works on their own copy of the project and changes are then merged together in the remote repository. There are two different ways you can set up a collaborative project on GitHub. One is the workflow we just went through, where everybody connects their local repository to the same remote one; this system works well with small project where different people mainly work on different aspects of the project. The second approach consists of every collaborator creating a copy (or <em>fork</em>) of the main repository, which becomes their remote repository. Every collaborator then needs to send a request (a <em>pull request</em>) to the owner of the main repository to incorporate any changes into the main repository and this includes a review process before the changes are integrated.</p>
 <p>Git offers a number of advanced features that you can incorporate in your workflow. If you are going to be working on a large collaborative project it is worth looking into <em>forking</em>, <em>branching</em> and <em>pull requests</em>. If you are the only person working on your code, then the workflow detailed here is usually enough.</p>
 <p> </p>
+</div>
 </div>
 </div>
 <div id="resources" class="section level2">
