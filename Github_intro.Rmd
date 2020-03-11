@@ -413,7 +413,7 @@ Typically, when using Git your workflow will go something like this:
 
 2. Once you've reached a natural 'break point' in your progress (i.e. you'd be sad if you lost this progress) you **stage** these files
 
-3. You then **commit** the changes you made to these files (along with a useful commit message) which creates a permanent snapshot of these changes  
+3. You then **commit** the changes you made to these staged files (along with a useful commit message) which creates a permanent snapshot of these changes  
 
 4. You keep on with this cycle until you get to a point when you would like to **push** these changes to GitHub  
 
@@ -467,7 +467,7 @@ knitr::include_graphics(path = "images/first_Rmd3.png")
 
 \  
 
-After clicking on the 'Commit' button you will be taken to the 'Review Changes' window. You should see the three files you staged from the previous step in the left pane. If you click on the file name `first_doc.Rmd` you will see the changes you have made to this file highlighted in the bottom pane. Content that you have added is highlighted in green and deleted content is highlighted in red. As you have only just created this file, all the content is highlighted in green. To commit these files (take a snapshot) first enter a mandatory commit message in the 'Commit message' box. This message should be relatively short and informative (to you and your collaborators) and indicate why you made the changes, not what you changed. This makes sense as Git keeps track of *what* has changed (see use of **Diff** below) and so it is best not to use commit messages for this purpose. It is traditional to enter the message 'First commit' (or 'Initial commit') when you commit files for the first time. Now click on the 'Commit' button to commit these changes.
+After clicking on the 'Commit' button you will be taken to the 'Review Changes' window. You should see the three files you staged from the previous step in the left pane. If you click on the file name `first_doc.Rmd` you will see the changes you have made to this file highlighted in the bottom pane. Content that you have added is highlighted in green and deleted content is highlighted in red. As you have only just created this file, all the content is highlighted in green. To commit these files (take a snapshot) first enter a mandatory commit message in the 'Commit message' box. This message should be relatively short and informative (to you and your collaborators) and indicate why you made the changes, not what you changed. This makes sense as Git keeps track of *what* has changed and so it is best not to use commit messages for this purpose. It's traditional to enter the message 'First commit' (or 'Initial commit') when you commit files for the first time. Now click on the 'Commit' button to commit these changes.
 
 \  
 
@@ -496,7 +496,7 @@ knitr::include_graphics(path = "images/first_Rmd6.png")
 
 \  
 
-To confirm the changes you made to the project haved been pushed to GitHub, open your GitHub page, click on the Repositories link and then click on the  `first_repo` repository. You should see four files listed including the `first_doc.Rmd` you just pushed. Along side the file name you will see your last commit message ('First commit' in this instance) and when you made the last commit.
+To confirm the changes you made to the project haved been pushed to GitHub, open your GitHub page, click on the Repositories link and then click on the  `first_repo` repository. You should see four files listed including the `first_doc.Rmd` you just pushed. Along side the file name you will see your last commit message ('First commit' in this case) and when you made the last commit.
 
 \  
 
@@ -516,17 +516,61 @@ knitr::include_graphics(path = "images/first_Rmd8.png")
 
 \  
 
-After following the steps outlined above, you have successfully modified an RStudio project by creating a new R markdown document, staged and then commited these changes and finally pushed the changes to your GitHub repository. Now let's make some further changes to your R markdown file and follow the workflow once again but this time we will take a look at how to identify changes made, examine the commit history and how to restore to a previous version of the document. 
+After following the steps outlined above, you will have successfully modified an RStudio project by creating a new R markdown document, staged and then commited these changes and finally pushed the changes to your GitHub repository. Now let's make some further changes to your R markdown file and follow the workflow once again but this time we 'll take a look at how to identify changes made, examine the commit history and how to restore to a previous version of the document. 
 
 \  
 
-In RStudio open up the `first_repo.Rproj` file you created previously and open then open the `first_doc.Rmd` file (click on the file in the 'Files' tab in RStudio). 
+In RStudio open up the `first_repo.Rproj` file you created previously and open then open the `first_doc.Rmd` file (click on the file name in the 'Files' tab in RStudio).  
 
+Let's make some changes to this document. Delete the line begining with 'My first version controlled ...' and replace it with something more informative (see figure below). We will also change the plotted symbols to red and give the plot axes labels. Lastly, let's add a summary of the dataframe using the `summary()` function and let's render this document to pdf.
 
+\  
+
+```{r mod1, echo=FALSE, out.width="60%", fig.align="center"}
+knitr::include_graphics(path = "images/mod1.png")
+```
 
 ***
 
 \  
+
+Now click the `knit` button and render to pdf. A new pdf file named `first_doc.pdf` will be created which you can view by clicking on the file name in the `Files` tab in RStudio.  
+
+Notice that these two files have been added to the `Git` tab in RStudio. The status icons indicate that the `first_doc.Rmd` file has been modified (capital M) and the `first_doc.pdf` file is currently untracked (question mark).
+
+\  
+
+```{r mod2, echo=FALSE, out.width="60%", fig.align="center"}
+knitr::include_graphics(path = "images/mod2.png")
+```
+
+\  
+
+To stage these files tick the 'Staged' box for each file and click on the 'Commit' button to take you to the 'Review Changes' window
+
+\  
+
+```{r mod3, echo=FALSE, out.width="60%", fig.align="center"}
+knitr::include_graphics(path = "images/mod3.png")
+```
+
+\  
+
+Before you commit your changes notice the status of `first_doc.pdf` has changed from untracked to added (A). You can also check out the changes you have made to the `first_doc.Rmd` by clicking on the file name in the lefthand pane. The pane at the bottom provides a useful summary of the changes. Lines that have been deleted are highlighted in red and lines that have been added are highlighted in green. Once you're happy you understand this, commit these changes by writing a suitable commit message and click on the 'Commit' button.
+
+\  
+
+```{r mod4, echo=FALSE, out.width="60%", fig.align="center"}
+knitr::include_graphics(path = "images/mod4.png")
+```
+
+\  
+
+ 
+
+\  
+
+
 
 *Work in progress below*
 

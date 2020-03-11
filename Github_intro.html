@@ -761,7 +761,7 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <ol style="list-style-type: decimal">
 <li><p>You create/delete and edit files in your project directory on your computer as usual (saving these changes as you go)</p></li>
 <li><p>Once you’ve reached a natural ‘break point’ in your progress (i.e. you’d be sad if you lost this progress) you <strong>stage</strong> these files</p></li>
-<li><p>You then <strong>commit</strong> the changes you made to these files (along with a useful commit message) which creates a permanent snapshot of these changes</p></li>
+<li><p>You then <strong>commit</strong> the changes you made to these staged files (along with a useful commit message) which creates a permanent snapshot of these changes</p></li>
 <li><p>You keep on with this cycle until you get to a point when you would like to <strong>push</strong> these changes to GitHub</p></li>
 <li><p>If you’re working with other people on the same project you may also need to <strong>pull</strong> their changes to your local computer</p></li>
 </ol>
@@ -784,7 +784,7 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <p> </p>
 <p><img src="images/first_Rmd3.png" width="50%" style="display: block; margin: auto;" /></p>
 <p> </p>
-<p>After clicking on the ‘Commit’ button you will be taken to the ‘Review Changes’ window. You should see the three files you staged from the previous step in the left pane. If you click on the file name <code>first_doc.Rmd</code> you will see the changes you have made to this file highlighted in the bottom pane. Content that you have added is highlighted in green and deleted content is highlighted in red. As you have only just created this file, all the content is highlighted in green. To commit these files (take a snapshot) first enter a mandatory commit message in the ‘Commit message’ box. This message should be relatively short and informative (to you and your collaborators) and indicate why you made the changes, not what you changed. This makes sense as Git keeps track of <em>what</em> has changed (see use of <strong>Diff</strong> below) and so it is best not to use commit messages for this purpose. It is traditional to enter the message ‘First commit’ (or ‘Initial commit’) when you commit files for the first time. Now click on the ‘Commit’ button to commit these changes.</p>
+<p>After clicking on the ‘Commit’ button you will be taken to the ‘Review Changes’ window. You should see the three files you staged from the previous step in the left pane. If you click on the file name <code>first_doc.Rmd</code> you will see the changes you have made to this file highlighted in the bottom pane. Content that you have added is highlighted in green and deleted content is highlighted in red. As you have only just created this file, all the content is highlighted in green. To commit these files (take a snapshot) first enter a mandatory commit message in the ‘Commit message’ box. This message should be relatively short and informative (to you and your collaborators) and indicate why you made the changes, not what you changed. This makes sense as Git keeps track of <em>what</em> has changed and so it is best not to use commit messages for this purpose. It’s traditional to enter the message ‘First commit’ (or ‘Initial commit’) when you commit files for the first time. Now click on the ‘Commit’ button to commit these changes.</p>
 <p> </p>
 <p><img src="images/first_Rmd4.png" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
@@ -795,7 +795,7 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <p>Now that you have commited your changes the next step is to <strong>push</strong> these changes to GitHub. Before you push your changes it’s good practice to first <strong>pull</strong> any changes from GitHub. This is especially important if you are working with colleagues on the same files as it keeps you local copy up to date and avoids any potential conflicts. In this case your repository will already be up to date but it’s a good habit to get into. To do this, click on the ‘Pull’ button on the top right of the ‘Review Changes’ window. Once you have pulled any changes click on the green ‘Push’ button to push your changes. You will see a summary of the push you just performed. Hit the ‘Close’ button and then close the ‘Review Changes’ window.</p>
 <p>  <img src="images/first_Rmd6.png" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
-<p>To confirm the changes you made to the project haved been pushed to GitHub, open your GitHub page, click on the Repositories link and then click on the <code>first_repo</code> repository. You should see four files listed including the <code>first_doc.Rmd</code> you just pushed. Along side the file name you will see your last commit message (‘First commit’ in this instance) and when you made the last commit.</p>
+<p>To confirm the changes you made to the project haved been pushed to GitHub, open your GitHub page, click on the Repositories link and then click on the <code>first_repo</code> repository. You should see four files listed including the <code>first_doc.Rmd</code> you just pushed. Along side the file name you will see your last commit message (‘First commit’ in this case) and when you made the last commit.</p>
 <p> </p>
 <p><img src="images/first_Rmd7.png" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
@@ -803,10 +803,27 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <p> </p>
 <p><img src="images/first_Rmd8.png" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
-<p>After following the steps outlined above, you have successfully modified an RStudio project by creating a new R markdown document, staged and then commited these changes and finally pushed the changes to your GitHub repository. Now let’s make some further changes to your R markdown file and follow the workflow once again but this time we will take a look at how to identify changes made, examine the commit history and how to restore to a previous version of the document.</p>
+<p>After following the steps outlined above, you will have successfully modified an RStudio project by creating a new R markdown document, staged and then commited these changes and finally pushed the changes to your GitHub repository. Now let’s make some further changes to your R markdown file and follow the workflow once again but this time we ’ll take a look at how to identify changes made, examine the commit history and how to restore to a previous version of the document.</p>
 <p> </p>
-<p>In RStudio open up the <code>first_repo.Rproj</code> file you created previously and open then open the <code>first_doc.Rmd</code> file (click on the file in the ‘Files’ tab in RStudio).</p>
+<p>In RStudio open up the <code>first_repo.Rproj</code> file you created previously and open then open the <code>first_doc.Rmd</code> file (click on the file name in the ‘Files’ tab in RStudio).</p>
+<p>Let’s make some changes to this document. Delete the line begining with ‘My first version controlled …’ and replace it with something more informative (see figure below). We will also change the plotted symbols to red and give the plot axes labels. Lastly, let’s add a summary of the dataframe using the <code>summary()</code> function and let’s render this document to pdf.</p>
+<p> </p>
+<p><img src="images/mod1.png" width="60%" style="display: block; margin: auto;" /></p>
 <hr />
+<p> </p>
+<p>Now click the <code>knit</code> button and render to pdf. A new pdf file named <code>first_doc.pdf</code> will be created which you can view by clicking on the file name in the <code>Files</code> tab in RStudio.</p>
+<p>Notice that these two files have been added to the <code>Git</code> tab in RStudio. The status icons indicate that the <code>first_doc.Rmd</code> file has been modified (capital M) and the <code>first_doc.pdf</code> file is currently untracked (question mark).</p>
+<p> </p>
+<p><img src="images/mod2.png" width="60%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<p>To stage these files tick the ‘Staged’ box for each file and click on the ‘Commit’ button to take you to the ‘Review Changes’ window</p>
+<p> </p>
+<p><img src="images/mod3.png" width="60%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<p>Before you commit your changes notice the status of <code>first_doc.pdf</code> has changed from untracked to added (A). You can also check out the changes you have made to the <code>first_doc.Rmd</code> by clicking on the file name in the lefthand pane. The pane at the bottom provides a useful summary of the changes. Lines that have been deleted are highlighted in red and lines that have been added are highlighted in green. Once you’re happy you understand this, commit these changes by writing a suitable commit message and click on the ‘Commit’ button.</p>
+<p> </p>
+<p><img src="images/mod4.png" width="60%" style="display: block; margin: auto;" /></p>
+<p> </p>
 <p> </p>
 <p><em>Work in progress below</em></p>
 <p> </p>
