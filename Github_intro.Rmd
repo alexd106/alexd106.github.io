@@ -9,9 +9,11 @@ output:
 
 \  
 
-This short(ish!) tutorial will introduce you to using a version control system to keep track of all your important PhD documents and facilitate collaboration with colleagues. The tutorial will focus on using the software 'Git' in combination with the web-based hosting service 'GitHub'. By the end of the tutorial, you will be able to install and configure Git and GitHub on your computer, setup and work with a version controlled project in RStudio, track changes in your project, revert to previous versions of your project and finally how to resolve issues with Git and GitHub. Just a note of caution, Git and version control in general is a very large (and sometimes complicated) subject area which will take you some time to get completely comfortable with. This tutorial will get you started with the basics but be prepared to do some extra [reading](#resources) and don't worry if it takes you some time to get your head around it all. It's worth it!
+This short(ish!) tutorial will introduce you to the basics of using a version control system to keep track of all your important PhD documents and facilitate collaboration with colleagues. The tutorial will focus on using the software 'Git' in combination with the web-based hosting service 'GitHub'. By the end of the tutorial, you will be able to install and configure Git and GitHub on your computer, setup and work with a version controlled project in RStudio, track changes in your project and revert to previous versions of your project. 
 
 I estimate that this tutorial should take you roughly 1.5 to 2.5 hours to complete in one sitting, but feel free to dip in and out over a longer period if that suits you better.  
+
+Just a note of caution. In this tutorial we'll be using RStudio to interface with Git as it gives you a nice friendly graphical user interface. However, the downside to using RStudio with Git is that RStudio only provides pretty basic Git functionality (more than enough to get you going though). If you really want to benefit from using Git's power you will need to learn some Git commands using the command line and that is a whole different tutorial! See some of the [links](#resources) below if you do want to dip your toes into the wonderful world of Git. 
 
 \  
 
@@ -517,7 +519,7 @@ knitr::include_graphics(path = "images/first_Rmd8.png")
 \  
 
 
-### Making changes 
+### Tracking changes 
 
 \  
 
@@ -559,7 +561,7 @@ knitr::include_graphics(path = "images/mod3.png")
 
 \  
 
-Before you commit your changes notice the status of `first_doc.pdf` has changed from untracked to added (A). You can also view the changes you have made to the `first_doc.Rmd` by clicking on the file name in the top left pane which will then provide you with a useful summary of the changes in the bottom pane. Lines that have been deleted are highlighted in red and lines that have been added are highlighted in green. Once you're happy, commit these changes by writing a suitable commit message and click on the 'Commit' button.
+Before you commit your changes notice the status of `first_doc.pdf` has changed from untracked to added (A). You can also view the changes you have made to the `first_doc.Rmd` by clicking on the file name in the top left pane which will then provide you with a useful summary of the changes in the bottom pane. Lines that have been deleted are highlighted in red and lines that have been added are highlighted in green (note that from Git's point of view, a modification to a line is actually two operations: the removal of the original line followed by the creation of a new line). Once you're happy, commit these changes by writing a suitable commit message and click on the 'Commit' button.
 
 \  
 
@@ -569,7 +571,7 @@ knitr::include_graphics(path = "images/mod4.png")
 
 \  
 
-To push the changes to GitHub, click on the 'Pull' button first (remember this is good practice even though you are only collaborating with yourself at the moment) and then click on the 'Push' button. Go to your GitHub repository and you will see your new commits, including your `first_doc.pdf` you just created. 
+To push the changes to GitHub, click on the 'Pull' button first (remember this is good practice even though you are only collaborating with yourself at the moment) and then click on the 'Push' button. Go to your online GitHub repository and you will see your new commits, including the `first_doc.pdf` file you created when you rendered your R markdown document. 
  
 \  
 
@@ -579,7 +581,7 @@ knitr::include_graphics(path = "images/mod5.png")
 
 \  
 
-To view the changes in `first_doc.Rmd` click on the file name for this file 
+To view the changes in `first_doc.Rmd` click on the file name for this file.
 
 \  
 
@@ -589,6 +591,26 @@ knitr::include_graphics(path = "images/mod6.png")
 
 \  
 
+### Commit history 
+
+\  
+
+RStudio  
+GitHub
+
+\  
+
+### Reverting changes 
+
+\  
+
+This is also possible in RStudio. Click on “Diff” or “Commit”. Select a file with changes you do not want. Use “Discard All” to discard all changes in that file. Use “Discard chunk” to discard changes in that file, selectively. Repeat this procedure for each affected file until you are back to an acceptable state. Carry on.
+
+\  
+
+### Git hints
+
+\  
 
 ***
 *Work in progress below*
@@ -596,66 +618,7 @@ knitr::include_graphics(path = "images/mod6.png")
 \  
 
 
-
-
-Now we want to make some changes to our R script, for example modify a plot.
-
-```{r change_plot}
-plot(cars, col="red")
-```
-
-After you have modified your code, save the script. Now, click on the **Git** tab in RStudio. You'll notice that there's only one file listed, since RStudio only lists files that have changed in its git interface.
-
-Click on the **Staged** checkbox to stage your change. Now click on **Diff** (next to **Commit**) to display a summary of what's changed. Lines that have been added are green. Lines that have been removed are red (note that from git's point of view, a modification to a line is actually two operations: the removal of the original line followed by the creation of a new line).
-
-\  
-
-```{r diff, echo=FALSE, out.width="75%", fig.align="center", fig.cap="Review your changes"}
-knitr::include_graphics(path = "images/Diff.png")
-```
-
-\  
-
-Add a commit message and click on **Commit**.
 In the **Git** tab of RStudio, click on **Diff** and then **History**. You'll see that you can look through every commit you've ever made. This can be extremely useful for finding bugs or looking back to how your model looked a few months ago.
-
-\  
-
-
-
-\  
-
-
-### Pulling and pushing changes {#pull_push}
-
-Once a local repository has been associated with GitHub, it's not necessary to use the command line for subsequent uploads. However, you will want to always keep the local (e.g., your personal computer) and remote (e.g., GitHub) copy in sync with one another. To do this you will **Pull** and **Push** changes from one copy to the other.
-
-When you start working on your local repository (e.g., files on your own computer), it is best to start by **Pulling** any new changes off of your remote repository (e.g., GitHub). Similarly, when you are finished working on them in your local repository (e.g., your computer) it is good to then **Push** them to the remote repository (e.g., GitHub). We will walk through this basic workflow that enables you to keep your local files in sync across multiple computers or when files may change because of someone else working on the project.
-
-To start working on a project, **Pull** any new changes to update your local copy.
-
-\  
-
-```{r pullChanges, echo=FALSE, out.width="75%", fig.align="center", fig.cap="Pull changes from remote repository"}
-knitr::include_graphics(path = "images/PullMaster.png")
-```
-
-\  
-
-Now make a change to your script, commit the change and **Push**. You should see something like this:
-
-\  
-
-```{r pushChanges, echo=FALSE, out.width="75%", fig.align="center", fig.cap="Push changes to remote repository"}
-knitr::include_graphics(path = "images/PushMsg.png")
-```
-
-\  
-
-And you're done! Now your remote and local copy are synchronised and any changes you've made are available to you and your collaborators.
-
-\  
-
 
 \  
 
