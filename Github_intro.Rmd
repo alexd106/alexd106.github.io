@@ -17,6 +17,7 @@ Just a few notes of caution. In this tutorial we'll be using RStudio to interfac
 
 
 See some of the [links](#resources) below if you do want to dip your toes into the wonderful world of Git.
+
 \  
 
 ## What is version control?
