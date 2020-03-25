@@ -668,7 +668,6 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <p> </p>
 <p>Now that we have our project and repositories (both local and remote) set up, it’s finally time to learn how to use Git in RStudio!</p>
 <p>Typically, when using Git your workflow will go something like this:</p>
-<p> </p>
 <ol style="list-style-type: decimal">
 <li><p>You create/delete and edit files in your project directory on your computer as usual (saving these changes as you go)</p></li>
 <li><p>Once you’ve reached a natural ‘break point’ in your progress (i.e. you’d be sad if you lost this progress) you <strong>stage</strong> these files</p></li>
@@ -678,7 +677,11 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 </ol>
 <p><img src="images/workflow_3.png" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
-<p>OK, let’s go through an example to help clarify this workflow. In RStudio open up the <code>first_repo.Rproj</code> file you created previously during Option 1. Create an R markdown document inside this project by clicking on the <code>File</code> -&gt; <code>New File</code> -&gt; <code>R markdown</code> menu (remember from the R markdown <a href="Rmarkdown_intro.html">tutorial</a>?).</p>
+<p>OK, let’s go through an example to help clarify this workflow. In RStudio open up the <code>first_repo.Rproj</code> you created previously during Option 1. Either use the <code>File</code> -&gt; <code>Open Project</code> menu or click on the top right project icon and select the appropriate project.</p>
+<p> </p>
+<p><img src="images/first_Rmd0.png" width="80%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<p>Create an R markdown document inside this project by clicking on the <code>File</code> -&gt; <code>New File</code> -&gt; <code>R markdown</code> menu (remember from the R markdown <a href="Rmarkdown_intro.html">tutorial</a>?).</p>
 <p>Once created, we can delete all the example R markdown code (except the YAML header) as usual and write some interesting R markdown text and include a plot. We’ll use the inbuilt <code>cars</code> dataset to do this. Save this file (cmd + s for Mac or ctrl + s in Windows). Your R markdown document should look something like the following (it doesn’t matter if it’s not exactly the same).</p>
 <p> </p>
 <p><img src="images/first_Rmd.png" width="60%" style="display: block; margin: auto;" /></p>
@@ -719,7 +722,7 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <p> </p>
 <p>After following the steps outlined above, you will have successfully modified an RStudio project by creating a new R markdown document, staged and then committed these changes and finally pushed the changes to your GitHub repository. Now let’s make some further changes to your R markdown file and follow the workflow once again but this time we ’ll take a look at how to identify changes made to files, examine the commit history and how to restore to a previous version of the document.</p>
 <p>In RStudio open up the <code>first_repo.Rproj</code> file you created previously (if not already open) then open the <code>first_doc.Rmd</code> file (click on the file name in the <code>Files</code> tab in RStudio).</p>
-<p>Let’s make some changes to this document. Delete the line beginning with ‘My first version controlled …’ and replace it with something more informative (see figure below). We will also change the plotted symbols to red and give the plot axes labels. Lastly, let’s add a summary of the dataframe using the <code>summary()</code> function and then render this document to pdf by changing the YAML option to <code>output: pdf_document</code>.</p>
+<p>Let’s make some changes to this document. Delete the line beginning with ‘My first version controlled …’ and replace it with something more informative (see figure below). We will also change the plotted symbols to red and give the plot axes labels. Lastly, let’s add a summary table of the dataframe using the <code>kable()</code> and <code>summary()</code> functions (you may need to install the <code>knitr</code> package if you haven’t done so previously to use the <code>kable()</code> function) and finally render this document to pdf by changing the YAML option to <code>output: pdf_document</code>.</p>
 <p> </p>
 <p><img src="images/mod1.png" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
@@ -732,7 +735,7 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <p> </p>
 <p><img src="images/mod3.png" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
-<p>Before you commit your changes notice the status of <code>first_doc.pdf</code> has changed from untracked to added (A). You can also view the changes you have made to the <code>first_doc.Rmd</code> by clicking on the file name in the top left pane which will then provide you with a useful summary of the changes in the bottom pane. Lines that have been deleted are highlighted in red and lines that have been added are highlighted in green (note that from Git’s point of view, a modification to a line is actually two operations: the removal of the original line followed by the creation of a new line). Once you’re happy, commit these changes by writing a suitable commit message and click on the ‘Commit’ button.</p>
+<p>Before you commit your changes notice the status of <code>first_doc.pdf</code> has changed from untracked to added (A). You can view the changes you have made to the <code>first_doc.Rmd</code> by clicking on the file name in the top left pane which will provide you with a useful summary of the changes in the bottom pane (technically called diffs). Lines that have been deleted are highlighted in red and lines that have been added are highlighted in green (note that from Git’s point of view, a modification to a line is actually two operations: the removal of the original line followed by the creation of a new line). Once you’re happy, commit these changes by writing a suitable commit message and click on the ‘Commit’ button.</p>
 <p> </p>
 <p><img src="images/mod4.png" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
@@ -744,25 +747,45 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <p> </p>
 <p><img src="images/mod6.png" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
-<hr />
-<p><em>Work in progress below</em></p>
-<p> </p>
 </div>
 <div id="commit-history" class="section level3">
 <h3>Commit history</h3>
 <p> </p>
-<p>RStudio<br />
-GitHub</p>
+<p>One of the great things about Git and GitHub is that you can view the history of all the commits you have made along with the associated commit messages. You can do this locally using RStudio (or the Git command line) or if you have pushed your commits to GitHub you can check them out on the GitHub website.</p>
+<p>To view your commit history in RStudio click on the ‘History’ button (the one that looks like a clock) in the Git pane to bring up the history view in the ‘Review Changes’ window. You can also click on the ‘Commit’ or ‘Diff’ buttons which takes you to the same window (you just need to additionally click on the ‘History’ button in the ‘Review Changes’ window).</p>
+<p> </p>
+<p><img src="images/c_history.png" width="60%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<p>The history window is split into two parts. The top pane lists every commit you have made in this repository (with associated commit messages) starting with the most recent at the top and oldest at the bottom. You can click on each of these commits and the bottom pane shows you the changes you have made along with a summary of the Date the commit was made, Author of the commit and the commit message (Subject). There is also a unique identifier for the commit (SHA - Secure Hash Algorithm) and a Parent SHA which identifies the previous commit. These SHA identifiers are really important as you can use these to revert to previous versions of documents (details <a href="#undo">below</a>). You can view the contents of each file by clicking on the ‘View file @` link (in our case ’View file @ 2b4693d1’).</p>
+<p> </p>
+<p><img src="images/c_history2.png" width="80%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<p>You can also view your commit history on GitHub but this will be limited to only those commits you have already pushed to GitHub. To view the commit history click on the repostitories tab in GitHub and then on the name of the repository. You can then click on the commits link (in our case the link will be labelled ‘3 commits’ as we have made 3 commits) to view the commit history.</p>
+<p> </p>
+<p><img src="images/c_history3.png" width="80%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<p>You will see all the commits you have made, along with commit messages, date of commit and the SHA identifier (these are the same SHA identifiers you saw in the RStudio history).</p>
+<p> </p>
+<p><img src="images/c_history4.png" width="80%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<p>To view the changes in the file associated with the commit simply click on the relevant commit link in the list.</p>
+<p> </p>
+<p><img src="images/c_history5.png" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
 </div>
-<div id="reverting-changes" class="section level3">
+<div id="undo" class="section level3">
 <h3>Reverting changes</h3>
+<p> </p>
+<p>Now that we are able to navigate through our commit history</p>
+<p> </p>
+<hr />
+<p><em>Work in progress below</em></p>
 <p> </p>
 <p>This is also possible in RStudio. Click on “Diff” or “Commit”. Select a file with changes you do not want. Use “Discard All” to discard all changes in that file. Use “Discard chunk” to discard changes in that file, selectively. Repeat this procedure for each affected file until you are back to an acceptable state. Carry on.</p>
 <p> </p>
 </div>
 <div id="git-tips" class="section level3">
-<h3>Git Tips</h3>
+<h3>Git tips</h3>
 <p> </p>
 <p>In the <strong>Git</strong> tab of RStudio, click on <strong>Diff</strong> and then <strong>History</strong>. You’ll see that you can look through every commit you’ve ever made. This can be extremely useful for finding bugs or looking back to how your model looked a few months ago.</p>
 <p> </p>
