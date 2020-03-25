@@ -469,7 +469,7 @@ div.tocify {
 
 
 <p> </p>
-<p>This short(ish!) tutorial will introduce you to the basics of using a version control system to keep track of all your important PhD documents and facilitate collaboration with colleagues and the wider world. The tutorial will focus on using the software ‘Git’ in combination with the web-based hosting service ‘GitHub’. By the end of the tutorial, you will be able to install and configure Git and GitHub on your computer and setup and work with a version controlled project in RStudio. We won’t be covering topics such as branching, forking and pull requests but if you get the Git bug then see the <a href="#resources">resources</a> section of this tutorial for further fun.</p>
+<p>This short(ish!) tutorial will introduce you to the basics of using a version control system to keep track of all your important PhD documents and facilitate collaboration with colleagues and the wider world. The tutorial will focus on using the software ‘Git’ in combination with the web-based hosting service ‘GitHub’. By the end of the tutorial, you will be able to install and configure Git and GitHub on your computer and setup and work with a version controlled project in RStudio. We won’t be covering more advanced topics such as branching, forking and pull requests in much detail but I do give an overview <a href="#collab">later</a> on in the tutorial.</p>
 <p>I estimate that this tutorial should take you roughly 1.5 to 2.5 hours to complete in one sitting, but feel free to dip in and out over a longer period if that suits you better.</p>
 <p>Just a few notes of caution. In this tutorial we’ll be using RStudio to interface with Git as it gives you a nice friendly graphical user interface which generally makes life a little bit easier (and who doesn’t want that?). However, one downside to using RStudio with Git is that RStudio only provides pretty basic Git functionality through its menu system. That’s fine for most of what we’ll be doing during this tutorial (although I will introduce a few Git commands as we go along) but if you really want to benefit from using Git’s power you will need to <a href="#resources">learn</a> some Git commands and syntax. This leads me on to my next point. I’m not going to lie, Git can become a little bewildering and frustrating when you first start using it. This is mostly due to the terminology and liberal use of jargon associated with Git, but there’s no hiding the fact that it’s quite easy to get yourself and your Git repository into a pickle. Therefore, I have tried hard to keep things as straight forward as I can during this tutorial and as a result I do occasionally show you a couple of very ‘un-Git’ ways of doing things (mostly about reverting to previous versions of documents). Don’t get hung up about this, there’s no shame to using these low tech solutions and if it works then it works. Lastly, GitHub was not designed to host very large files and will warn you if you try to add files greater than 50 MB and block you adding files greater than 100 MB. If your project involves using large file sizes there are a <a href="https://help.github.com/en/github/managing-large-files/configuring-git-large-file-storage">few solutions</a> but I find the easiest is to host these files elsewhere (Googledrive, Dropbox etc) and create a link to them in a README file or R markdown document on Github (these files won’t be under version control though).</p>
 <p> </p>
@@ -756,19 +756,19 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <p> </p>
 <p><img src="images/c_history.png" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
-<p>The history window is split into two parts. The top pane lists every commit you have made in this repository (with associated commit messages) starting with the most recent at the top and oldest at the bottom. You can click on each of these commits and the bottom pane shows you the changes you have made along with a summary of the Date the commit was made, Author of the commit and the commit message (Subject). There is also a unique identifier for the commit (SHA - Secure Hash Algorithm) and a Parent SHA which identifies the previous commit. These SHA identifiers are really important as you can use these to revert to previous versions of documents (details <a href="#undo">below</a>). You can view the contents of each file by clicking on the ‘View file @` link (in our case ’View file @ 2b4693d1’).</p>
+<p>The history window is split into two parts. The top pane lists every commit you have made in this repository (with associated commit messages) starting with the most recent one at the top and oldest at the bottom. You can click on each of these commits and the bottom pane shows you the changes you have made along with a summary of the Date the commit was made, Author of the commit and the commit message (Subject). There is also a unique identifier for the commit (SHA - Secure Hash Algorithm) and a Parent SHA which identifies the previous commit. These SHA identifiers are really important as you can use them to view and revert to previous versions of files (details <a href="#undo">below</a>). You can view the contents of each file by clicking on the ‘View file @ SHA key` link (in our case ’View file @ 2b4693d1’).</p>
 <p> </p>
 <p><img src="images/c_history2.png" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
-<p>You can also view your commit history on GitHub but this will be limited to only those commits you have already pushed to GitHub. To view the commit history click on the repostitories tab in GitHub and then on the name of the repository. You can then click on the commits link (in our case the link will be labelled ‘3 commits’ as we have made 3 commits) to view the commit history.</p>
+<p>You can also view your commit history on GitHub website but this will be limited to only those commits you have already pushed to GitHub. To view the commit history navigate to the repository and click on the ‘commits’ link (in our case the link will be labelled ‘3 commits’ as we have made 3 commits).</p>
 <p> </p>
 <p><img src="images/c_history3.png" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
-<p>You will see all the commits you have made, along with commit messages, date of commit and the SHA identifier (these are the same SHA identifiers you saw in the RStudio history).</p>
+<p>You will see a list of all the commits you have made, along with commit messages, date of commit and the SHA identifier (these are the same SHA identifiers you saw in the RStudio history). You can even browse the repository at a particular point in time by clicking on the <code>&lt;&gt;</code> link. To view the changes in files associated with the commit simply click on the relevant commit link in the list.</p>
 <p> </p>
 <p><img src="images/c_history4.png" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
-<p>To view the changes in the file associated with the commit simply click on the relevant commit link in the list.</p>
+<p>Which will display changes using the usual format of green for additions and red for deletions.</p>
 <p> </p>
 <p><img src="images/c_history5.png" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
@@ -776,7 +776,12 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <div id="undo" class="section level3">
 <h3>Reverting changes</h3>
 <p> </p>
-<p>Now that we are able to navigate through our commit history</p>
+<p>One reason to use Git is that you are able to revert to previous versions of files</p>
+<p> </p>
+</div>
+<div id="collab" class="section level3">
+<h3>Collaborate with Git</h3>
+<p>GitHub is a great tool for collaboration, it can seem scary and complicated at first, but it is worth investing some time to learn how it works. What makes GitHub so good for collaboration is that it is a <em>distributed system</em>, which means that every collaborator works on their own copy of the project and changes are then merged together in the remote repository. There are two main ways you can set up a collaborative project on GitHub. One is the workflow we went through above, where everybody connects their local repository to the same remote one; this system works well with small projects where different people mainly work on different aspects of the project but can quickly become unwieldy if many people are collaborating and are working on the same files (merge misery!). The second approach consists of every collaborator creating a copy (or <em>fork</em>) of the main repository, which becomes their remote repository. Every collaborator then needs to send a request (a <em>pull request</em>) to the owner of the main repository to incorporate any changes into the main repository and this includes a review process before the changes are integrated. More detail of these topics can be found in the <a href="#resources">Further resources</a> section.</p>
 <p> </p>
 <hr />
 <p><em>Work in progress below</em></p>
@@ -787,13 +792,6 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <div id="git-tips" class="section level3">
 <h3>Git tips</h3>
 <p> </p>
-<p>In the <strong>Git</strong> tab of RStudio, click on <strong>Diff</strong> and then <strong>History</strong>. You’ll see that you can look through every commit you’ve ever made. This can be extremely useful for finding bugs or looking back to how your model looked a few months ago.</p>
-<p> </p>
-<div id="view-your-project-history" class="section level4">
-<h4>View your project history</h4>
-<p>Your commits are a record of all the changes you have made to your code; viewing this history can help you track the development of your project, highlight major revisions and identify where a bug was introduced.</p>
-<p> </p>
-</div>
 <div id="revert-to-a-previous-commit" class="section level4">
 <h4>Revert to a previous commit</h4>
 <p>Oops, I broke it! One of the great things about a version control system is that if you break your code you can always go back to when it was still working. There are two ways:</p>
@@ -802,10 +800,6 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <li><p>If you are already a few commits away from the one that broke your code and you need to go back to a previous version of your project, first use <code>git reflog</code>, which will show you a list of everything you have done in git. Then, find the step that broke your code. Finally use <code>git reset</code> and the step’s index (something of the form <code>HEAD@{index}</code>, which you’ll find in the output of <code>git reflog</code>) to revert to that point in time. Seems like magic, but it has limitations. <code>git reset</code> can create problems if you have already pushed changes to the remote repository, so only use it in this way if you want to go back a series of commits that you have not pushed yet.</p></li>
 </ol>
 <p> </p>
-</div>
-<div id="collaborate" class="section level4">
-<h4>Collaborate</h4>
-<p>GitHub is a great tool for collaboration, it can seem scary and complicated at first, but it is worth investing some time to learn how it works. What makes it so good for collaboration is that it is a <em>distributed system</em>, which means that every collaborator works on their own copy of the project and changes are then merged together in the remote repository. There are two different ways you can set up a collaborative project on GitHub. One is the workflow we just went through, where everybody connects their local repository to the same remote one; this system works well with small project where different people mainly work on different aspects of the project. The second approach consists of every collaborator creating a copy (or <em>fork</em>) of the main repository, which becomes their remote repository. Every collaborator then needs to send a request (a <em>pull request</em>) to the owner of the main repository to incorporate any changes into the main repository and this includes a review process before the changes are integrated.</p>
 <p>Git offers a number of advanced features that you can incorporate in your workflow. If you are going to be working on a large collaborative project it is worth looking into <em>forking</em>, <em>branching</em> and <em>pull requests</em>. If you are the only person working on your code, then the workflow detailed here is usually enough.</p>
 <p> </p>
 </div>
@@ -813,6 +807,7 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 </div>
 <div id="resources" class="section level2">
 <h2>Further resources</h2>
+<p> </p>
 <p>There are many good guides online to learn more about git and GitHub and as with any open source software there is a huge community that can be a great resource:</p>
 <ul>
 <li><p>The British Ecological Society guide to <a href="https://www.britishecologicalsociety.org/wp-content/uploads/2019/06/BES-Guide-Reproducible-Code-2019.pdf">Reproducible Code</a></p></li>
