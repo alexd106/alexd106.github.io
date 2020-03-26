@@ -566,7 +566,7 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <p> </p>
 <p>Now that you’re all set up, let’s create your first version controlled RStudio project. There are a couple of different approaches you can use to do this. You can either setup a remote GitHub repository first then connect an RStudio project to this repository (we’ll call this Option 1). Another option is to setup a local repository first and then link a remote GitHub repository to this repository (Option 2). You can also connect an existing project to a GitHub repository but we won’t cover this here. I suggest that if you’re completely new to Git and GitHub then use Option 1 as this approach sets up your local Git repository nicely and you can <strong>push</strong> and <strong>pull</strong> immediately. Option 2 requires a little more work and therefore there are more opportunities to go wrong. We will cover both of these options below.</p>
 <p> </p>
-<div id="option-1---github-first" class="section level3">
+<div id="opt1" class="section level3">
 <h3>Option 1 - GitHub first</h3>
 <p> </p>
 <p>To use the GitHub first approach you will first need to create a <strong>repository (repo)</strong> on GitHub. Go to your <a href="https://github.com/">GitHub page</a> and sign in if necessary. Click on the ‘Repositories’ tab at the top and then on the green ‘New’ button on the right</p>
@@ -594,7 +594,7 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <p><img src="images/proj_setup3.png" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 </div>
-<div id="option-2---rstudio-first" class="section level3">
+<div id="opt2" class="section level3">
 <h3>Option 2 - RStudio first</h3>
 <p> </p>
 <p>An alternative approach is to create a local RStudio project first and then link to a remote Github repository. As I mentioned before, this option is more involved than Option 1 so feel free to skip this now and come back later to it if you’re interested. This option is also useful if you just want to create a local RStudio project linked to a local Git repository (i.e. no GitHub involved). If you want to do this then just follow the instructions below omitting the GitHub bit.</p>
@@ -706,7 +706,7 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <p> </p>
 <p><img src="images/first_Rmd5.png" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
-<p>Now that you have commited your changes the next step is to <strong>push</strong> these changes to GitHub. Before you push your changes it’s good practice to first <strong>pull</strong> any changes from GitHub. This is especially important if both you and your collaborators are working on the same files as it keeps you local copy up to date and avoids any potential conflicts. In this case your repository will already be up to date but it’s a good habit to get into. To do this, click on the ‘Pull’ button on the top right of the ‘Review Changes’ window. Once you have pulled any changes click on the green ‘Push’ button to push your changes. You will see a summary of the push you just performed. Hit the ‘Close’ button and then close the ‘Review Changes’ window.</p>
+<p>Now that you have committed your changes the next step is to <strong>push</strong> these changes to GitHub. Before you push your changes it’s good practice to first <strong>pull</strong> any changes from GitHub. This is especially important if both you and your collaborators are working on the same files as it keeps you local copy up to date and avoids any potential conflicts. In this case your repository will already be up to date but it’s a good habit to get into. To do this, click on the ‘Pull’ button on the top right of the ‘Review Changes’ window. Once you have pulled any changes click on the green ‘Push’ button to push your changes. You will see a summary of the push you just performed. Hit the ‘Close’ button and then close the ‘Review Changes’ window.</p>
 <p>  <img src="images/first_Rmd6.png" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
 <p>To confirm the changes you made to the project have been pushed to GitHub, open your GitHub page, click on the Repositories link and then click on the <code>first_repo</code> repository. You should see four files listed including the <code>first_doc.Rmd</code> you just pushed. Along side the file name you will see your last commit message (‘First commit’ in this case) and when you made the last commit.</p>
@@ -756,7 +756,7 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <p> </p>
 <p><img src="images/c_history.png" width="60%" style="display: block; margin: auto;" /></p>
 <p> </p>
-<p>The history window is split into two parts. The top pane lists every commit you have made in this repository (with associated commit messages) starting with the most recent one at the top and oldest at the bottom. You can click on each of these commits and the bottom pane shows you the changes you have made along with a summary of the Date the commit was made, Author of the commit and the commit message (Subject). There is also a unique identifier for the commit (SHA - Secure Hash Algorithm) and a Parent SHA which identifies the previous commit. These SHA identifiers are really important as you can use them to view and revert to previous versions of files (details <a href="#undo">below</a>). You can view the contents of each file by clicking on the ‘View file @ SHA key` link (in our case ’View file @ 2b4693d1’).</p>
+<p>The history window is split into two parts. The top pane lists every commit you have made in this repository (with associated commit messages) starting with the most recent one at the top and oldest at the bottom. You can click on each of these commits and the bottom pane shows you the changes you have made along with a summary of the <strong>Date</strong> the commit was made, <strong>Author</strong> of the commit and the commit message (<strong>Subject</strong>). There is also a unique identifier for the commit (<strong>SHA</strong> - Secure Hash Algorithm) and a <strong>Parent</strong> SHA which identifies the previous commit. These SHA identifiers are really important as you can use them to view and revert to previous versions of files (details <a href="#undo">below</a>). You can also view the contents of each file by clicking on the ‘View file @ SHA key` link (in our case ’View file @ 2b4693d1’).</p>
 <p> </p>
 <p><img src="images/c_history2.png" width="80%" style="display: block; margin: auto;" /></p>
 <p> </p>
@@ -776,43 +776,112 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <div id="undo" class="section level3">
 <h3>Reverting changes</h3>
 <p> </p>
-<p>One reason to use Git is that you are able to revert to previous versions of files</p>
+<p>One the great things about using Git is that you are able to revert to previous versions of files if you’ve made a mistake, broke something or just prefer and earlier approach. How you do this will depend on whether the changes you want to discard have been staged, committed or pushed to GitHub. We’ll go through some common scenarios below mostly using RStudio but occasionally we will need to resort to using the Terminal (still in RStudio though).</p>
 <p> </p>
+<div id="changes-saved-but-not-staged-committed-or-pushed" class="section level4">
+<h4>Changes saved but not staged, committed or pushed</h4>
+<p>If you have saved changes to your file(s) but not staged, committed or pushed these files to GitHub you can right click on the offending file in the Git pane and select ‘Revert …’. This will roll back all of the changes you have made to the same state as your last commit. Just be aware that you cannot undo this operation so use with caution.</p>
+<p> </p>
+<p><img src="images/revert1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<p>You can also undo changes to just part of a file by opening up the ‘Diff’ window (click on the ‘Diff’ button in the Git pane). Select the line you wish to discard by double clicking on the line and then click on the ‘Discard line’ button. In a similar fashion you can discard chunks of code by clicking on the ‘Discard chunk’ button.</p>
+<p> </p>
+<p><img src="images/revert2.png" width="80%" style="display: block; margin: auto;" /></p>
+<p> </p>
+</div>
+<div id="staged-but-not-committed-and-not-pushed" class="section level4">
+<h4>Staged but not committed and not pushed</h4>
+<p>If you have staged your files, but not committed them then simply unstage them by clicking on the ‘Staged’ check box in the Git pane (or in the ‘Review Changes’ window) to remove the tick. You can then revert all or parts of the file as described in the section above.</p>
+<p> </p>
+</div>
+<div id="staged-and-committed-but-not-pushed" class="section level4">
+<h4>Staged and committed but not pushed</h4>
+<p>If you have made a mistake or have forgotten to include a file in your last commit which you have not yet pushed to GitHub, you can just fix your mistake, save your changes, and then amend your previous commit. You can do this by staging your file and then tick the ‘Amend previous commit` box in the ’Review Changes’ window before committing.</p>
+<p> </p>
+<p><img src="images/revert3.png" width="80%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<p>If we check out our commit history you can see that our latest commit contains both changes to the file rather than having two separate commits. I use the amend commit approach alot but it’s important to understand that you should <strong>not</strong> do this if you have already pushed your last commit to GitHub as you are effectively rewriting history and all sorts bad things may happen!</p>
+<p> </p>
+<p><img src="images/revert4.png" width="80%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<p>If you spot a mistake that has happened multiple commits back or you just want to revert to a previous version of a document you have a number of options.</p>
+<p><strong>Option 1</strong> - (probably the easiest but very unGit - but like, whatever!) is to look in your commit history in RStudio, find the commit that you would like to go back to and click on the ‘View file @’ button to show the file contents.</p>
+<p> </p>
+<p><img src="images/revert5.png" width="80%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<p>You can then copy the contents of the file to the clipboard and paste it into your current file to replace your duff code or text. Alternatively, you can click on the ‘Save As’ button and save the file with a different file name. Once you have saved your new file you can delete your current unwanted file and then carry on working on your new file. Don’t forget to stage and commit this new file.</p>
+<p> </p>
+<p><img src="images/revert6.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><br />
+</p>
+<p><strong>Option 2</strong> - (Git like) Go to your Git history, find the commit you would like to roll back to and write down (or copy) its SHA identifier.</p>
+<p> </p>
+<p><img src="images/revert7.png" width="80%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<p>Now go to the Terminal in RStudio and type <code>git checkout &lt;SHA&gt; &lt;filename&gt;</code>. In our case the SHA key is <code>2b4693d1</code> and the filename is <code>first_doc.Rmd</code> so our command would look like this:</p>
+<p> </p>
+<pre><code>git checkout 2b4693d1 first_doc.Rmd</code></pre>
+<p> </p>
+<p>The command above will copy the selected file version from the past and place it into the present. RStudio may ask you whether you want to reload the file as it now changed - select yes. You will also need to stage and commit the file as usual.</p>
+<p>If you want to revert all your files to the same state as a previous commit rather than just one file you can use (the single ‘dot’ <code>.</code> is important otherwise your HEAD will detach!):</p>
+<p> </p>
+<pre><code>git rm -r .
+git checkout 2b4693d1 .
+</code></pre>
+<p> </p>
+<p>Note that this will delete all files that you have created since you made this commit so be careful!</p>
+<p> </p>
+</div>
+<div id="staged-committed-and-pushed" class="section level4">
+<h4>Staged, committed and pushed</h4>
+<p>If you have already pushed your commits to GitHub you can use the <code>git checkout</code> strategy described above and then commit and push to update GitHub (although this is not really considered ‘best’ practice). Another approach would be to use <code>git revert</code> (Note: as far as I can tell <code>git revert</code> is not the same as the ‘Revert’ option in RStudio). The <code>revert</code> command in Git essentially creates a new commit based on a previous commit and therefore preserves all of your commit history. To rollback to a previous state (commit) you first need to identify the SHA for the commit you wish to go back to (as we did above) and then use the <code>revert</code> command in the Terminal. Let’s say we want to revert back to our ‘First commit’ which has a SHA identifier <code>d27e79f1</code>.</p>
+<p> </p>
+<p><img src="images/revert8.png" width="80%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<p>We can use the <code>revert</code> command as shown below in the Terminal. The <code>--no-commit</code> option is used to prevent us from having to deal with each intermediate commit.</p>
+<p> </p>
+<pre><code>git revert --no-commit d27e79f1..HEAD</code></pre>
+<p> </p>
+<p>Your <code>first_doc.Rmd</code> file will now revert back to the same state as it was when you did your ‘First commit’. Notice also that the <code>first_doc.pdf</code> file has been deleted as this wasn’t present when we made our first commit. You can now stage and commit these files with a new commit message and finally push them to GitHub. Notice that if we look at our commit history all of the commits we have made are still present.</p>
+<p> </p>
+<p><img src="images/revert9.png" width="80%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<p>and our repo on GitHub also reflects these changes</p>
+<p> </p>
+<p><img src="images/revert10.png" width="80%" style="display: block; margin: auto;" /></p>
+<p> </p>
+</div>
 </div>
 <div id="collab" class="section level3">
 <h3>Collaborate with Git</h3>
+<p> </p>
 <p>GitHub is a great tool for collaboration, it can seem scary and complicated at first, but it is worth investing some time to learn how it works. What makes GitHub so good for collaboration is that it is a <em>distributed system</em>, which means that every collaborator works on their own copy of the project and changes are then merged together in the remote repository. There are two main ways you can set up a collaborative project on GitHub. One is the workflow we went through above, where everybody connects their local repository to the same remote one; this system works well with small projects where different people mainly work on different aspects of the project but can quickly become unwieldy if many people are collaborating and are working on the same files (merge misery!). The second approach consists of every collaborator creating a copy (or <em>fork</em>) of the main repository, which becomes their remote repository. Every collaborator then needs to send a request (a <em>pull request</em>) to the owner of the main repository to incorporate any changes into the main repository and this includes a review process before the changes are integrated. More detail of these topics can be found in the <a href="#resources">Further resources</a> section.</p>
-<p> </p>
-<hr />
-<p><em>Work in progress below</em></p>
-<p> </p>
-<p>This is also possible in RStudio. Click on “Diff” or “Commit”. Select a file with changes you do not want. Use “Discard All” to discard all changes in that file. Use “Discard chunk” to discard changes in that file, selectively. Repeat this procedure for each affected file until you are back to an acceptable state. Carry on.</p>
 <p> </p>
 </div>
 <div id="git-tips" class="section level3">
 <h3>Git tips</h3>
 <p> </p>
-<div id="revert-to-a-previous-commit" class="section level4">
-<h4>Revert to a previous commit</h4>
-<p>Oops, I broke it! One of the great things about a version control system is that if you break your code you can always go back to when it was still working. There are two ways:</p>
-<ol style="list-style-type: decimal">
-<li><p>If you have made a mistake or you forgot to include a file in your last commit, which you have not yet pushed to your remote repository, then you can just make your changes, use <code>git add</code> to stage the new or the changed file and then use the command <code>git commit --amend</code>. This will change your previous commit to include the new changes. You can also use this command on its own if you just want to modify the commit message.</p></li>
-<li><p>If you are already a few commits away from the one that broke your code and you need to go back to a previous version of your project, first use <code>git reflog</code>, which will show you a list of everything you have done in git. Then, find the step that broke your code. Finally use <code>git reset</code> and the step’s index (something of the form <code>HEAD@{index}</code>, which you’ll find in the output of <code>git reflog</code>) to revert to that point in time. Seems like magic, but it has limitations. <code>git reset</code> can create problems if you have already pushed changes to the remote repository, so only use it in this way if you want to go back a series of commits that you have not pushed yet.</p></li>
-</ol>
+<p>Generally speaking you should commit often (including amended commits) but push much less often. This makes collaboration easier and also makes the process of reverting to previous versions of documents much more straight forward. I generally only push changes to GitHub when I’m happy for my collaborators (or the rest of the world) to see my work. However, this is entirely up to you and depends on the project (and who you are working with) and what your priorities are when using Git.</p>
 <p> </p>
-<p>Git offers a number of advanced features that you can incorporate in your workflow. If you are going to be working on a large collaborative project it is worth looking into <em>forking</em>, <em>branching</em> and <em>pull requests</em>. If you are the only person working on your code, then the workflow detailed here is usually enough.</p>
+<p>If you don’t want to track a file in your repository (maybe they are too large or transient files) you can get Git to ignore the file by right clicking on the filename in the Git pane and selecting ‘Ignore…’</p>
 <p> </p>
-</div>
+<p><img src="images/tip1.png" width="80%" style="display: block; margin: auto;" /></p>
+<p> </p>
+<p>This will add the filename to the <code>.gitignore</code> file. If you want to ignore multiple files or a particular type of file you can also include wildcards in the <code>.gitignore</code> file. For example to ignore all <code>png</code> files you can include the expression <code>*.png</code> in your <code>.gitignore</code> file and save.</p>
+<p> </p>
+<p>If it all goes pear shaped and you end up completely trashing your Git repository don’t despair (we’ve all been there!). As long as your GitHub repository is good, all you need to do is delete the offending project directory on your computer, create a new RStudio project and link this with your remote GitHub repository using <a href="#opt2">Option 2</a>. Once you have cloned the remote repository you should be good to go.</p>
+<p> </p>
 </div>
 </div>
 <div id="resources" class="section level2">
 <h2>Further resources</h2>
 <p> </p>
-<p>There are many good guides online to learn more about git and GitHub and as with any open source software there is a huge community that can be a great resource:</p>
+<p>There are many good online guides to learn more about git and GitHub and as with any open source software there is a huge community that can be a great resource:</p>
 <ul>
 <li><p>The British Ecological Society guide to <a href="https://www.britishecologicalsociety.org/wp-content/uploads/2019/06/BES-Guide-Reproducible-Code-2019.pdf">Reproducible Code</a></p></li>
 <li><p>The <a href="https://guides.github.com/">GitHub guides</a></p></li>
 <li><p>The Mozilla Science Lab <a href="https://mozillascience.github.io/working-open-workshop/github_for_collaboration/">GitHub for Collaboration on Open Projects guide</a></p></li>
+<li><p>Jenny Bryan’s <a href="https://happygitwithr.com/">Happy Git and GitHub</a></p></li>
 <li><p>If you have done something terribly wrong and don’t know how to fix it try <a href="https://ohshitgit.com/">Oh Shit, Git</a></p></li>
 </ul>
 <p>These are only a couple of examples, all you need to do is Google “version control with git and GitHub” to see how huge the community around these open source projects is and how many free resources are available for you to become a version control expert.</p>

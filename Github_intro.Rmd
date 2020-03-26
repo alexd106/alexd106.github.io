@@ -178,7 +178,7 @@ Now that you're all set up, let's create your first version controlled RStudio p
 
 \  
 
-### Option 1 - GitHub first
+### Option 1 - GitHub first {#opt1}
 
 \  
 
@@ -242,7 +242,7 @@ knitr::include_graphics(path = "images/proj_setup3.png")
 
 \  
 
-### Option 2 - RStudio first
+### Option 2 - RStudio first {#opt2}
 
 \  
 
@@ -497,7 +497,7 @@ knitr::include_graphics(path = "images/first_Rmd5.png")
 
 \  
 
-Now that you have commited your changes the next step is to **push** these changes to GitHub. Before you push your changes it's good practice to first **pull** any changes from GitHub. This is especially important if both you and your collaborators are working on the same files as it keeps you local copy up to date and avoids any potential conflicts. In this case your repository will already be up to date but it's a good habit to get into. To do this, click on the 'Pull' button on the top right of the 'Review Changes' window. Once you have pulled any changes click on the green 'Push' button to push your changes. You will see a summary of the push you just performed. Hit the 'Close' button and then close the 'Review Changes' window. 
+Now that you have committed your changes the next step is to **push** these changes to GitHub. Before you push your changes it's good practice to first **pull** any changes from GitHub. This is especially important if both you and your collaborators are working on the same files as it keeps you local copy up to date and avoids any potential conflicts. In this case your repository will already be up to date but it's a good habit to get into. To do this, click on the 'Pull' button on the top right of the 'Review Changes' window. Once you have pulled any changes click on the green 'Push' button to push your changes. You will see a summary of the push you just performed. Hit the 'Close' button and then close the 'Review Changes' window. 
 
 \  
 ```{r rm7, echo=FALSE, out.width="60%", fig.align="center"}
@@ -613,7 +613,7 @@ knitr::include_graphics(path = "images/c_history.png")
 
 \  
 
-The history window is split into two parts. The top pane lists every commit you have made in this repository (with associated commit messages) starting with the most recent one at the top and oldest at the bottom. You can click on each of these commits and the bottom pane shows you the changes you have made along with a summary of the Date the commit was made, Author of the commit and the commit message (Subject). There is also a unique identifier for the commit (SHA - Secure Hash Algorithm) and a Parent SHA which identifies the previous commit. These SHA identifiers are really important as you can use them to view and revert to previous versions of files (details [below](#undo)). You can view the contents of each file by clicking on the 'View file @ SHA key` link (in our case 'View file @ 2b4693d1').  
+The history window is split into two parts. The top pane lists every commit you have made in this repository (with associated commit messages) starting with the most recent one at the top and oldest at the bottom. You can click on each of these commits and the bottom pane shows you the changes you have made along with a summary of the **Date** the commit was made, **Author** of the commit and the commit message (**Subject**). There is also a unique identifier for the commit (**SHA** - Secure Hash Algorithm) and a **Parent** SHA which identifies the previous commit. These SHA identifiers are really important as you can use them to view and revert to previous versions of files (details [below](#undo)). You can also view the contents of each file by clicking on the 'View file @ SHA key` link (in our case 'View file @ 2b4693d1').  
 
 \  
 
@@ -657,23 +657,167 @@ knitr::include_graphics(path = "images/c_history5.png")
 
 \  
 
-One reason to use Git is that you are able to revert to previous versions of files 
+One the great things about using Git is that you are able to revert to previous versions of files if you've made a mistake, broke something or just prefer and earlier approach. How you do this will depend on whether the changes you want to discard have been staged, committed or pushed to GitHub. We'll go through some common scenarios below mostly using RStudio but occasionally we will need to resort to using the Terminal (still in RStudio though).  
+
+\  
+
+#### Changes saved but not staged, committed or pushed
+
+If you have saved changes to your file(s) but not staged, committed or pushed these files to GitHub you can right click on the offending file in the Git pane and select 'Revert ...'. This will roll back all of the changes you have made to the same state as your last commit. Just be aware that you cannot undo this operation so use with caution. 
+
+\  
+
+```{r rev1, echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics(path = "images/revert1.png")
+```
+
+\  
+
+You can also undo changes to just part of a file by opening up the 'Diff' window (click on the 'Diff' button in the Git pane). Select the line you wish to discard by double clicking on the line and then click on the 'Discard line' button. In a similar fashion you can discard chunks of code by clicking on the 'Discard chunk' button.  
+
+\  
+
+```{r rev2, echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics(path = "images/revert2.png")
+```
+
+\  
+
+#### Staged but not committed and not pushed
+
+If you have staged your files, but not committed them then simply unstage them by clicking on the 'Staged' check box in the Git pane (or in the 'Review Changes' window) to remove the tick. You can then revert all or parts of the file as described in the section above. 
+
+\  
+
+#### Staged and committed but not pushed
+
+If you have made a mistake or have forgotten to include a file in your last commit which you have not yet pushed to GitHub, you can just fix your mistake, save your changes, and then amend your previous commit. You can do this by staging your file and then tick the 'Amend previous commit` box in the 'Review Changes' window before committing.   
+
+\  
+
+```{r rev3, echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics(path = "images/revert3.png")
+```
+
+\  
+
+If we check out our commit history you can see that our latest commit contains both changes to the file rather than having two separate commits. I use the amend commit approach alot but it's important to understand that you should **not** do this if you have already pushed your last commit to GitHub as you are effectively rewriting history and all sorts bad things may happen! 
+
+\  
+
+```{r rev4, echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics(path = "images/revert4.png")
+```
+
+\  
+
+If you spot a mistake that has happened multiple commits back or you just want to revert to a previous version of a document you have a number of options.   
+
+**Option 1** - (probably the easiest but very unGit - but like, whatever!) is to look in your commit history in RStudio, find the commit that you would like to go back to and click on the 'View file @ ' button to show the file contents.
+
+\  
+
+```{r rev5, echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics(path = "images/revert5.png")
+```
+
+\  
+
+You can then copy the contents of the file to the clipboard and paste it into your current file to replace your duff code or text. Alternatively, you can click on the 'Save As' button and save the file with a different file name. Once you have saved your new file you can delete your current unwanted file and then carry on working on your new file. Don't forget to stage and commit this new file.
+
+\  
+
+```{r rev6, echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics(path = "images/revert6.png")
+```
+
+\
+
+**Option 2** - (Git like) Go to your Git history, find the commit you would like to roll back to and write down (or copy) its SHA identifier. 
+
+\  
+
+```{r rev7, echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics(path = "images/revert7.png")
+```
+
+\  
+
+Now go to the Terminal in RStudio and type `git checkout <SHA> <filename>`. In our case the SHA key is `2b4693d1` and the filename is `first_doc.Rmd` so our command would look like this:
+
+\  
+
+```
+git checkout 2b4693d1 first_doc.Rmd
+```
+
+\  
+
+The command above will copy the selected file version from the past and place it into the present. RStudio may ask you whether you want to reload the file as it now changed - select yes. You will also need to stage and commit the file as usual.  
+
+If you want to revert all your files to the same state as a previous commit rather than just one file you can use (the single 'dot' `.` is important otherwise your HEAD will detach!):
+
+\  
+
+```
+git rm -r .
+git checkout 2b4693d1 .
+
+```
+
+\  
+
+Note that this will delete all files that you have created since you made this commit so be careful!
+
+\  
+
+#### Staged, committed and pushed
+
+If you have already pushed your commits to GitHub you can use the `git checkout` strategy described above and then commit and push to update GitHub (although this is not really considered 'best' practice). Another approach would be to use `git revert` (Note: as far as I can tell `git revert` is not the same as the 'Revert' option in RStudio). The `revert` command in Git essentially creates a new commit based on a previous commit and therefore preserves all of your commit history. To rollback to a previous state (commit) you first need to identify the SHA for the commit you wish to go back to (as we did above) and then use the `revert` command in the Terminal. Let's say we want to revert back to our 'First commit' which has a SHA identifier `d27e79f1`. 
+
+\  
+
+```{r rev8, echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics(path = "images/revert8.png")
+```
+
+\  
+
+We can use the `revert` command as shown below in the Terminal. The `--no-commit` option is used to prevent us from having to deal with each intermediate commit. 
+
+\  
+
+```
+git revert --no-commit d27e79f1..HEAD
+```
+
+\  
+
+Your `first_doc.Rmd` file will now revert back to the same state as it was when you did your 'First commit'. Notice also that the `first_doc.pdf` file has been deleted as this wasn't present when we made our first commit. You can now stage and commit these files with a new commit message and finally push them to GitHub. Notice that if we look at our commit history all of the commits we have made are still present.
+
+\  
+
+```{r rev9, echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics(path = "images/revert9.png")
+```
+
+\  
+
+and our repo on GitHub also reflects these changes
+
+\  
+
+```{r rev10, echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics(path = "images/revert10.png")
+```
 
 \  
 
 ### Collaborate with Git {#collab}
 
+\  
+
 GitHub is a great tool for collaboration, it can seem scary and complicated at first, but it is worth investing some time to learn how it works. What makes GitHub so good for collaboration is that it is a *distributed system*, which means that every collaborator works on their own copy of the project and changes are then merged together in the remote repository. There are two main ways you can set up a collaborative project on GitHub. One is the workflow we went through above, where everybody connects their local repository to the same remote one; this system works well with small projects where different people mainly work on different aspects of the project but can quickly become unwieldy if many people are collaborating and are working on the same files (merge misery!). The second approach consists of every collaborator creating a copy (or *fork*) of the main repository, which becomes their remote repository. Every collaborator then needs to send a request (a *pull request*) to the owner of the main repository to incorporate any changes into the main repository and this includes a review process before the changes are integrated. More detail of these topics can be found in the [Further resources](#resources) section.
-
-\  
-
-***
-*Work in progress below*
-
-\  
-
-
-This is also possible in RStudio. Click on “Diff” or “Commit”. Select a file with changes you do not want. Use “Discard All” to discard all changes in that file. Use “Discard chunk” to discard changes in that file, selectively. Repeat this procedure for each affected file until you are back to an acceptable state. Carry on.
 
 \  
 
@@ -681,23 +825,25 @@ This is also possible in RStudio. Click on “Diff” or “Commit”. Select a 
 
 \  
 
-Commit often, push less often
+Generally speaking you should commit often (including amended commits) but push much less often. This makes collaboration easier and also makes the process of reverting to previous versions of documents much more straight forward. I generally only push changes to GitHub when I'm happy for my collaborators (or the rest of the world) to see my work. However, this is entirely up to you and depends on the project (and who you are working with) and what your priorities are when using Git. 
 
 \  
 
-#### Revert to a previous commit 
-
-Oops, I broke it! One of the great things about a version control system is that if you break your code you can always go back to when it was still working. There are two ways:
-
-1. If you have made a mistake or you forgot to include a file in your last commit, which you have not yet pushed to your remote repository, then you can just make your changes, use `git add` to stage the new or the changed file and then use the command `git commit --amend`. This will change your previous commit to include the new changes. You can also use this command on its own if you just want to modify the commit message.
-
-2. If you are already a few commits away from the one that broke your code and you need to go back to a previous version of your project, first use `git reflog`, which will show you a list of everything you have done in git. Then, find the step that broke your code. Finally use `git reset` and the step's index (something of the form `HEAD@{index}`, which you'll find in the output of `git reflog`) to revert to that point in time. Seems like magic, but it has limitations. `git reset` can create problems if you have already pushed changes to the remote repository, so only use it in this way if you want to go back a series of commits that you have not pushed yet.
+If you don't want to track a file in your repository (maybe they are too large or transient files) you can get Git to ignore the file by right clicking on the filename in the Git pane and selecting 'Ignore...'
 
 \  
 
+```{r tip1, echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics(path = "images/tip1.png")
+```
 
+\  
 
-Git offers a number of advanced features that you can incorporate in your workflow. If you are going to be working on a large collaborative project it is worth looking into *forking*, *branching* and *pull requests*. If you are the only person working on your code, then the workflow detailed here is usually enough. 
+This will add the filename to the `.gitignore` file. If you want to ignore multiple files or a particular type of file you can also include wildcards in the `.gitignore` file. For example to ignore all `png` files you can include the expression `*.png` in your `.gitignore` file and save.
+
+\  
+
+If it all goes pear shaped and you end up completely trashing your Git repository don't despair (we've all been there!). As long as your GitHub repository is good, all you need to do is delete the offending project directory on your computer, create a new RStudio project and link this with your remote GitHub repository using [Option 2](#opt2). Once you have cloned the remote repository you should be good to go. 
 
 \  
 
@@ -705,13 +851,15 @@ Git offers a number of advanced features that you can incorporate in your workfl
 
 \  
 
-There are many good guides online to learn more about git and GitHub and as with any open source software there is a huge community that can be a great resource:
+There are many good online guides to learn more about git and GitHub and as with any open source software there is a huge community that can be a great resource:
 
 - The British Ecological Society guide to [Reproducible Code](https://www.britishecologicalsociety.org/wp-content/uploads/2019/06/BES-Guide-Reproducible-Code-2019.pdf)
 
 - The [GitHub guides](https://guides.github.com/)
 
 - The Mozilla Science Lab [GitHub for Collaboration on Open Projects guide](https://mozillascience.github.io/working-open-workshop/github_for_collaboration/)
+
+- Jenny Bryan's [Happy Git and GitHub](https://happygitwithr.com/)
 
 - If you have done something terribly wrong and don't know how to fix it try [Oh Shit, Git](https://ohshitgit.com/)
 
