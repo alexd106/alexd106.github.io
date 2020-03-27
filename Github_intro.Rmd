@@ -61,7 +61,7 @@ Version control automatically takes care of keeping a record of all the versions
 
 **GitHub** is a web-based hosting service for Git repositories which allows you to create a remote copy of your local version-controlled project. This can be used as a backup or archive of your project or make it accessible to you and to your colleagues so you can work collaboratively. 
 
-At the start of a project we typically create a **remote** repository on GitHub, then **clone** (think of this as copying) this repository to our **local** computer (the one in front of you). This cloning is usually a one time event and you shouldn't need to clone this repository again unless you really muck things up. Once you have cloned your repository you can then work on your project as usual creating and saving files for your data analysis (scripts, R markdown documents, figures etc). Along the way you can take snapshots (called **commits**) of these files after you've made important changes. We can then **push** these changes to the remote GitHub repository to make a backup or make available to our collaborators. If other people are working on the same project (**repository**), or maybe you're working on a different computer, you can **pull** any changes back to your local repository so everything is synchronised.          
+At the start of a project we typically (but not always) create a **remote** repository on GitHub, then **clone** (think of this as copying) this repository to our **local** computer (the one in front of you). This cloning is usually a one time event and you shouldn't need to clone this repository again unless you really muck things up. Once you have cloned your repository you can then work locally on your project as usual, creating and saving files for your data analysis (scripts, R markdown documents, figures etc). Along the way you can take snapshots (called **commits**) of these files after you've made important changes. We can then **push** these changes to the remote GitHub repository to make a backup or make available to our collaborators. If other people are working on the same project (**repository**), or maybe you're working on a different computer, you can **pull** any changes back to your local repository so everything is synchronised.          
 
 
 \  
@@ -202,7 +202,7 @@ knitr::include_graphics(path = "images/new_repo_opt.png")
 
 \  
 
-Your new GitHub repository will now be created. Notice the README has been rendered in GitHub and is in markdown (.md) format (see the other [tutorial] (Rmarkdown_intro.html) on R markdown if this doesn't mean anything to you). Next click on the green 'Clone or Download' button and copy the `https//...` URL that pops up for later (either highlight it all and copy or click on the copy to clipboard icon to the right).
+Your new GitHub repository will now be created. Notice the README has been rendered in GitHub and is in markdown (.md) format (see the other [tutorial](Rmarkdown_intro.html) on R markdown if this doesn't mean anything to you). Next click on the green 'Clone or Download' button and copy the `https//...` URL that pops up for later (either highlight it all and copy or click on the copy to clipboard icon to the right).
 
 \  
 
