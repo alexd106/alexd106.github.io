@@ -114,7 +114,7 @@ sudo apt install git
 
 You will need administrative privileges to do this. For other versions of Linux see [here](https://git-scm.com/download/linux) for further installation instructions.  
 
-Whatever version of Git you're installing, once the installation has finished verify that the installation process has been successful by running the command `git --version` in the Terminal tab in RStudio (as described above). On some installations of Git (yes I'm looking at you MS Wondows) this may still produce an error as you will also need to setup RStudio so it can find the Git executable (described [below](#rs_config)). 
+Whatever version of Git you're installing, once the installation has finished verify that the installation process has been successful by running the command `git --version` in the Terminal tab in RStudio (as described above). On some installations of Git (yes I'm looking at you MS Windows) this may still produce an error as you will also need to setup RStudio so it can find the Git executable (described [below](#rs_config)). 
 
 \  
 
