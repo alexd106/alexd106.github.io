@@ -529,7 +529,7 @@ You need version control
 sudo apt install git</code></pre>
 <p> </p>
 <p>You will need administrative privileges to do this. For other versions of Linux see <a href="https://git-scm.com/download/linux">here</a> for further installation instructions.</p>
-<p>Whatever version of Git you’re installing, once the installation has finished verify that the installation process has been successful by running the command <code>git --version</code> in the Terminal tab in the Console in RStudio (as described above).</p>
+<p>Whatever version of Git you’re installing, once the installation has finished verify that the installation process has been successful by running the command <code>git --version</code> in the Terminal tab in RStudio (as described above). On some installations of Git (yes I’m looking at you MS Wondows) this may still produce an error as you will also need to setup RStudio so it can find the Git executable (described <a href="#rs_config">below</a>).</p>
 <p> </p>
 </div>
 <div id="configure-git" class="section level3">
@@ -547,6 +547,11 @@ git config --global user.name &#39;Your Name&#39;</code></pre>
 <pre><code>git config --global --list</code></pre>
 <p> </p>
 <p>You should see both your <code>user.name</code> and <code>user.email</code> configured.</p>
+<p> </p>
+</div>
+<div id="rs_config" class="section level3">
+<h3>Configure RStudio</h3>
+<p> </p>
 <p>As you can see above, Git can be used from the command line, but it also integrates well with RStudio, providing a friendly graphical user interface. If you want to use RStudio’s Git integration (we recommend you do - at least at the start), you need to check that the path to the Git executable is specified correctly. In RStudio, go to the menu <code>Tools</code> -&gt; <code>Global Options</code> -&gt; <code>Git/SVN</code> and make sure that ‘Enable version control interface for RStudio projects’ is ticked and that the ‘Git executable:’ path is correct for your installation. If it’s not correct hit the <code>Browse...</code> button and navigate to where you installed git and click on the executable file. You will need to restart RStudio after doing this.</p>
 <p> </p>
 <p><img src="images/git_path.png" width="60%" style="display: block; margin: auto;" /></p>

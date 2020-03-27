@@ -114,7 +114,7 @@ sudo apt install git
 
 You will need administrative privileges to do this. For other versions of Linux see [here](https://git-scm.com/download/linux) for further installation instructions.  
 
-Whatever version of Git you're installing, once the installation has finished verify that the installation process has been successful by running the command `git --version` in the Terminal tab in the Console in RStudio (as described above). 
+Whatever version of Git you're installing, once the installation has finished verify that the installation process has been successful by running the command `git --version` in the Terminal tab in RStudio (as described above). On some installations of Git (yes I'm looking at you MS Wondows) this may still produce an error as you will also need to setup RStudio so it can find the Git executable (described [below](#rs_config)). 
 
 \  
 
@@ -147,6 +147,12 @@ git config --global --list
 \  
 
 You should see both your `user.name` and `user.email` configured. 
+
+\  
+
+### Configure RStudio {#rs_config}
+
+\  
 
 As you can see above, Git can be used from the command line, but it also integrates well with RStudio, providing a friendly graphical user interface. If you want to use RStudio's Git integration (we recommend you do - at least at the start), you need to check that the path to the Git executable is specified correctly. In RStudio, go to the menu `Tools` -> `Global Options` -> `Git/SVN` and make sure that 'Enable version control interface for RStudio projects' is ticked and that the 'Git executable:' path is correct for your installation. If it's not correct hit the `Browse...` button and navigate to where you installed git and click on the executable file. You will need to restart RStudio after doing this.
 
