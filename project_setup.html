@@ -646,7 +646,7 @@ div.tocify {
 <div id="directory-structure" class="section level2">
 <h2>Directory structure</h2>
 <p> </p>
-<p>In addition to using RStudio Projects, it’s also really good practice to structure your directory in a consistent and logical way to help both you and your collaborators. I frequently use the following directory structure in my R orientated projects</p>
+<p>In addition to using RStudio Projects, it’s also really good practice to structure your directory in a consistent and logical way to help both you and your collaborators. I frequently use the following directory structure in my R based projects</p>
 <p> </p>
 <pre><code>
     Root
@@ -665,14 +665,14 @@ div.tocify {
      |_output
  </code></pre>
 <p> </p>
-<p>In your working directory you will have the following directories:</p>
+<p>In my working directory I have the following directories:</p>
 <ul>
 <li><p><strong>Root</strong> - This is your project directory containing your .Rproj file.</p></li>
-<li><p><strong>data</strong> - I store all my data in this directory. The subdirectory called <code>raw_data</code> contains raw data files and only raw data files. These files should be treated as read only and should not be changed in any way. If you need to process/clean/modify your data do this in R (not MS Excel) as then you are able to document (and justify) and changes made. Any processed data should be saved to a separate file and stored in the <code>processed_data</code> subdirectory. Any Information about data collection methods, details of data download and any other useful metadata should be saved in a text document (see README text files below) in the <code>metadata</code> subdirectory.</p></li>
+<li><p><strong>data</strong> - I store all my data in this directory. The subdirectory called <code>raw_data</code> contains raw data files and only raw data files. These files should be treated as read only and should not be changed in any way. If you need to process/clean/modify your data do this in R (not MS Excel) as you can document (and justify) any changes made. Any processed data should be saved to a separate file and stored in the <code>processed_data</code> subdirectory. Information about data collection methods, details of data download and any other useful metadata should be saved in a text document (see README text files below) in the <code>metadata</code> subdirectory.</p></li>
 <li><p><strong>R</strong> - This is an optional directory where I save all of my custom R functions for the current analysis. These can then be sourced into R.</p></li>
 <li><p><strong>Rmd</strong> - An optional directory where I save my R markdown documents.</p></li>
 <li><p><strong>scripts</strong> - All of my main R scripts for the current project are saved here.</p></li>
-<li><p><strong>output</strong> - Outputs from my R scripts such as plots, HTML files and data summaries are saved in this directory. This helps you and others to distinguish what files are outputs and which are source files.</p></li>
+<li><p><strong>output</strong> - Outputs from my R scripts such as plots, HTML files and data summaries are saved in this directory. This helps me and others to distinguish what files are outputs and which are source files.</p></li>
 </ul>
 <p> </p>
 <p>Of course, the structure described above is just what works for me most of the time and should be viewed as a starting point for your own needs. I tend to have a fairly consistent directory structure across my projects as this allows me to quickly orientate myself when I return to a project after a while. Having said that, different projects will have different requirements so I happily add and remove directories as required.</p>
@@ -711,9 +711,9 @@ source:<a href="https://xkcd.com/1459/" class="uri">https://xkcd.com/1459/</a>
 <p> </p>
 <ul>
 <li><p>First, avoid using spaces in file names by replacing them with underscores or even hyphens. Why does this matter? One reason is that some command line software (especially many bioinformatic tools) won’t recognise a file name with a space and you’ll have to go through all sorts of shenanigans using escape characters to make sure spaces are handled correctly. Even if you don’t think you will ever use command line software you may be doing so indirectly. Take R markdown for example, if you want to render an R markdown document to pdf using the <code>rmarkdown</code> package you will actually be using a command line LaTeX engine under the hood. Another good reason not to use spaces in file names is that is makes searching for file names (or parts of file names) using <a href="https://en.wikipedia.org/wiki/Regular_expression">regular expressions</a> in R (or any other language) much more difficult.</p></li>
-<li><p>For the same reasons given above, avoid using special characters (@£$%^&amp;*():;&lt;&gt;?{}) in your file names.</p></li>
+<li><p>For the reasons given above, avoid using special characters (i.e. @£$%^&amp;*():;&lt;&gt;?{}/) in your file names.</p></li>
 <li><p>If you are versioning your files with sequential numbers (i.e. file1, file2, file3 …) and you have more than 9 files you should use 01, 02, 03 .. 10 as this will ensure the files are printed in the correct order (see what happens if you don’t). If you have more than 99 files then use 001, 002, 003 …etc.</p></li>
-<li><p>If your file names include dates, use the ISO 8601 format of YYYY-MM-DD (or YYYYMMDD) to ensure your files are sorted in proper chronological order.</p></li>
+<li><p>If your file names include dates, use the ISO 8601 format YYYY-MM-DD (or YYYYMMDD) to ensure your files are sorted in proper chronological order.</p></li>
 <li><p>Never use the word <em>final</em> in any file name - it never is!</p></li>
 </ul>
 <p> </p>
