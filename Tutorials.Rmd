@@ -19,7 +19,7 @@ knitr::include_graphics("images/rstudio_2.png")
 
 \  
 
-[Setting up a project](project_setup.html)  
+[Setting up an RStudio project](project_setup.html)  
 
 \  
 
