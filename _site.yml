@@ -9,7 +9,115 @@ navbar:
     - text: "Home"
       icon: fa-home
       href: index.html
+<<<<<<< HEAD
    
+||||||| 1985833
+    - text: "Setup"
+      icon: fa-cog
+      href: setup.html
+    - text: "Lectures"
+      icon: fa-university
+      href: lectures.html
+    - text: "Exercises"
+      icon: fa-book
+      href: exercises.html
+    - text: "Data"
+      icon: fa-download
+      href: "data.html"
+    - text: "Tutorials"
+      icon: fa-desktop
+      href: Tutorials.html
+    - text: "Info"
+      icon: fa-question-circle
+      menu:
+        - text: "Syllabus"
+          icon: fa-graduation-cap
+          href: syllabus.html
+        - text: "----"
+        - text: "People"
+          icon: fa-user-friends
+          href: "People.html"
+        - text: "----"
+        - text: "Resources"
+          icon: fa-book
+          href: "resources.html"
+        - text: "Feedback"
+          icon: fa-commenting
+          href: https://docs.google.com/forms/d/e/1FAIpQLSfCbHly9uxs7IClhBd95y9JhfG-a5JUXCAal6sFyKKJiWR1Ng/viewform?usp=sf_link
+        - text: "----"
+        - text: "QUADRAT"
+          icon: fa-chrome
+          href: https://www.quadrat.ac.uk/
+        - text: "Contact"
+          icon: fa-envelope fa-lg
+          href: People.html
+        - text: "Source code"
+          icon: fa-github fa-lg
+          href: http://github.com/alexd106
+        - text: "Twitter"
+          icon: fa-twitter fa-lg
+          href: https://twitter.com/QUADRATdtp  
+=======
+    - text: "Setup"
+      icon: fa-cog
+      href: setup.html
+    - text: "Lectures"
+      icon: fa-university
+      href: lectures.html
+    - text: "R book"
+      icon: fa-book
+      menu: 
+        - text: "Web book"
+          icon: fa-firefox
+          href: https://alexd106.github.io/Rbook
+        - text: "----"
+        - text: "PDF book"
+          icon: fa-file-pdf
+          href: https://github.com/alexd106/Rbook/raw/master/docs/Rbook.pdf
+        - text: "----"
+        - text: "Old manual"
+          icon: fa-book
+          href: R_manual_2020.pdf
+    - text: "Exercises"
+      icon: fa-book
+      href: exercises.html
+    - text: "Data"
+      icon: fa-download
+      href: "data.html"
+    - text: "Tutorials"
+      icon: fa-desktop
+      href: Tutorials.html
+    - text: "Info"
+      icon: fa-question-circle
+      menu:
+        - text: "Syllabus"
+          icon: fa-graduation-cap
+          href: syllabus.html
+        - text: "----"
+        - text: "People"
+          icon: fa-user-friends
+          href: "People.html"
+        - text: "----"
+        - text: "Resources"
+          icon: fa-book
+          href: "resources.html"
+        - text: "Feedback"
+          icon: fa-commenting
+          href: https://docs.google.com/forms/d/e/1FAIpQLSfCbHly9uxs7IClhBd95y9JhfG-a5JUXCAal6sFyKKJiWR1Ng/viewform?usp=sf_link
+        - text: "----"
+        - text: "QUADRAT"
+          icon: fa-chrome
+          href: https://www.quadrat.ac.uk/
+        - text: "Contact"
+          icon: fa-envelope fa-lg
+          href: People.html
+        - text: "Source code"
+          icon: fa-github fa-lg
+          href: http://github.com/alexd106
+        - text: "Twitter"
+          icon: fa-twitter fa-lg
+          href: https://twitter.com/QUADRATdtp  
+>>>>>>> a49db492f0555459ba8bac0403a78e5a6644522e
 
 output:
   html_document:
@@ -20,6 +128,20 @@ output:
     toc_float:
       collapsed: false
     fig_align: center
+<<<<<<< HEAD
     
+||||||| 1985833
+    # css: 'styles.css'
+    # css:
+    #  - https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css
+    #  - styles.css
+=======
+    includes:
+      in_header: GA_script.html
+    # css: 'styles.css'
+    # css:
+    #  - https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css
+    #  - styles.css
+>>>>>>> a49db492f0555459ba8bac0403a78e5a6644522e
 
 exclude: ["LICENSE", "README.md", "*.Rproj", "*.key", "*.psd"]
