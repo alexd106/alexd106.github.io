@@ -27,7 +27,7 @@ navbar:
         - href: https://github.com/alexd106/Rbook/raw/master/docs/Rbook.pdf
         - text: "----"
         - text: "Old manual"
-        - icon: fa-file-pdf
+        - icon: fa-book
         - href: R_manual_2020.pdf
     - text: "Exercises"
       icon: fa-book
