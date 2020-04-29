@@ -15,6 +15,20 @@ navbar:
     - text: "Lectures"
       icon: fa-university
       href: lectures.html
+    - text: "R book"
+      icon: fa-book
+      menu: 
+        - text: "Web book"
+        - icon: fa-firefox
+        - href: https://alexd106.github.io/Rbook
+        - text: "----"
+        - text: "PDF book"
+        - icon: fa-file-pdf
+        - href: https://github.com/alexd106/Rbook/raw/master/docs/Rbook.pdf
+        - text: "----"
+        - text: "Old manual"
+        - icon: fa-file-pdf
+        - href: R_manual_2020.pdf
     - text: "Exercises"
       icon: fa-book
       href: exercises.html
