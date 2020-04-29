@@ -364,7 +364,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">QUADstat</a>
+      <a class="navbar-brand" href="index.html">Alex Douglas</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -374,145 +374,6 @@ $(document).ready(function () {
      
     Home
   </a>
-</li>
-<li>
-  <a href="setup.html">
-    <span class="fa fa-cog"></span>
-     
-    Setup
-  </a>
-</li>
-<li>
-  <a href="lectures.html">
-    <span class="fa fa-university"></span>
-     
-    Lectures
-  </a>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fa fa-book"></span>
-     
-    R book
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="https://alexd106.github.io/Rbook">
-        <span class="fa fa-firefox"></span>
-         
-        Web book
-      </a>
-    </li>
-    <li class="divider"></li>
-    <li>
-      <a href="https://github.com/alexd106/Rbook/raw/master/docs/Rbook.pdf">
-        <span class="fa fa-file-pdf"></span>
-         
-        PDF book
-      </a>
-    </li>
-    <li class="divider"></li>
-    <li>
-      <a href="R_manual_2020.pdf">
-        <span class="fa fa-book"></span>
-         
-        Old manual
-      </a>
-    </li>
-  </ul>
-</li>
-<li>
-  <a href="exercises.html">
-    <span class="fa fa-book"></span>
-     
-    Exercises
-  </a>
-</li>
-<li>
-  <a href="data.html">
-    <span class="fa fa-download"></span>
-     
-    Data
-  </a>
-</li>
-<li>
-  <a href="Tutorials.html">
-    <span class="fa fa-desktop"></span>
-     
-    Tutorials
-  </a>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fa fa-question-circle"></span>
-     
-    Info
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="syllabus.html">
-        <span class="fa fa-graduation-cap"></span>
-         
-        Syllabus
-      </a>
-    </li>
-    <li class="divider"></li>
-    <li>
-      <a href="People.html">
-        <span class="fa fa-user-friends"></span>
-         
-        People
-      </a>
-    </li>
-    <li class="divider"></li>
-    <li>
-      <a href="resources.html">
-        <span class="fa fa-book"></span>
-         
-        Resources
-      </a>
-    </li>
-    <li>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCbHly9uxs7IClhBd95y9JhfG-a5JUXCAal6sFyKKJiWR1Ng/viewform?usp=sf_link">
-        <span class="fa fa-commenting"></span>
-         
-        Feedback
-      </a>
-    </li>
-    <li class="divider"></li>
-    <li>
-      <a href="https://www.quadrat.ac.uk/">
-        <span class="fa fa-chrome"></span>
-         
-        QUADRAT
-      </a>
-    </li>
-    <li>
-      <a href="People.html">
-        <span class="fa fa-envelope fa-lg"></span>
-         
-        Contact
-      </a>
-    </li>
-    <li>
-      <a href="http://github.com/alexd106">
-        <span class="fa fa-github fa-lg"></span>
-         
-        Source code
-      </a>
-    </li>
-    <li>
-      <a href="https://twitter.com/QUADRATdtp">
-        <span class="fa fa-twitter fa-lg"></span>
-         
-        Twitter
-      </a>
-    </li>
-  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -759,8 +620,8 @@ $(document).ready(function () {
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="co"># vanilla pairs plot</span></a>
 <a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw">pairs</span>(squid[, <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>)])</a>
 <a class="sourceLine" id="cb9-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co"># customise the plot. You will need to define the panel.hist and panel.cor functions first. see the course manual or</span></a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="co"># ?pairs help file</span></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co"># customise the plot. You will need to define the panel.hist and panel.cor functions first. see the course manual or ?pairs help</span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="co"># file</span></a>
 <a class="sourceLine" id="cb9-6" data-line-number="6"></a>
 <a class="sourceLine" id="cb9-7" data-line-number="7"><span class="kw">pairs</span>(squid[, <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>)], <span class="dt">diag.panel =</span> panel.hist, <span class="dt">upper.panel =</span> panel.cor, <span class="dt">lower.panel =</span> panel.smooth)</a></code></pre></div></li>
 </ol>
@@ -771,8 +632,8 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb10-2" data-line-number="2">squid<span class="op">$</span>ovary.weight.sqrt &lt;-<span class="st"> </span><span class="kw">sqrt</span>(squid<span class="op">$</span>ovary.weight)</a>
 <a class="sourceLine" id="cb10-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb10-4" data-line-number="4"><span class="co"># create the plot</span></a>
-<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="kw">with</span>(squid, <span class="kw">plot</span>(DML, ovary.weight.sqrt, <span class="dt">xlab =</span> <span class="st">&quot;DML (mm)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;square root ovary weight (g)&quot;</span>, <span class="dt">col =</span> <span class="kw">as.numeric</span>(Fmaturity), </a>
-<a class="sourceLine" id="cb10-6" data-line-number="6">    <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">60</span>, <span class="dv">350</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">8.5</span>)))</a>
+<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="kw">with</span>(squid, <span class="kw">plot</span>(DML, ovary.weight.sqrt, <span class="dt">xlab =</span> <span class="st">&quot;DML (mm)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;square root ovary weight (g)&quot;</span>, <span class="dt">col =</span> <span class="kw">as.numeric</span>(Fmaturity), <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">60</span>, </a>
+<a class="sourceLine" id="cb10-6" data-line-number="6">    <span class="dv">350</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">8.5</span>)))</a>
 <a class="sourceLine" id="cb10-7" data-line-number="7"></a>
 <a class="sourceLine" id="cb10-8" data-line-number="8"><span class="co"># create the legend</span></a>
 <a class="sourceLine" id="cb10-9" data-line-number="9">labs &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;stage 1&quot;</span>, <span class="st">&quot;stage 2&quot;</span>, <span class="st">&quot;stage 3&quot;</span>, <span class="st">&quot;stage 4&quot;</span>, <span class="st">&quot;stage 5&quot;</span>)</a>
@@ -784,8 +645,8 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb11-4" data-line-number="4"><span class="kw">library</span>(scales)</a>
 <a class="sourceLine" id="cb11-5" data-line-number="5"></a>
 <a class="sourceLine" id="cb11-6" data-line-number="6"><span class="co"># setup the axes but dont plot the points</span></a>
-<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="kw">with</span>(squid, <span class="kw">plot</span>(DML, ovary.weight.sqrt, <span class="dt">xlab =</span> <span class="st">&quot;DML (mm)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;square root ovary weight (g)&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">60</span>, </a>
-<a class="sourceLine" id="cb11-8" data-line-number="8">    <span class="dv">350</span>), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">8.5</span>)))</a>
+<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="kw">with</span>(squid, <span class="kw">plot</span>(DML, ovary.weight.sqrt, <span class="dt">xlab =</span> <span class="st">&quot;DML (mm)&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;square root ovary weight (g)&quot;</span>, <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">60</span>, <span class="dv">350</span>), </a>
+<a class="sourceLine" id="cb11-8" data-line-number="8">    <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">8.5</span>)))</a>
 <a class="sourceLine" id="cb11-9" data-line-number="9"></a>
 <a class="sourceLine" id="cb11-10" data-line-number="10"><span class="co"># plot the points with custom colours</span></a>
 <a class="sourceLine" id="cb11-11" data-line-number="11"><span class="kw">with</span>(squid, <span class="kw">points</span>(DML[Fmaturity <span class="op">==</span><span class="st"> &quot;1&quot;</span>], ovary.weight.sqrt[Fmaturity <span class="op">==</span><span class="st"> &quot;1&quot;</span>], <span class="dt">col =</span> <span class="kw">alpha</span>(<span class="st">&quot;deepskyblue3&quot;</span>, <span class="fl">0.7</span>), <span class="dt">pch =</span> <span class="dv">16</span>))</a>

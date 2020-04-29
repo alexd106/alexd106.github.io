@@ -8,8 +8,9 @@ output:
     code_folding: hide
 ---
 
-```{r global_options, echo=FALSE} 
+```{r global_options, echo=FALSE, warning=FALSE, message=FALSE} 
 knitr::opts_chunk$set(message=FALSE, tidy.opts=list(width.cutoff=60))
+library(knitr)
 ```
 
 
