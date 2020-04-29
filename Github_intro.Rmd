@@ -1,6 +1,0 @@
----
-title: "Introduction to Git and Github"
-output:
-  html_document:
-    toc: false
----

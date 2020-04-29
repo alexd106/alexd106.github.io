@@ -1,7 +1,0 @@
----
-title: "Introduction to R markdown"
-output:
-  html_document:
-    toc: false
----
-
