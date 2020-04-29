@@ -398,37 +398,28 @@ $(document).ready(function () {
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li class="dropdown-header">Web book</li>
     <li>
-      <a>
+      <a href="https://alexd106.github.io/Rbook">
         <span class="fa fa-firefox"></span>
          
+        Web book
       </a>
     </li>
-    <li>
-      <a href="https://alexd106.github.io/Rbook"></a>
-    </li>
     <li class="divider"></li>
-    <li class="dropdown-header">PDF book</li>
     <li>
-      <a>
+      <a href="https://github.com/alexd106/Rbook/raw/master/docs/Rbook.pdf">
         <span class="fa fa-file-pdf"></span>
          
+        PDF book
       </a>
-    </li>
-    <li>
-      <a href="https://github.com/alexd106/Rbook/raw/master/docs/Rbook.pdf"></a>
     </li>
     <li class="divider"></li>
-    <li class="dropdown-header">Old manual</li>
     <li>
-      <a>
+      <a href="R_manual_2020.pdf">
         <span class="fa fa-book"></span>
          
+        Old manual
       </a>
-    </li>
-    <li>
-      <a href="R_manual_2020.pdf"></a>
     </li>
   </ul>
 </li>
@@ -721,8 +712,8 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb7-5" data-line-number="5">gigartina &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;workshop/data/Gigartina.CSV&quot;</span>)</a>
 <a class="sourceLine" id="cb7-6" data-line-number="6"></a>
 <a class="sourceLine" id="cb7-7" data-line-number="7"><span class="kw">str</span>(gigartina)</a>
-<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="co"># &#39;data.frame&#39;: 40 obs. of 2 variables: $ diameter : int 110 115 110 108 109 101 101 98 120 ...  $ diatom.treat: Factor w/ 4 levels</span></a>
-<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="co"># &#39;ASGM&#39;,&#39;Sdecl&#39;,..: 1 1...</span></a>
+<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="co"># &#39;data.frame&#39;: 40 obs. of 2 variables: $ diameter : int 110 115 110 108 109 101 101 98 120 ...  $ diatom.treat: Factor</span></a>
+<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="co"># w/ 4 levels &#39;ASGM&#39;,&#39;Sdecl&#39;,..: 1 1...</span></a>
 <a class="sourceLine" id="cb7-10" data-line-number="10"></a>
 <a class="sourceLine" id="cb7-11" data-line-number="11"><span class="kw">table</span>(gigartina<span class="op">$</span>diatom.treat)</a>
 <a class="sourceLine" id="cb7-12" data-line-number="12"></a>
@@ -740,7 +731,8 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb7-24" data-line-number="24"></a>
 <a class="sourceLine" id="cb7-25" data-line-number="25"><span class="co"># or if you want to do the fancy um symbol correctly</span></a>
 <a class="sourceLine" id="cb7-26" data-line-number="26"></a>
-<a class="sourceLine" id="cb7-27" data-line-number="27"><span class="kw">boxplot</span>(diameter <span class="op">~</span><span class="st"> </span>diatom.treat, <span class="dt">data =</span> gigartina, <span class="dt">xlab =</span> <span class="st">&quot;diatom treatment&quot;</span>, <span class="dt">ylab =</span> <span class="kw">expression</span>(<span class="kw">paste</span>(<span class="st">&quot;diameter&quot;</span>, <span class="st">&quot; (&quot;</span>, mu, <span class="st">&quot;m)&quot;</span>)))</a></code></pre></div></li>
+<a class="sourceLine" id="cb7-27" data-line-number="27"><span class="kw">boxplot</span>(diameter <span class="op">~</span><span class="st"> </span>diatom.treat, <span class="dt">data =</span> gigartina, <span class="dt">xlab =</span> <span class="st">&quot;diatom treatment&quot;</span>, <span class="dt">ylab =</span> <span class="kw">expression</span>(<span class="kw">paste</span>(<span class="st">&quot;diameter&quot;</span>, <span class="st">&quot; (&quot;</span>, mu, </a>
+<a class="sourceLine" id="cb7-28" data-line-number="28">    <span class="st">&quot;m)&quot;</span>)))</a></code></pre></div></li>
 </ol>
 <p> </p>
 <ol start="8" style="list-style-type: decimal">
@@ -831,8 +823,8 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb14-6" data-line-number="6"></a>
 <a class="sourceLine" id="cb14-7" data-line-number="7"><span class="kw">str</span>(temora)</a>
 <a class="sourceLine" id="cb14-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb14-9" data-line-number="9"><span class="co"># &#39;data.frame&#39;: 45 obs. of 3 variables: $ temp : num 5 6 7 10 11 12 13 15 16 17 ...  $ beat_rate : num 3.76 5.4 8 9.4 16.6 18.5 19...  $</span></a>
-<a class="sourceLine" id="cb14-10" data-line-number="10"><span class="co"># acclimitisation_temp: int 5 5 5 5 5 5 5 5 5 5 ...</span></a></code></pre></div></li>
+<a class="sourceLine" id="cb14-9" data-line-number="9"><span class="co"># &#39;data.frame&#39;: 45 obs. of 3 variables: $ temp : num 5 6 7 10 11 12 13 15 16 17 ...  $ beat_rate : num 3.76 5.4 8 9.4</span></a>
+<a class="sourceLine" id="cb14-10" data-line-number="10"><span class="co"># 16.6 18.5 19...  $ acclimitisation_temp: int 5 5 5 5 5 5 5 5 5 5 ...</span></a></code></pre></div></li>
 </ol>
 <p> </p>
 <ol start="16" style="list-style-type: decimal">
